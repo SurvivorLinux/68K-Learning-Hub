@@ -1,7 +1,7 @@
 # 101 Med Lab Spec - MLT 68k Study Quizzes
 # I added the 68W study quizzes as well
 
-This repository contains a collection of static web-based quizzes for the MLT 68k course. It's designed to help students review and test their knowledge on various topics covered in the Medical Laboratory Technician program.
+This repository contains a collection of static web-based quizzes for the MLT 68k & 68W courses. It's designed to help students review and test their knowledge on various topics covered in their programs.
 
 ## 🚀 Getting Started
 
