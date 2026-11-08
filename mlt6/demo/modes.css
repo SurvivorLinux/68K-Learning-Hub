@@ -38,3 +38,13 @@
 .mode-footer a{color:var(--gold)}
 @media(max-width:620px){.study-tabs a{flex:1;justify-content:center;min-width:110px}.mode-status-line{align-items:flex-start}.bookmark-item-header{flex-direction:column}.path-navigation button,.path-actions button{flex:1}.bookmarked-links .path-link{flex:1;justify-content:center}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Shared term/definition direction settings for Flashcards and Write. */
+.direction-settings{padding:7px 13px;min-height:39px;white-space:nowrap}
+.direction-fieldset{padding:15px;margin:19px 0;border:1px solid var(--border);border-radius:11px}
+.direction-fieldset legend{color:var(--text);font-size:.88rem;font-weight:750;padding:0 8px}
+.direction-option{display:flex;align-items:center;gap:12px;padding:12px 9px;cursor:pointer;border-radius:8px}
+.direction-option:hover{background:#33383d}
+.direction-option input{width:18px;height:18px;accent-color:var(--gold);flex:0 0 auto}
+.direction-option input:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:620px){.direction-settings{width:100%}}
