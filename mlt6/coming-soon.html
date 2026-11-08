@@ -19,7 +19,7 @@
         document.getElementById("invalid-selection").hidden = false;
         return;
       }
-      document.title = modeName + " · " + test.legacyLabel || test.title + " | 68K Learning Hub";
+      document.title = modeName + " · " + (test.legacyLabel || test.title) + " | 68K Learning Hub";
       document.getElementById("test-breadcrumb").textContent = test.label;
       document.getElementById("mode-breadcrumb").textContent = modeName;
       document.getElementById("mode-name").textContent = modeName;
