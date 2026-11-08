@@ -1,8 +1,20 @@
-/* Approved course question banks are registered here as chapters are verified.
- * Each key must match an MLT6_CHAPTER_ORDER id. Never register demo banks here.
- * Real chapter banks must include verified:true, bankId, version, and questions,
- * with questions already sorted by the original textbook chapter/source order.
- * Example structure only (NOT course content):
- * "21": { verified:true, bankId:"mlt6-chapter-21", version:"v1", questions:[...] }
+/* MLT 106 verified course bank registry.
+ * IMPORTANT: keys are TEXTBOOK LESSON IDs (e.g. "5.1", "5.2"), not legacy test IDs.
+ * Original questions live here ONCE, in textbook source order. Examples:
+ *
+ * window.MLT6_APPROVED_BANKS = Object.freeze({
+ *   "5.1": {
+ *     verified: true,
+ *     bankId: "mlt106-lesson-5.1",
+ *     version: "approved-v1",
+ *     title: "Lesson 5.1: Miscellaneous Blood Bank Testing",
+ *     questions: [ ... approved, sourced question records ... ]
+ *   }
+ * });
+ *
+ * Do not publish a lesson until every question has a verified answer key,
+ * summarized explanation, printed textbook page, and exact supporting quote.
+ * The study engines derive unit comprehensive and All Bookmarks automatically.
+ * This empty registry deliberately contains NO invented textbook questions.
  */
 window.MLT6_APPROVED_BANKS = Object.freeze({});
