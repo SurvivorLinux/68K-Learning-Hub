@@ -1,26 +1,112 @@
 (function () {
   'use strict';
-  const bank = window.DEMO_QUESTION_BANK;
+  const fullBank = window.DEMO_QUESTION_BANK;
   const core = window.QuizCore;
   const app = document.getElementById('app');
-  if (!bank || !core || !app) {
+  if (!fullBank || !core || !app) {
     if (app) app.textContent = 'Unable to load the demonstration quiz.';
     return;
   }
-  const key = '68k:quiz:session:' + bank.bankId;
-  let state, selected = [], screen = 'quiz', historyIndex = 0;
+  const key = '68k:quiz:session:' + fullBank.bankId;
+  const practiceKey = '68k:quiz:practice:' + fullBank.bankId;
+  const settingsKey = '68k:quiz:settings:' + fullBank.bankId;
+  const bookmarksKey = '68k:quiz:bookmarks:' + fullBank.bankId + ':' + fullBank.version;
+  const questionIDs = new Set(fullBank.questions.map(q => q.id));
+  function readStorage(storageKey) {
+    try { return JSON.parse(localStorage.getItem(storageKey)); } catch (_) { return null; }
+  }
+  function store(storageKey, value) {
+    try { localStorage.setItem(storageKey, JSON.stringify(value)); return true; }
+    catch (_) {
+      const note = document.getElementById('storage-note');
+      if (note) note.textContent = 'Progress cannot be stored in this browser.';
+      return false;
+    }
+  }
+  function practiceBank(kind, ids) {
+    const allowed = new Set(ids);
+    return {
+      bankId: fullBank.bankId + ':practice:' + kind,
+      version: fullBank.version + ':subset:' + ids.join('|'),
+      title: kind === 'missed' ? 'Practice missed questions' : 'Practice bookmarks',
+      questions: fullBank.questions.filter(q => allowed.has(q.id))
+    };
+  }
+  let settings = core.normalizeSettings(readStorage(settingsKey));
+  const savedBookmarks = readStorage(bookmarksKey);
+  let bookmarks = new Set(Array.isArray(savedBookmarks) ?
+    savedBookmarks.filter(id => typeof id === 'string' && questionIDs.has(id)) : []);
+  let bank = fullBank, state, mainState, selected = [], screen = 'quiz';
+  let previousScreen = 'quiz', historyIndex = 0, sessionMode = 'main', practiceIDs = [];
+  let settingsMessage = '';
   try {
-    core.validateBank(bank);
-    let stored = null;
-    try { stored = JSON.parse(localStorage.getItem(key)); } catch (_) { /* Browser privacy mode */ }
-    state = core.restoreSession(bank, stored) || core.startSession(bank);
+    core.validateBank(fullBank);
+    mainState = core.restoreSession(fullBank, readStorage(key)) ||
+      core.startSession(fullBank, settings);
+    state = mainState;
+    const savedPractice = readStorage(practiceKey);
+    if (savedPractice && ['missed', 'bookmarks'].includes(savedPractice.kind) &&
+        Array.isArray(savedPractice.ids) && savedPractice.ids.length > 0 &&
+        new Set(savedPractice.ids).size === savedPractice.ids.length &&
+        savedPractice.ids.every(id => questionIDs.has(id))) {
+      const resumedBank = practiceBank(savedPractice.kind, savedPractice.ids);
+      const resumed = core.restoreSession(resumedBank, savedPractice.state);
+      if (resumed) {
+        bank = resumedBank;
+        state = resumed;
+        practiceIDs = [...savedPractice.ids];
+        sessionMode = savedPractice.kind;
+      }
+    }
   } catch (err) {
     app.textContent = 'Unable to start this quiz: ' + err.message;
     return;
   }
   function save() {
-    try { localStorage.setItem(key, JSON.stringify(state)); }
-    catch (_) { document.getElementById('storage-note').textContent = 'Progress cannot be stored in this browser.'; }
+    if (sessionMode === 'main') mainState = state;
+    store(key, mainState);
+    if (sessionMode !== 'main') {
+      store(practiceKey, { kind: sessionMode, ids: practiceIDs, state });
+    }
+  }
+  function saveBookmarks() { store(bookmarksKey, [...bookmarks]); }
+  function isBookmarked(id) { return bookmarks.has(id); }
+  function toggleBookmark(id) {
+    if (!questionIDs.has(id)) return;
+    if (isBookmarked(id)) bookmarks.delete(id); else bookmarks.add(id);
+    saveBookmarks();
+    render();
+  }
+  function bookmarkButton(id) {
+    const saved = isBookmarked(id);
+    const control = button(saved ? '★ Bookmarked' : '☆ Bookmark', 'bookmark-toggle' + (saved ? ' is-bookmarked' : ''), () => toggleBookmark(id));
+    control.setAttribute('aria-label', saved ? 'Remove bookmark from question' : 'Bookmark this question');
+    control.setAttribute('aria-pressed', String(saved));
+    return control;
+  }
+  function startPractice(kind) {
+    if (sessionMode !== 'main') return;
+    const wanted = kind === 'missed' ?
+      new Set(mainState.firstMissed) : bookmarks;
+    const ids = fullBank.questions.map(q => q.id).filter(id => wanted.has(id));
+    if (!ids.length) return;
+    save(); // Keep the finished main test intact.
+    practiceIDs = ids;
+    sessionMode = kind;
+    bank = practiceBank(kind, ids);
+    state = core.startSession(bank, settings);
+    screen = 'quiz'; selected = []; historyIndex = 0;
+    save(); render();
+  }
+  function returnToFull() {
+    if (sessionMode === 'main') return;
+    if (state.stage !== 'done' &&
+      !window.confirm('Leave this practice session? Its progress will be discarded. Your original quiz results are safe.')) return;
+    sessionMode = 'main';
+    bank = fullBank; state = mainState; practiceIDs = [];
+    screen = 'quiz'; selected = []; historyIndex = 0;
+    try { localStorage.removeItem(practiceKey); } catch (_) { /* Optional storage */ }
+    save(); render();
   }
   function make(tag, cssClass, text) {
     const el = document.createElement(tag);
@@ -83,7 +169,17 @@
     document.getElementById('progress-fill').style.width = percent + '%';
     document.getElementById('progress-track').setAttribute('aria-valuenow', String(Math.round(percent)));
     document.getElementById('progress-text').textContent = progress.answeredNew + ' of ' + progress.total + ' new questions';
-    document.getElementById('phase-status').textContent = screen === 'history' ? 'Missed history (read-only)' : state.stage === 'new' ? 'Learning round' : state.stage === 'done' ? 'Complete' : 'Required review';
+    const phase = screen === 'history' ? 'Missed history (read-only)' :
+      screen === 'settings' ? 'Study settings' :
+      state.stage === 'new' ? 'Learning round' : state.stage === 'done' ? 'Complete' : 'Required review';
+    document.getElementById('phase-status').textContent = (sessionMode === 'main' ? '' :
+      sessionMode === 'missed' ? 'Missed practice · ' : 'Bookmarked practice · ') + phase;
+    document.getElementById('bookmark-count').textContent = bookmarks.size + ' bookmarked';
+    document.getElementById('active-mode').textContent = sessionMode === 'main' ? 'Full question bank' :
+      sessionMode === 'missed' ? 'Practicing missed questions' : 'Practicing bookmarks';
+    document.getElementById('checkpoint-note').textContent =
+      'Required review every ' + state.roundSize + ' new questions when you have misses. Your results include all original questions and explanations.';
+    document.getElementById('settings-message').textContent = settingsMessage;
     document.getElementById('accuracy').textContent = progress.answeredNew === 0 ? '—' : progress.firstAttemptAccuracy + '%';
     document.getElementById('mastered').textContent = progress.mastered;
     document.getElementById('unresolved').textContent = progress.unresolved;
@@ -100,7 +196,10 @@
     const bar = make('div', 'question-marker');
     bar.append(make('span', 'stage-label', reviewed ? 'Required review' : 'New question'));
     bar.append(make('span', 'counter', reviewed ? 'Review ' + (state.reviewIndex + 1) + ' of ' + state.reviewQueue.length : 'Question ' + (state.newIndex + 1) + ' of ' + bank.questions.length));
-    target.append(bar, make('h2', '', q.question));
+    target.append(bar);
+    const tools = make('div', 'question-tools');
+    tools.append(bookmarkButton(q.id));
+    target.append(tools, make('h2', '', q.question));
     if (q.type === 'multi') target.append(make('p', 'hint', 'Select all correct answers, then choose Check answers.'));
     const answers = make('div', 'answers');
     const graded = Boolean(state.response);
@@ -177,6 +276,7 @@
       marker.append(make('span', 'result-number', 'Question ' + entry.number + ' of ' + entries.length));
       marker.append(make('span', 'result-badge ' + (entry.firstCorrect ? 'is-correct' : 'is-incorrect'), entry.firstCorrect ? 'Correct on first try' : 'Incorrect on first try'));
       if (!entry.firstCorrect) marker.append(make('span', 'result-badge ' + (entry.unresolved ? 'is-unresolved' : 'is-resolved'), entry.unresolved ? 'Still unresolved' : 'Corrected in review'));
+      marker.append(bookmarkButton(q.id));
       item.append(marker, make('h3', '', q.question));
       item.append(resultLine('Your first answer:', answerText(q, entry.firstSelection)));
       item.append(resultLine('Correct answer:', answerText(q, q.correct)));
@@ -204,20 +304,40 @@
   }
   function renderDone() {
     const target = panel();
-    const s = core.summary(state,bank);
-    target.append(make('p','stage-label','Session complete'));
-    target.append(make('h2','', 'You finished the demo question bank.'));
-    target.append(make('p','', 'First-attempt accuracy is fixed after each new question. Correctly answered review questions can increase mastery without inflating that accuracy.'));
-    const grid=make('div','summary-grid');
-    for(const [num,label] of [[s.firstAttemptAccuracy+'%','First-attempt accuracy'],[s.mastered+'/'+s.total,'Mastered'],[String(s.unresolved),'Still unresolved']]) {
-      const cell=make('div','summary-cell'); cell.append(make('strong','',num),make('span','',label));grid.append(cell);
+    const s = core.summary(state, bank);
+    target.append(make('p', 'stage-label', 'Session complete'));
+    target.append(make('h2', '', sessionMode === 'main' ?
+      'You finished the demo question bank.' : 'You finished your practice session.'));
+    target.append(make('p', '', 'First-attempt accuracy is fixed after each new question. Correctly answered review questions can increase mastery without inflating that accuracy.'));
+    const grid = make('div', 'summary-grid');
+    for (const [num, label] of [[s.firstAttemptAccuracy + '%', 'First-attempt accuracy'], [s.mastered + '/' + s.total, 'Mastered'], [String(s.unresolved), 'Still unresolved']]) {
+      const cell = make('div', 'summary-cell');
+      cell.append(make('strong', '', num), make('span', '', label)); grid.append(cell);
     }
     target.append(grid);
-    target.append(make('p','', s.unresolved ? 'Some questions remain unresolved after the final review.' : 'No unresolved questions remain.'));
-    const actions=make('div','actions');
-    actions.append(button('Practice again','primary',reset));
+    target.append(make('p', '', s.unresolved ? 'Some questions remain unresolved after the final review.' : 'No unresolved questions remain.'));
+    const actions = make('div', 'actions');
+    actions.append(button('Practice again', 'primary', reset));
+    if (sessionMode !== 'main') {
+      actions.append(button('← Return to full results', 'secondary', returnToFull));
+    }
     addHistoryAction(actions);
     target.append(actions);
+    if (sessionMode === 'main') {
+      const options = make('section', 'practice-options');
+      options.append(make('h3', '', 'Focused practice'));
+      options.append(make('p', '', 'Start a separate practice session. Your original full-test score and results will be preserved.'));
+      const actionRow = make('div', 'practice-actions');
+      if (mainState.firstMissed.length) {
+        actionRow.append(button('Practice missed (' + mainState.firstMissed.length + ')', 'secondary', function () { startPractice('missed'); }));
+      }
+      if (bookmarks.size) {
+        actionRow.append(button('Practice bookmarked (' + bookmarks.size + ')', 'secondary', function () { startPractice('bookmarks'); }));
+      }
+      if (!actionRow.children.length) actionRow.append(make('p', 'quiet', 'Miss a question or bookmark something to unlock focused practice.'));
+      options.append(actionRow);
+      target.append(options);
+    }
     renderFullAnswerReport(target);
   }
   function renderMissedHistory() {
@@ -234,7 +354,7 @@
     target.append(marker, make('h2', '', q.question));
     target.append(make('p', 'history-info', 'Original answers are locked. Looking back does not affect your progress, accuracy, or required review.'));
     const status = make('p', 'history-status', record.unresolved ? 'Still unresolved · returns at a required checkpoint' : 'Resolved during a required review');
-    target.append(status);
+    target.append(status, bookmarkButton(q.id));
     const answers = make('div', 'answers');
     const letters = ['A', 'B', 'C', 'D'];
     record.optionOrder.forEach((id, i) => {
@@ -277,16 +397,66 @@
     });
   }
   function reset() {
-    if (!window.confirm('Restart this demonstration? Your saved quiz progress will be cleared.')) return;
-    state=core.startSession(bank);selected=[];screen='quiz';historyIndex=0;save();render();
+    const message = sessionMode === 'main' ?
+      'Restart the full demonstration? Your full-test results will be replaced. Bookmarks are kept.' :
+      'Restart this focused practice set? Your original full-test results are safe.';
+    if (!window.confirm(message)) return;
+    state = core.startSession(bank, settings);
+    selected = []; screen = 'quiz'; historyIndex = 0;
+    save(); render();
+  }
+  function openSettings() {
+    previousScreen = screen;
+    screen = 'settings'; settingsMessage = '';
+    render();
+  }
+  function closeSettings() { screen = previousScreen; render(); }
+  function renderSettings() {
+    const target = panel();
+    target.append(make('p', 'stage-label', 'Study settings'));
+    target.append(make('h2', '', 'Customize your next study session'));
+    target.append(make('p', 'settings-description',
+      'These settings apply when you start or restart a session. They do not rearrange or reset the current quiz.'));
+    let roundSize = settings.roundSize, shuffle = settings.shuffleQuestions;
+    const fieldset = make('fieldset', 'settings-fieldset');
+    fieldset.append(make('legend', '', 'Required review after every…'));
+    for (const num of core.ROUND_OPTIONS) {
+      const label = make('label', 'setting-option');
+      const radio = make('input');
+      radio.type = 'radio'; radio.name = 'review-interval'; radio.value = String(num); radio.checked = roundSize === num;
+      radio.addEventListener('change', function () { roundSize = num; });
+      label.append(radio, make('span', '', num + ' new questions'));
+      fieldset.append(label);
+    }
+    target.append(fieldset);
+    const shuffleLabel = make('label', 'setting-option shuffle-option');
+    const checkbox = make('input');
+    checkbox.type = 'checkbox'; checkbox.checked = shuffle;
+    checkbox.addEventListener('change', function () { shuffle = checkbox.checked; });
+    shuffleLabel.append(checkbox, make('span', '', 'Shuffle question order in a new session'));
+    target.append(shuffleLabel);
+    target.append(make('p', 'settings-description',
+      'Answer choices remain shuffled for fairness. Your current session uses ' + state.roundSize +
+      '-question checkpoints. Saved bookmarks are not deleted when starting over.'));
+    const actions = make('div', 'actions');
+    actions.append(button('Cancel', 'secondary', closeSettings));
+    actions.append(button('Save settings', 'primary', function () {
+      settings = core.normalizeSettings({ roundSize, shuffleQuestions: shuffle });
+      store(settingsKey, settings);
+      settingsMessage = 'Settings saved for your next session. Use Start over to apply them now.';
+      closeSettings();
+    }));
+    target.append(actions);
   }
   function render() {
     stats();
+    if (screen === 'settings') { renderSettings(); return; }
     if (screen === 'history') { renderMissedHistory(); return; }
     if (state.stage === 'new' || state.stage === 'review') renderQuestion();
     else if (state.stage === 'review-intro') renderReviewIntro();
     else renderDone();
   }
   document.getElementById('restart').addEventListener('click',reset);
+  document.getElementById('settings').addEventListener('click',openSettings);
   save();render();
 })();
