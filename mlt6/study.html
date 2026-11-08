@@ -19,7 +19,11 @@
       document.title = test.label + " | 68K Learning Hub";
       document.getElementById("test-breadcrumb").textContent = test.label;
       document.getElementById("test-title").textContent = test.label;
-      document.getElementById("multiple-choice").href = test.quiz;
+      document.getElementById("multiple-choice").href = id === "23" ? "demo/index.html" : test.quiz;
+      if (id === "23") {
+        document.querySelector("#multiple-choice .mode-desc").textContent = "Try the 25-question ABO demo with mandatory review checkpoints.";
+        document.querySelector("#multiple-choice .mode-action").textContent = "Open demo quiz →";
+      }
       document.getElementById("review").href = "coming-soon.html?test=" + encodeURIComponent(id) + "&mode=review";
       document.getElementById("flashcards").href = "coming-soon.html?test=" + encodeURIComponent(id) + "&mode=flashcards";
       document.getElementById("study-content").hidden = false;
