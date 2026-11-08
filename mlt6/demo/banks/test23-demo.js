@@ -35,7 +35,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "What is 1 + 1?",
+      "definition": "2"
     },
     {
       "id": "ABO-DEMO-002",
@@ -67,7 +69,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Which animal says 'meow'?",
+      "definition": "Cat"
     },
     {
       "id": "ABO-DEMO-003",
@@ -99,7 +103,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "What color is a typical yellow school bus?",
+      "definition": "Yellow"
     },
     {
       "id": "ABO-DEMO-004",
@@ -131,7 +137,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "How many days are in one week?",
+      "definition": "7"
     },
     {
       "id": "ABO-DEMO-005",
@@ -164,7 +172,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Select both fruits.",
+      "definition": "Apple; Banana"
     },
     {
       "id": "ABO-DEMO-006",
@@ -196,7 +206,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Which object can you write with?",
+      "definition": "Pencil"
     },
     {
       "id": "ABO-DEMO-007",
@@ -228,7 +240,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "What number comes right after 9?",
+      "definition": "10"
     },
     {
       "id": "ABO-DEMO-008",
@@ -260,7 +274,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "What color are standard STOP signs in the United States?",
+      "definition": "Red"
     },
     {
       "id": "ABO-DEMO-009",
@@ -292,7 +308,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Which of these is a vehicle?",
+      "definition": "Car"
     },
     {
       "id": "ABO-DEMO-010",
@@ -325,7 +343,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Select both even numbers.",
+      "definition": "2; 4"
     },
     {
       "id": "ABO-DEMO-011",
@@ -357,7 +377,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "What is 5 - 3?",
+      "definition": "2"
     },
     {
       "id": "ABO-DEMO-012",
@@ -389,7 +411,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Which animal is known for barking?",
+      "definition": "Dog"
     },
     {
       "id": "ABO-DEMO-013",
@@ -421,7 +445,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Which shape has exactly three sides?",
+      "definition": "Triangle"
     },
     {
       "id": "ABO-DEMO-014",
@@ -454,7 +480,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Select both animals.",
+      "definition": "Cat; Dog"
     },
     {
       "id": "ABO-DEMO-015",
@@ -486,7 +514,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "What is 10 divided by 2?",
+      "definition": "5"
     },
     {
       "id": "ABO-DEMO-016",
@@ -518,7 +548,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Which item is typically worn on your feet?",
+      "definition": "Shoes"
     },
     {
       "id": "ABO-DEMO-017",
@@ -550,7 +582,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Which of these is a day of the week?",
+      "definition": "Monday"
     },
     {
       "id": "ABO-DEMO-018",
@@ -583,7 +617,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Select both things used to tell time.",
+      "definition": "Clock; Watch"
     },
     {
       "id": "ABO-DEMO-019",
@@ -615,7 +651,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "What color is healthy lawn grass usually?",
+      "definition": "Green"
     },
     {
       "id": "ABO-DEMO-020",
@@ -647,7 +685,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "How many wheels does a standard bicycle have?",
+      "definition": "2"
     },
     {
       "id": "ABO-DEMO-021",
@@ -679,7 +719,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Which season comes after spring?",
+      "definition": "Summer"
     },
     {
       "id": "ABO-DEMO-022",
@@ -712,7 +754,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Select both shapes that have four sides.",
+      "definition": "Square; Rectangle"
     },
     {
       "id": "ABO-DEMO-023",
@@ -744,7 +788,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "What is 3 + 4?",
+      "definition": "7"
     },
     {
       "id": "ABO-DEMO-024",
@@ -776,7 +822,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Which word means the opposite of 'up'?",
+      "definition": "Down"
     },
     {
       "id": "ABO-DEMO-025",
@@ -809,7 +857,9 @@ window.DEMO_QUESTION_BANK = {
         "sourceName": null,
         "pageNumber": null,
         "directQuote": null
-      }
+      },
+      "term": "Select both numbers greater than 10.",
+      "definition": "11; 12"
     }
   ]
 };
