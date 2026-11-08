@@ -19,13 +19,34 @@
       document.title = test.label + " | 68K Learning Hub";
       document.getElementById("test-breadcrumb").textContent = test.label;
       document.getElementById("test-title").textContent = test.label;
-      document.getElementById("multiple-choice").href = id === "23" ? "demo/index.html?v=answer-details-v5" : test.quiz;
-      if (id === "23") {
-        document.querySelector("#multiple-choice .mode-desc").textContent = "Try the 25-question ABO demo with mandatory review checkpoints.";
-        document.querySelector("#multiple-choice .mode-action").textContent = "Open demo quiz →";
+      const hasDemoBank = id === "23";
+      const cards = [
+        ["multiple-choice", "multiple-choice", "demo/index.html?v=pathways-v6"],
+        ["review", "review", "demo/modes.html?mode=review&v=pathways-v6"],
+        ["flashcards", "flashcards", "demo/modes.html?mode=flashcards&v=pathways-v6"],
+        ["write", "write", "demo/modes.html?mode=write&v=pathways-v6"],
+        ["bookmarked", "bookmarked", "demo/modes.html?mode=bookmarked&v=pathways-v6"]
+      ];
+      for (const [elementId, mode, demoRoute] of cards) {
+        const card = document.getElementById(elementId);
+        card.href = hasDemoBank ? demoRoute :
+          (mode === "multiple-choice" ? test.quiz :
+            "coming-soon.html?test=" + encodeURIComponent(id) + "&mode=" + encodeURIComponent(mode));
+        card.querySelector(".mode-action").textContent =
+          hasDemoBank ? "Open demo →" :
+          (mode === "multiple-choice" ? "Open original quiz →" : "Coming Soon →");
       }
-      document.getElementById("review").href = "coming-soon.html?test=" + encodeURIComponent(id) + "&mode=review";
-      document.getElementById("flashcards").href = "coming-soon.html?test=" + encodeURIComponent(id) + "&mode=flashcards";
+      if (hasDemoBank) {
+        const key = "68k:quiz:bookmarks:mlt6-test23-demo:demo-easy-v2";
+        let count = 0;
+        try {
+          const saved = JSON.parse(localStorage.getItem(key));
+          if (Array.isArray(saved)) count = saved.length;
+        } catch (_) { /* Optional browser storage */ }
+        document.querySelector("#bookmarked .mode-desc").textContent =
+          count ? count + " saved questions · study in any available mode." :
+            "Collect difficult questions and study them in any mode.";
+      }
       document.getElementById("study-content").hidden = false;
     });
   </script>
@@ -49,23 +70,33 @@
       <div class="page-heading">
         <p class="eyebrow">MLT 6 · Study selection</p>
         <h1 id="test-title">Test</h1>
-        <p class="lead">Select one of the three ways to study this test.</p>
+        <p class="lead">Choose a study pathway. Save difficult questions to revisit across modes.</p>
       </div>
       <div class="mode-grid" aria-label="Study choices">
         <a id="multiple-choice" class="mode-card" href="../index.html">
           <span class="mode-icon" aria-hidden="true">01</span>
-          <span><span class="mode-title">Multiple Choice</span><span class="mode-desc">Take the original quiz with immediate answer feedback.</span></span>
-          <span class="mode-action">Open original quiz →</span>
+          <span><span class="mode-title">Multiple Choice</span><span class="mode-desc">One question at a time, with required reviews and instant feedback.</span></span>
+          <span class="mode-action">Open quiz →</span>
         </a>
         <a id="review" class="mode-card" href="../index.html">
           <span class="mode-icon" aria-hidden="true">02</span>
-          <span><span class="mode-title">Review</span><span class="mode-desc">A dedicated review destination for this test.</span></span>
-          <span class="mode-action">Coming Soon →</span>
+          <span><span class="mode-title">Review</span><span class="mode-desc">Browse answers, explanations, and verified textbook references.</span></span>
+          <span class="mode-action">Open review →</span>
         </a>
         <a id="flashcards" class="mode-card" href="../index.html">
           <span class="mode-icon" aria-hidden="true">03</span>
-          <span><span class="mode-title">Flashcards</span><span class="mode-desc">A dedicated flashcard destination for this test.</span></span>
-          <span class="mode-action">Coming Soon →</span>
+          <span><span class="mode-title">Flashcards</span><span class="mode-desc">Flip each card and mark whether you know the answer.</span></span>
+          <span class="mode-action">Open flashcards →</span>
+        </a>
+        <a id="write" class="mode-card" href="../index.html">
+          <span class="mode-icon" aria-hidden="true">04</span>
+          <span><span class="mode-title">Write</span><span class="mode-desc">Type an answer from memory, then check it yourself.</span></span>
+          <span class="mode-action">Open Write →</span>
+        </a>
+        <a id="bookmarked" class="mode-card mode-card-wide" href="../index.html">
+          <span class="mode-icon" aria-hidden="true">★</span>
+          <span><span class="mode-title">Bookmarked Questions</span><span class="mode-desc">Access saved questions across all available study pathways.</span></span>
+          <span class="mode-action">View bookmarks →</span>
         </a>
       </div>
       <div class="page-actions"><a class="back-link" href="../index.html#mlt6">← Back to MLT 6</a></div>
