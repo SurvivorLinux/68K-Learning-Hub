@@ -15,9 +15,9 @@
       if (!q || typeof q.id !== 'string' || ids.has(q.id) ||
           !['single', 'multi'].includes(q.type) || !q.question ||
           !Array.isArray(q.choices) || q.choices.length !== 4 ||
+          q.choices.some(choice => !choice || !choice.id || !choice.text) ||
           new Set(q.choices.map(choice => choice.id)).size !== 4 ||
-          q.choices.some(choice => !choice.id || !choice.text) ||
-          !Array.isArray(q.correct) ||
+          !Array.isArray(q.correct) || new Set(q.correct).size !== q.correct.length ||
           q.correct.length < (q.type === 'multi' ? 2 : 1) ||
           (q.type === 'single' && q.correct.length !== 1) ||
           q.correct.some(id => !q.choices.some(choice => choice.id === id)) ||
