@@ -149,6 +149,8 @@
     const row = el("div", "question-marker");
     row.append(el("span", "stage-label", title[mode]), el("span", "counter", "Question " + (progress.index + 1) + " of " + count));
     card.append(row);
+    if (q.chapterTitle && window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.kind === "unit")
+      card.append(el("p", "chapter-origin", "Chapter: " + q.chapterTitle));
     const tools = el("div", "question-tools");
     tools.append(bookmarkControl(q));
     card.append(tools, el("h2", "", mode === "flashcards" || mode === "write" ? prompt(q) : q.question));
