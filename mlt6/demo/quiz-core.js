@@ -7,10 +7,14 @@
   'use strict';
   const ROUND_SIZE = 10;
   const ROUND_OPTIONS = [5, 10, 15];
+  const TERM_FIRST = 'term-to-definition';
+  const DEF_FIRST = 'definition-to-term';
+  function normalizeDirection(direction) { return direction === DEF_FIRST ? DEF_FIRST : TERM_FIRST; }
   function normalizeSettings(settings) {
     return {
       roundSize: settings && ROUND_OPTIONS.includes(Number(settings.roundSize)) ? Number(settings.roundSize) : ROUND_SIZE,
-      shuffleQuestions: !settings || settings.shuffleQuestions !== false
+      shuffleQuestions: !settings || settings.shuffleQuestions !== false,
+      direction: normalizeDirection(settings && settings.direction)
     };
   }
   const randomize = function (array) {
@@ -45,11 +49,50 @@
     return true;
   }
   function indexBank(bank) { return Object.fromEntries(bank.questions.map(q => [q.id, q])); }
+  function reverseSource(bank) {
+    return Array.isArray(bank.reversePool) && bank.reversePool.length ? bank.reversePool : bank.questions;
+  }
+  function supportsReverse(bank) {
+    const pool = reverseSource(bank);
+    if (!Array.isArray(pool) || pool.length < 4) return false;
+    const known = new Set();
+    for (const q of pool) {
+      if (!q || typeof q.term !== 'string' || !q.term.trim() ||
+          typeof q.definition !== 'string' || !q.definition.trim() ||
+          known.has(q.term.trim().toLowerCase())) return false;
+      known.add(q.term.trim().toLowerCase());
+    }
+    return bank.questions.every(q => {
+      if (!q.term || !q.definition) return false;
+      const different = pool.filter(other => other.id !== q.id &&
+        other.definition.trim().toLowerCase() !== q.definition.trim().toLowerCase());
+      return different.length >= 3;
+    });
+  }
+  function directionalQuestion(q, bank, direction) {
+    if (!q || direction !== DEF_FIRST || !supportsReverse(bank)) return q;
+    const pool = reverseSource(bank);
+    const starting = Math.max(0, pool.findIndex(item => item.id === q.id));
+    const alternate = [];
+    for (let offset = 1; offset < pool.length && alternate.length < 3; offset++) {
+      const other = pool[(starting + offset) % pool.length];
+      if (other.id !== q.id && other.definition.trim().toLowerCase() !==
+          q.definition.trim().toLowerCase()) alternate.push(other);
+    }
+    return {
+      ...q,
+      type: 'single',
+      question: q.definition,
+      choices: [{ id: 'rev0', text: q.term },
+        ...alternate.map((other, i) => ({ id: 'rev' + (i + 1), text: other.term }))],
+      correct: ['rev0']
+    };
+  }
   function currentQuestion(state, bank) {
     const indexed = indexBank(bank);
-    if (state.stage === 'new') return indexed[state.order[state.newIndex]] || null;
-    if (state.stage === 'review') return indexed[state.reviewQueue[state.reviewIndex]] || null;
-    return null;
+    const id = state.stage === 'new' ? state.order[state.newIndex] :
+      state.stage === 'review' ? state.reviewQueue[state.reviewIndex] : null;
+    return id ? directionalQuestion(indexed[id], bank, state.direction) : null;
   }
   function freshOptionOrder(state, bank) {
     const q = currentQuestion(state, bank);
@@ -63,6 +106,7 @@
       format: 1, bankId: bank.bankId, bankVersion: bank.version,
       stage: 'new', order: config.shuffleQuestions ? randomize(ids) : ids,
       roundSize: config.roundSize, shuffleQuestions: config.shuffleQuestions,
+      direction: config.direction === DEF_FIRST && supportsReverse(bank) ? DEF_FIRST : TERM_FIRST,
       newIndex: 0, reviewQueue: [], reviewIndex: 0,
       unresolved: [], mastered: [], firstMissed: [], firstCorrect: 0,
       reviewAttempts: 0, optionOrder: [], response: null, missedHistory: [], firstAttempts: {}
@@ -83,10 +127,15 @@
     if (candidate.roundSize === undefined) candidate.roundSize = ROUND_SIZE;
     if (candidate.shuffleQuestions === undefined) candidate.shuffleQuestions = true;
     if (!ROUND_OPTIONS.includes(candidate.roundSize) || typeof candidate.shuffleQuestions !== 'boolean') return null;
+    // Previous sessions were forward-only: retain their question and answer order.
+    if (candidate.direction === undefined) candidate.direction = TERM_FIRST;
+    if (![TERM_FIRST, DEF_FIRST].includes(candidate.direction) ||
+        (candidate.direction === DEF_FIRST && !supportsReverse(bank))) return null;
     // Existing browser sessions predate saved answer snapshots; keep their progress.
     if (candidate.missedHistory === undefined) candidate.missedHistory = [];
     if (!Array.isArray(candidate.missedHistory)) return null;
-    const indexed = indexBank(bank);
+    const indexed = Object.fromEntries(bank.questions.map(q =>
+      [q.id, directionalQuestion(q, bank, candidate.direction)]));
     for (const miss of candidate.missedHistory) {
       const q = miss && indexed[miss.questionId];
       if (!q || !['new', 'review'].includes(miss.phase) ||
@@ -108,7 +157,7 @@
     if (candidate.firstAttempts === undefined) candidate.firstAttempts = {};
     if (!candidate.firstAttempts || typeof candidate.firstAttempts !== 'object' || Array.isArray(candidate.firstAttempts)) return null;
     const results = candidate.firstAttempts;
-    const knownQuestions = indexBank(bank);
+    const knownQuestions = indexed;
     for (const [id, attempt] of Object.entries(results)) {
       const question = knownQuestions[id];
       if (!question || !attempt || typeof attempt.correct !== 'boolean' ||
@@ -195,7 +244,7 @@
     freshOptionOrder(state, bank);
   }
   function getMissedHistory(state, bank) {
-    const indexed = indexBank(bank);
+    const indexed = Object.fromEntries(bank.questions.map(q => [q.id, directionalQuestion(q, bank, state.direction)]));
     return [...new Set(state.firstMissed)].filter(id => Boolean(indexed[id])).map(id => {
       // Show the most recent incorrect submission while preserving earlier scores.
       const latestMiss = [...(state.missedHistory || [])].reverse().find(entry => entry.questionId === id);
@@ -208,7 +257,7 @@
     });
   }
   function questionReport(state, bank) {
-    const indexed = indexBank(bank);
+    const indexed = Object.fromEntries(bank.questions.map(q => [q.id, directionalQuestion(q, bank, state.direction)]));
     return state.order.map((id, index) => {
       const q = indexed[id];
       const attempt = state.firstAttempts && state.firstAttempts[id];
@@ -235,5 +284,5 @@
       reviewAttempts: state.reviewAttempts
     };
   }
-  return { ROUND_SIZE, ROUND_OPTIONS, normalizeSettings, validateBank, startSession, restoreSession, currentQuestion, submit, advance, beginReview, summary, answeredNew, getMissedHistory, questionReport };
+  return { ROUND_SIZE, ROUND_OPTIONS, TERM_FIRST, DEF_FIRST, normalizeSettings, normalizeDirection, supportsReverse, directionalQuestion, validateBank, startSession, restoreSession, currentQuestion, submit, advance, beginReview, summary, answeredNew, getMissedHistory, questionReport };
 });
