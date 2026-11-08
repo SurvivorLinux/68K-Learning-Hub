@@ -18,3 +18,27 @@
   .history-actions .secondary { padding: 12px 7px; }
   .history-choice .history-flag { width: 100%; padding-left: 42px; margin-left: 0; }
 }
+
+/* End-of-session answer-by-answer audit. Source excerpts appear only when supplied. */
+.question-report { border-top: 1px solid var(--border); margin-top: 34px; padding-top: 28px; }
+.question-report > h2 { font-size: clamp(1.45rem, 4vw, 1.95rem); margin: 0 0 8px; }
+.report-intro { color: var(--muted); font-size: .91rem; margin: 0 0 22px; }
+.result-item { border: 1px solid var(--border); border-radius: 14px; background: var(--card2); margin: 0 0 16px; padding: clamp(17px, 3vw, 23px); }
+.result-item.result-correct { border-left: 4px solid var(--green); }
+.result-item.result-incorrect { border-left: 4px solid var(--red); }
+.result-marker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 15px; }
+.result-number { color: var(--muted); font-size: .76rem; font-weight: 700; margin-right: auto; }
+.result-badge { font-size: .71rem; font-weight: 700; border-radius: 20px; padding: 4px 10px; border: 1px solid; }
+.result-badge.is-correct,.result-badge.is-resolved { color: #b4d9be; border-color: #688772; background: #25382c; }
+.result-badge.is-incorrect,.result-badge.is-unresolved { color: #f2b8b8; border-color: #996a6d; background: #422c30; }
+.result-item h3 { font-size: 1.06rem; line-height: 1.48; margin: 0 0 15px; font-weight: 650; }
+.result-line { margin: 0 0 8px; font-size: .9rem; overflow-wrap: anywhere; }
+.result-line strong { color: var(--muted); }
+.result-explanation { border-radius: 9px; background: #252b30; border: 1px solid #414a52; padding: 14px 16px; margin-top: 14px; }
+.result-explanation > strong { font-size: .85rem; color: var(--gold); }
+.result-explanation p { margin: 5px 0 0; font-size: .9rem; }
+.result-source { padding: 12px 0 0; }
+.result-source strong { font-size: .83rem; }
+.source-reference { color: var(--muted); font-size: .85rem; margin: 0 0 8px; }
+.source-quote { color: var(--text); margin: 9px 0 0; padding: 12px 16px; background: #24282d; border-left: 3px solid var(--gold); font-size: .88rem; font-style: italic; overflow-wrap: anywhere; }
+@media (max-width: 620px) { .result-marker { gap: 7px; } .result-number { width: 100%; } .result-badge { font-size: .67rem; } }
