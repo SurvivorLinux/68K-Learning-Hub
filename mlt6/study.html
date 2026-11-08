@@ -21,11 +21,12 @@
       document.getElementById("test-title").textContent = test.label;
       const hasDemoBank = id === "23";
       const cards = [
-        ["multiple-choice", "multiple-choice", "demo/index.html?v=direction-v7"],
-        ["review", "review", "demo/modes.html?mode=review&v=direction-v7"],
-        ["flashcards", "flashcards", "demo/modes.html?mode=flashcards&v=direction-v7"],
-        ["write", "write", "demo/modes.html?mode=write&v=direction-v7"],
-        ["bookmarked", "bookmarked", "demo/modes.html?mode=bookmarked&v=direction-v7"]
+        ["multiple-choice", "multiple-choice", "demo/index.html?v=exam-v8"],
+        ["exam", "exam", "demo/exam.html?v=exam-v8"],
+        ["review", "review", "demo/modes.html?mode=review&v=exam-v8"],
+        ["flashcards", "flashcards", "demo/modes.html?mode=flashcards&v=exam-v8"],
+        ["write", "write", "demo/modes.html?mode=write&v=exam-v8"],
+        ["bookmarked", "bookmarked", "demo/modes.html?mode=bookmarked&v=exam-v8"]
       ];
       for (const [elementId, mode, demoRoute] of cards) {
         const card = document.getElementById(elementId);
@@ -78,23 +79,28 @@
           <span><span class="mode-title">Multiple Choice</span><span class="mode-desc">One question at a time, with required reviews and instant feedback.</span></span>
           <span class="mode-action">Open quiz →</span>
         </a>
-        <a id="review" class="mode-card" href="../index.html">
+        <a id="exam" class="mode-card" href="../index.html">
           <span class="mode-icon" aria-hidden="true">02</span>
+          <span><span class="mode-title">Exam Mode</span><span class="mode-desc">Simulate an exam: no feedback until you submit, followed by detailed results.</span></span>
+          <span class="mode-action">Open exam →</span>
+        </a>
+        <a id="review" class="mode-card" href="../index.html">
+          <span class="mode-icon" aria-hidden="true">03</span>
           <span><span class="mode-title">Review</span><span class="mode-desc">Browse answers, explanations, and verified textbook references.</span></span>
           <span class="mode-action">Open review →</span>
         </a>
         <a id="flashcards" class="mode-card" href="../index.html">
-          <span class="mode-icon" aria-hidden="true">03</span>
+          <span class="mode-icon" aria-hidden="true">04</span>
           <span><span class="mode-title">Flashcards</span><span class="mode-desc">Flip each card and mark whether you know the answer.</span></span>
           <span class="mode-action">Open flashcards →</span>
         </a>
         <a id="write" class="mode-card" href="../index.html">
-          <span class="mode-icon" aria-hidden="true">04</span>
+          <span class="mode-icon" aria-hidden="true">05</span>
           <span><span class="mode-title">Write</span><span class="mode-desc">Type an answer from memory, then check it yourself.</span></span>
           <span class="mode-action">Open Write →</span>
         </a>
-        <a id="bookmarked" class="mode-card mode-card-wide" href="../index.html">
-          <span class="mode-icon" aria-hidden="true">★</span>
+        <a id="bookmarked" class="mode-card" href="../index.html">
+          <span class="mode-icon" aria-hidden="true">06</span>
           <span><span class="mode-title">Bookmarked Questions</span><span class="mode-desc">Access saved questions across all available study pathways.</span></span>
           <span class="mode-action">View bookmarks →</span>
         </a>
