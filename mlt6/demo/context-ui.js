@@ -45,7 +45,7 @@
     hint.textContent = ctx.kind === 'all-bookmarks' ?
       'This unit bookmark collection gathers approved questions across its lessons without duplicates. Changing a bookmark here also changes it within its original lesson.' :
       ctx.kind === 'comprehensive' ?
-      'These are verified course questions from every lesson in this unit, shown in textbook order by default. Bookmarks are shared with the original lessons.' :
+      'This unit comprehensive combines approved questions from the available lessons in textbook order, even while other lessons are awaiting question banks. Bookmarks are shared with the original lessons.' :
       ctx.kind === 'lesson' ?
       'Verified course questions from this textbook lesson. Save questions here to review them individually or under your unit’s All Bookmarks.' :
       ctx.message;
@@ -55,7 +55,7 @@
     description.textContent = ctx.kind === 'all-bookmarks' ?
       'Your saved questions across this unit, each displayed once.' :
       ctx.kind === 'comprehensive' ?
-      'Practice all lessons together. The source order is fixed unless you turn on shuffle.' :
+      'Practice currently approved lesson questions together. More appear automatically as lessons are added; shuffle remains optional.' :
       ctx.kind === 'lesson' ?
       'Study this lesson with required reviews, flashcards, written recall, or exam simulation.' :
       ctx.message;
