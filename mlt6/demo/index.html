@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#16191d">
   <title>MLT 6 | Easy Multiple Choice Feature Demo</title>
-  <link rel="stylesheet" href="styles.css?v=exam-v8">
+  <link rel="stylesheet" href="styles.css?v=chapters-v9">
 </head>
 <body>
   <header class="site-header">
@@ -18,11 +18,11 @@
     <nav class="crumb" aria-label="Breadcrumb"><a href="../../index.html#mlt6">MLT 6</a> <span aria-hidden="true">/</span> <a href="../study.html?test=23">Test23: ABO</a> <span aria-hidden="true">/</span> Multiple Choice</nav>
     <nav class="quiz-path-links" aria-label="Switch study pathways">
       <span aria-current="page">Multiple Choice</span>
-      <a href="modes.html?mode=review&v=exam-v8">Review</a>
-      <a href="modes.html?mode=flashcards&v=exam-v8">Flashcards</a>
-      <a href="modes.html?mode=write&v=exam-v8">Write</a>
-      <a href="modes.html?mode=bookmarked&v=exam-v8">Bookmarked</a>
-      <a href="exam.html?v=exam-v8">Exam Mode</a>
+      <a href="modes.html?mode=review&v=chapters-v9">Review</a>
+      <a href="modes.html?mode=flashcards&v=chapters-v9">Flashcards</a>
+      <a href="modes.html?mode=write&v=chapters-v9">Write</a>
+      <a href="modes.html?mode=bookmarked&v=chapters-v9">Bookmarked</a>
+      <a href="exam.html?v=chapters-v9">Exam Mode</a>
     </nav>
     <section class="intro">
       <p class="eyebrow">Prototype · Test23: ABO · Easy test questions</p>
@@ -46,8 +46,12 @@
     <div id="app" aria-live="polite"></div>
     <div class="bottom-actions"><button type="button" id="restart" class="text-button">Start over</button><span id="storage-note" class="quiet">Progress saves automatically in this browser.</span></div>
   </main>
-  <script src="banks/test23-demo.js?v=exam-v8"></script>
-  <script src="quiz-core.js?v=exam-v8"></script>
-  <script src="quiz-ui.js?v=exam-v8"></script>
+  <script src="../tests.js?v=chapters-v9"></script>
+  <script src="../banks/approved-banks.js?v=chapters-v9"></script>
+  <script src="banks/test23-demo.js?v=chapters-v9"></script>
+  <script src="../banks/scope-loader.js?v=chapters-v9"></script>
+  <script src="context-ui.js?v=chapters-v9"></script>
+  <script src="quiz-core.js?v=chapters-v9"></script>
+  <script src="quiz-ui.js?v=chapters-v9"></script>
 </body>
 </html>
