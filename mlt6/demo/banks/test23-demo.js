@@ -29,7 +29,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "Adding one item to one item gives two items, so 1 + 1 = 2.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-002",
@@ -55,7 +61,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "A cat commonly makes a meowing sound. The other options are animals that make different sounds.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-003",
@@ -81,7 +93,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "School buses in the United States are typically painted yellow to make them easy to recognize.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-004",
@@ -107,7 +125,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "A standard week has seven days, from Monday through Sunday.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-005",
@@ -134,7 +158,13 @@ window.DEMO_QUESTION_BANK = {
       "correct": [
         "1",
         "2"
-      ]
+      ],
+      "explanation": {
+        "summary": "Apples and bananas are fruits. A chair and a rock are not fruits.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-006",
@@ -160,7 +190,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "A pencil leaves a graphite mark on paper, making it a writing tool.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-007",
@@ -186,7 +222,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "When counting whole numbers, 10 comes immediately after 9.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-008",
@@ -212,7 +254,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "Standard STOP signs in the United States have a red background.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-009",
@@ -238,7 +286,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "A car is used for transportation, so it is a vehicle. The other choices are not vehicles.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-010",
@@ -265,7 +319,13 @@ window.DEMO_QUESTION_BANK = {
       "correct": [
         "1",
         "2"
-      ]
+      ],
+      "explanation": {
+        "summary": "An even number divides by 2 with no remainder. Both 2 and 4 are even; 3 and 5 are odd.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-011",
@@ -291,7 +351,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "Subtracting 3 from 5 leaves 2.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-012",
@@ -317,7 +383,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "Dogs commonly make barking sounds.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-013",
@@ -343,7 +415,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "A triangle is defined as a polygon with three sides.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-014",
@@ -370,7 +448,13 @@ window.DEMO_QUESTION_BANK = {
       "correct": [
         "1",
         "2"
-      ]
+      ],
+      "explanation": {
+        "summary": "Cats and dogs are animals. A desk and a lamp are objects, not animals.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-015",
@@ -396,7 +480,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "Dividing 10 into two equal groups gives 5 in each group.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-016",
@@ -422,7 +512,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "Shoes are footwear designed to be worn on your feet.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-017",
@@ -448,7 +544,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "Monday is one of the seven days of the week.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-018",
@@ -475,7 +577,13 @@ window.DEMO_QUESTION_BANK = {
       "correct": [
         "1",
         "2"
-      ]
+      ],
+      "explanation": {
+        "summary": "Clocks and watches both display time. A sandwich and pillow do not.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-019",
@@ -501,7 +609,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "Healthy grass usually looks green because it contains chlorophyll.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-020",
@@ -527,7 +641,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "A standard bicycle has two wheels, one in front and one in back.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-021",
@@ -553,7 +673,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "In the usual sequence of seasons, summer follows spring.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-022",
@@ -580,7 +706,13 @@ window.DEMO_QUESTION_BANK = {
       "correct": [
         "1",
         "2"
-      ]
+      ],
+      "explanation": {
+        "summary": "Squares and rectangles each have four sides. Triangles have three; circles have none.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-023",
@@ -606,7 +738,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "Three plus four equals seven.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-024",
@@ -632,7 +770,13 @@ window.DEMO_QUESTION_BANK = {
       ],
       "correct": [
         "1"
-      ]
+      ],
+      "explanation": {
+        "summary": "Down indicates the opposite direction from up.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     },
     {
       "id": "ABO-DEMO-025",
@@ -659,7 +803,13 @@ window.DEMO_QUESTION_BANK = {
       "correct": [
         "1",
         "2"
-      ]
+      ],
+      "explanation": {
+        "summary": "Eleven and twelve are greater than ten; eight and nine are less than ten.",
+        "sourceName": null,
+        "pageNumber": null,
+        "directQuote": null
+      }
     }
   ]
 };
