@@ -75,3 +75,13 @@
   .result-marker .bookmark-toggle { margin-left: 0; }
   .practice-actions .secondary { width: 100%; }
 }
+
+/* Page, summary and verified-quote breakdown after every graded answer. */
+.answer-details { margin: 16px 0 6px; border: 1px solid var(--border); border-radius: 12px; background: #252b30; padding: clamp(17px, 3vw, 23px); }
+.answer-details-heading { margin: 0 0 15px; font-size: 1.08rem; }
+.answer-source-name { color: var(--muted); margin: 0 0 12px; font-size: .84rem; }
+.answer-detail-row + .answer-detail-row { border-top: 1px solid #40464d; padding-top: 14px; margin-top: 14px; }
+.answer-detail-label { display: block; color: var(--gold); font-size: .83rem; font-weight: 750; margin-bottom: 5px; }
+.answer-detail-value { font-size: .92rem; line-height: 1.6; margin: 0; overflow-wrap: anywhere; }
+.answer-source-unavailable { color: var(--muted); font-style: italic; }
+.answer-direct-quote { margin: 5px 0 0; border-left: 3px solid var(--gold); padding: 9px 12px; background: #1e2329; color: var(--text); font-size: .9rem; line-height: 1.6; overflow-wrap: anywhere; }
