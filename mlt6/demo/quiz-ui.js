@@ -494,5 +494,15 @@
   document.getElementById('restart').addEventListener('click',reset);
   document.getElementById('settings').addEventListener('click',openSettings);
   document.getElementById('return-full').addEventListener('click',returnToFull);
-  save();render();
+  // Launch bookmarked Multiple Choice from the shared Bookmarked pathway.
+  // A focused practice session never overwrites the saved full-test result.
+  let directPractice = null;
+  try { directPractice = new URLSearchParams(window.location.search).get('practice'); }
+  catch (_) { /* Non-browser test environment */ }
+  if (directPractice === 'bookmarks' && sessionMode === 'main' && bookmarks.size) {
+    startPractice('bookmarks');
+  } else {
+    save();
+    render();
+  }
 })();
