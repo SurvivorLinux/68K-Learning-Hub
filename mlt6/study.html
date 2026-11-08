@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../hub.css">
   <script src="tests.js?v=chapters-v9" defer></script>
   <script src="banks/approved-banks.js?v=chapters-v9" defer></script>
+  <script src="banks/scope-loader.js?v=chapters-v9" defer></script>
   <script defer>
     document.addEventListener("DOMContentLoaded", function () {
       const params = new URLSearchParams(window.location.search);
@@ -22,7 +23,7 @@
       document.getElementById("test-breadcrumb").textContent = test.chapterTitle;
       document.getElementById("test-title").textContent = test.chapterTitle + " · Legacy Test" + id;
       const possible = (window.MLT6_APPROVED_BANKS || {})[id];
-      const hasVerifiedBank = !!(possible && possible.verified === true && Array.isArray(possible.questions) && possible.questions.length);
+      const hasVerifiedBank = !!(window.MLT6BankCatalog && window.MLT6BankCatalog.checkBank(possible));
       const hasDemoBank = id === "23" && !hasVerifiedBank;
       const hasChapterBank = hasVerifiedBank || hasDemoBank;
       const chapterQuery = "&chapter=" + encodeURIComponent(id);
