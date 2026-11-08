@@ -53,7 +53,7 @@
     const unit = units[unitId];
     if (!unit) return null;
     const valid = [], missing = [], invalid = [], versions = [], questions = [];
-    const seen = new Set(), bankIDs = new Set();
+    const seen = new Map(), bankIDs = new Set();
     for (const lesson of unit.lessons) {
       const bank = registered[lesson.id];
       if (!bank) { missing.push(lesson.id); continue; }
@@ -66,18 +66,28 @@
       versions.push(lesson.id + '@' + bank.version);
       for (const q of bank.questions) {
         const fingerprint = dedupeKey(q);
-        if (seen.has(fingerprint)) continue;
-        seen.add(fingerprint);
-        questions.push({
+        const original = {
+          bankId: bank.bankId, version: bank.version, id: q.id
+        };
+        if (seen.has(fingerprint)) {
+          // Keep the earliest textbook occurrence, but preserve EVERY source
+          // origin, so a bookmark on any duplicate is still represented.
+          seen.get(fingerprint).alternateOrigins.push(original);
+          continue;
+        }
+        const combined = {
           ...q,
           id: 'unit-' + unitId + '/' + lesson.id + '/' + q.id,
           originQuestionId: q.id,
           originBankId: bank.bankId,
           originVersion: bank.version,
           originLessonId: lesson.id,
+          alternateOrigins: [],
           lessonTitle: lesson.title,
           chapterTitle: 'Lesson ' + lesson.id + ' · ' + lesson.title
-        });
+        };
+        seen.set(fingerprint, combined);
+        questions.push(combined);
       }
     }
     const ready = unit.lessons.length > 0 && missing.length === 0 && invalid.length === 0;
