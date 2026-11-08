@@ -97,7 +97,11 @@
         questions.push(combined);
       }
     }
-    const ready = unit.lessons.length > 0 && missing.length === 0 && invalid.length === 0;
+    // A unit comprehensive is usable from the first verified lesson; never gate
+    // on completion of every lesson. With zero questions, routes stay available
+    // and the study engines display a truthful empty state.
+    const complete = unit.lessons.length > 0 && missing.length === 0 && invalid.length === 0;
+    const ready = questions.length > 0;
     const bank = {
       verified: ready, bankId: 'mlt6-unit-' + unitId + '-comprehensive',
       version: 'assembled-v2-' + versions.join('~'),
@@ -108,11 +112,11 @@
     const saved = bookmarks ? bookmarks.list(bank) : new Set();
     const bookmarkQuestions = questions.filter(q => saved.has(q.id));
     return {
-      unitId, unit, ready, valid, missing, invalid,
+      unitId, unit, ready, complete, valid, missing, invalid,
       questionCount: questions.length, bookmarkedCount: bookmarkQuestions.length,
       bank: ready ? bank : null,
-      // All Bookmarks must work with any completed lessons; unlike the full
-      // comprehensive, it must NOT wait for all lessons to become available.
+      // All Bookmarks and Comprehensive both build progressively from verified
+      // lesson banks. Neither requires every listed lesson to be populated.
       bookmarkBank: {
         verified: true,
         bankId: 'mlt6-unit-' + unitId + '-all-bookmarks',
@@ -152,10 +156,11 @@
       rootHref, bank ? '' : 'This lesson is awaiting verified textbook questions.');
   } else if (view === 'unit') {
     const status = aggregate(unitId);
-    root.DEMO_QUESTION_BANK = status.ready ? status.bank : null;
-    root.MLT6_BANK_CONTEXT = context(status.ready ? 'comprehensive' : 'missing',
+    root.DEMO_QUESTION_BANK = status.bank;
+    root.MLT6_BANK_CONTEXT = context('comprehensive',
       unit.title + ' · Comprehensive', rootHref,
-      status.ready ? '' : 'This unit comprehensive is not ready: every listed lesson must have a verified question bank.');
+      status.ready ? '' :
+        'No verified course questions are available in this unit yet. The comprehensive is open and will automatically include approved lesson questions as they are added.');
   } else if (view === 'bookmarks') {
     const status = aggregate(unitId);
     root.DEMO_QUESTION_BANK = status.bookmarkBank;
