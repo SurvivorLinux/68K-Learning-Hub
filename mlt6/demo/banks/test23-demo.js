@@ -1,30 +1,30 @@
-/* Demo questions only; replace with a verified course bank after review. */
+/* Intentionally simple demonstration questions, NOT an ABO course question bank. */
 window.DEMO_QUESTION_BANK = {
   "bankId": "mlt6-test23-demo",
-  "version": "demo-v1",
-  "title": "Test23: ABO — Demo",
-  "description": "Practice question bank written for prototype testing. Not sourced from your future photos or Quizlet links. Do not use as a validated course answer key.",
+  "version": "demo-easy-v2",
+  "title": "Test23: ABO — Easy Feature-Test Demo",
+  "description": "Deliberately easy everyday questions for testing the quiz interface, progress, and mandatory reviews. Not a real ABO or course question bank.",
   "questions": [
     {
       "id": "ABO-DEMO-001",
       "type": "single",
-      "question": "A patient’s red cells agglutinate with anti-A but not anti-B. Reverse typing shows reactivity with B reagent cells only. Which ABO group fits both results?",
+      "question": "What is 1 + 1?",
       "choices": [
         {
           "id": "1",
-          "text": "Group A"
+          "text": "2"
         },
         {
           "id": "2",
-          "text": "Group B"
+          "text": "3"
         },
         {
           "id": "3",
-          "text": "Group AB"
+          "text": "4"
         },
         {
           "id": "4",
-          "text": "Group O"
+          "text": "5"
         }
       ],
       "correct": [
@@ -34,49 +34,49 @@ window.DEMO_QUESTION_BANK = {
     {
       "id": "ABO-DEMO-002",
       "type": "single",
-      "question": "Forward typing reacts with anti-B only. The patient’s plasma reacts with A1 reagent cells but not B cells. What group is indicated?",
+      "question": "Which animal says 'meow'?",
       "choices": [
         {
           "id": "1",
-          "text": "Group O"
+          "text": "Cat"
         },
         {
           "id": "2",
-          "text": "Group AB"
+          "text": "Dog"
         },
         {
           "id": "3",
-          "text": "Group B"
+          "text": "Cow"
         },
         {
           "id": "4",
-          "text": "Group A"
+          "text": "Duck"
         }
       ],
       "correct": [
-        "3"
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-003",
       "type": "single",
-      "question": "A sample reacts with neither anti-A nor anti-B during forward typing. Reverse typing reacts with both A1 and B reagent cells. Which group is most consistent?",
+      "question": "What color is a typical yellow school bus?",
       "choices": [
         {
           "id": "1",
-          "text": "Group O"
+          "text": "Yellow"
         },
         {
           "id": "2",
-          "text": "Group AB"
+          "text": "Blue"
         },
         {
           "id": "3",
-          "text": "Group A"
+          "text": "Purple"
         },
         {
           "id": "4",
-          "text": "Group B"
+          "text": "Pink"
         }
       ],
       "correct": [
@@ -86,75 +86,76 @@ window.DEMO_QUESTION_BANK = {
     {
       "id": "ABO-DEMO-004",
       "type": "single",
-      "question": "A sample reacts with anti-A and anti-B. Reverse typing shows no reaction with A1 or B reagent cells. What is the expected group?",
+      "question": "How many days are in one week?",
       "choices": [
         {
           "id": "1",
-          "text": "Group B"
+          "text": "7"
         },
         {
           "id": "2",
-          "text": "Group O"
+          "text": "3"
         },
         {
           "id": "3",
-          "text": "Group AB"
+          "text": "10"
         },
         {
           "id": "4",
-          "text": "Group A"
+          "text": "12"
         }
       ],
       "correct": [
-        "3"
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-005",
-      "type": "single",
-      "question": "Forward typing suggests group A, but plasma unexpectedly reacts with both A1 and B reagent cells. What should the laboratory do next?",
+      "type": "multi",
+      "question": "Select both fruits.",
       "choices": [
         {
           "id": "1",
-          "text": "Report group A without further evaluation"
+          "text": "Apple"
         },
         {
           "id": "2",
-          "text": "Investigate the forward/reverse discrepancy before finalizing the type"
+          "text": "Banana"
         },
         {
           "id": "3",
-          "text": "Ignore reverse typing"
+          "text": "Chair"
         },
         {
           "id": "4",
-          "text": "Report group O based only on plasma reactions"
+          "text": "Rock"
         }
       ],
       "correct": [
+        "1",
         "2"
       ]
     },
     {
       "id": "ABO-DEMO-006",
       "type": "single",
-      "question": "A group A recipient is mistakenly given group B red cells. Which recipient antibody creates the primary ABO incompatibility?",
+      "question": "Which object can you write with?",
       "choices": [
         {
           "id": "1",
-          "text": "Anti-B"
+          "text": "Pencil"
         },
         {
           "id": "2",
-          "text": "Anti-A"
+          "text": "Pillow"
         },
         {
           "id": "3",
-          "text": "Anti-D"
+          "text": "Plate"
         },
         {
           "id": "4",
-          "text": "No ABO antibody"
+          "text": "Shoe"
         }
       ],
       "correct": [
@@ -164,75 +165,75 @@ window.DEMO_QUESTION_BANK = {
     {
       "id": "ABO-DEMO-007",
       "type": "single",
-      "question": "A group B recipient receives group A red cells. Which expected plasma antibody makes this an ABO-incompatible red-cell transfusion?",
+      "question": "What number comes right after 9?",
       "choices": [
         {
           "id": "1",
-          "text": "Anti-B"
+          "text": "10"
         },
         {
           "id": "2",
-          "text": "Anti-A"
+          "text": "8"
         },
         {
           "id": "3",
-          "text": "Anti-C"
+          "text": "5"
         },
         {
           "id": "4",
-          "text": "Neither anti-A nor anti-B"
+          "text": "21"
         }
       ],
       "correct": [
-        "2"
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-008",
       "type": "single",
-      "question": "A group O patient requires red blood cells. Which donor group is ABO compatible for red-cell transfusion?",
+      "question": "What color are standard STOP signs in the United States?",
       "choices": [
         {
           "id": "1",
-          "text": "Group AB"
+          "text": "Red"
         },
         {
           "id": "2",
-          "text": "Group A"
+          "text": "Gold"
         },
         {
           "id": "3",
-          "text": "Group B"
+          "text": "Blue"
         },
         {
           "id": "4",
-          "text": "Group O"
+          "text": "Green"
         }
       ],
       "correct": [
-        "4"
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-009",
       "type": "single",
-      "question": "A group AB patient needs red blood cells. Which donor group is ABO compatible based on ABO typing alone?",
+      "question": "Which of these is a vehicle?",
       "choices": [
         {
           "id": "1",
-          "text": "Group O"
+          "text": "Car"
         },
         {
           "id": "2",
-          "text": "Only group AB"
+          "text": "Apple"
         },
         {
           "id": "3",
-          "text": "No ABO group"
+          "text": "Tree"
         },
         {
           "id": "4",
-          "text": "Only group B"
+          "text": "Spoon"
         }
       ],
       "correct": [
@@ -241,184 +242,182 @@ window.DEMO_QUESTION_BANK = {
     },
     {
       "id": "ABO-DEMO-010",
-      "type": "single",
-      "question": "A patient’s forward type is O, but reverse typing reacts with B reagent cells only. What is the best interpretation?",
+      "type": "multi",
+      "question": "Select both even numbers.",
       "choices": [
         {
           "id": "1",
-          "text": "A normal group O pattern"
+          "text": "2"
         },
         {
           "id": "2",
-          "text": "A forward/reverse typing discrepancy that needs investigation"
+          "text": "4"
         },
         {
           "id": "3",
-          "text": "A confirmed group AB"
+          "text": "3"
         },
         {
           "id": "4",
-          "text": "A valid group A result"
+          "text": "5"
         }
       ],
       "correct": [
+        "1",
         "2"
       ]
     },
     {
       "id": "ABO-DEMO-011",
-      "type": "multi",
-      "question": "Select every donor red-cell ABO group compatible with a group A recipient (consider ABO compatibility only).",
+      "type": "single",
+      "question": "What is 5 - 3?",
       "choices": [
         {
           "id": "1",
-          "text": "Group A"
+          "text": "2"
         },
         {
           "id": "2",
-          "text": "Group B"
+          "text": "8"
         },
         {
           "id": "3",
-          "text": "Group AB"
+          "text": "0"
         },
         {
           "id": "4",
-          "text": "Group O"
+          "text": "1"
         }
       ],
       "correct": [
-        "1",
-        "4"
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-012",
-      "type": "multi",
-      "question": "Select every donor red-cell ABO group compatible with a group B recipient (consider ABO compatibility only).",
+      "type": "single",
+      "question": "Which animal is known for barking?",
       "choices": [
         {
           "id": "1",
-          "text": "Group A"
+          "text": "Dog"
         },
         {
           "id": "2",
-          "text": "Group B"
+          "text": "Cat"
         },
         {
           "id": "3",
-          "text": "Group AB"
+          "text": "Fish"
         },
         {
           "id": "4",
-          "text": "Group O"
+          "text": "Cow"
         }
       ],
       "correct": [
-        "2",
-        "4"
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-013",
-      "type": "multi",
-      "question": "Which groups would normally show a positive forward-typing reaction with anti-A? Select all that apply.",
+      "type": "single",
+      "question": "Which shape has exactly three sides?",
       "choices": [
         {
           "id": "1",
-          "text": "Group A"
+          "text": "Triangle"
         },
         {
           "id": "2",
-          "text": "Group B"
+          "text": "Square"
         },
         {
           "id": "3",
-          "text": "Group AB"
+          "text": "Circle"
         },
         {
           "id": "4",
-          "text": "Group O"
+          "text": "Hexagon"
         }
       ],
       "correct": [
-        "1",
-        "3"
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-014",
       "type": "multi",
-      "question": "Which groups would normally show a positive forward-typing reaction with anti-B? Select all that apply.",
+      "question": "Select both animals.",
       "choices": [
         {
           "id": "1",
-          "text": "Group A"
+          "text": "Cat"
         },
         {
           "id": "2",
-          "text": "Group B"
+          "text": "Dog"
         },
         {
           "id": "3",
-          "text": "Group AB"
+          "text": "Desk"
         },
         {
           "id": "4",
-          "text": "Group O"
+          "text": "Lamp"
         }
       ],
       "correct": [
-        "2",
-        "3"
+        "1",
+        "2"
       ]
     },
     {
       "id": "ABO-DEMO-015",
       "type": "single",
-      "question": "A group A plasma specimen is tested against A1 and B reagent red cells. Which reverse-typing pattern should be expected?",
+      "question": "What is 10 divided by 2?",
       "choices": [
         {
           "id": "1",
-          "text": "Reacts with A1 only"
+          "text": "5"
         },
         {
           "id": "2",
-          "text": "Reacts with B only"
+          "text": "12"
         },
         {
           "id": "3",
-          "text": "Reacts with both"
+          "text": "20"
         },
         {
           "id": "4",
-          "text": "Reacts with neither"
+          "text": "2"
         }
       ],
       "correct": [
-        "2"
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-016",
       "type": "single",
-      "question": "A group B plasma specimen is tested against A1 and B reagent red cells. Which reaction pattern should appear?",
+      "question": "Which item is typically worn on your feet?",
       "choices": [
         {
           "id": "1",
-          "text": "Reacts with A1 only"
+          "text": "Shoes"
         },
         {
           "id": "2",
-          "text": "Reacts with B only"
+          "text": "Hat"
         },
         {
           "id": "3",
-          "text": "Reacts with both"
+          "text": "Gloves"
         },
         {
           "id": "4",
-          "text": "Reacts with neither"
+          "text": "Glasses"
         }
       ],
       "correct": [
@@ -428,209 +427,207 @@ window.DEMO_QUESTION_BANK = {
     {
       "id": "ABO-DEMO-017",
       "type": "single",
-      "question": "A group AB plasma specimen is tested against A1 and B reagent red cells. Which typical pattern is expected?",
+      "question": "Which of these is a day of the week?",
       "choices": [
         {
           "id": "1",
-          "text": "Reacts with A1 only"
+          "text": "Monday"
         },
         {
           "id": "2",
-          "text": "Reacts with B only"
+          "text": "July"
         },
         {
           "id": "3",
-          "text": "Reacts with both"
+          "text": "Winter"
         },
         {
           "id": "4",
-          "text": "Reacts with neither"
+          "text": "Blue"
         }
       ],
       "correct": [
-        "4"
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-018",
-      "type": "single",
-      "question": "A group O plasma specimen is tested against A1 and B reagent red cells. Which typical pattern is expected?",
-      "choices": [
-        {
-          "id": "1",
-          "text": "Reacts with A1 only"
-        },
-        {
-          "id": "2",
-          "text": "Reacts with B only"
-        },
-        {
-          "id": "3",
-          "text": "Reacts with both"
-        },
-        {
-          "id": "4",
-          "text": "Reacts with neither"
-        }
-      ],
-      "correct": [
-        "3"
-      ]
-    },
-    {
-      "id": "ABO-DEMO-019",
       "type": "multi",
-      "question": "Which ABO antibodies are typically present in group O plasma? Select all that apply.",
+      "question": "Select both things used to tell time.",
       "choices": [
         {
           "id": "1",
-          "text": "Anti-A"
+          "text": "Clock"
         },
         {
           "id": "2",
-          "text": "Anti-B"
+          "text": "Watch"
         },
         {
           "id": "3",
-          "text": "Anti-D as an ABO antibody"
+          "text": "Sandwich"
         },
         {
           "id": "4",
-          "text": "Neither anti-A nor anti-B"
+          "text": "Pillow"
         }
       ],
       "correct": [
         "1",
         "2"
+      ]
+    },
+    {
+      "id": "ABO-DEMO-019",
+      "type": "single",
+      "question": "What color is healthy lawn grass usually?",
+      "choices": [
+        {
+          "id": "1",
+          "text": "Green"
+        },
+        {
+          "id": "2",
+          "text": "Pink"
+        },
+        {
+          "id": "3",
+          "text": "Orange"
+        },
+        {
+          "id": "4",
+          "text": "Purple"
+        }
+      ],
+      "correct": [
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-020",
       "type": "single",
-      "question": "A sample produces strong agglutination with anti-A and no reaction with anti-B. Which antigen is demonstrated on the red cells?",
+      "question": "How many wheels does a standard bicycle have?",
       "choices": [
         {
           "id": "1",
-          "text": "B antigen only"
+          "text": "2"
         },
         {
           "id": "2",
-          "text": "A antigen"
+          "text": "3"
         },
         {
           "id": "3",
-          "text": "Neither A nor B"
+          "text": "4"
         },
         {
           "id": "4",
-          "text": "Both A and B"
+          "text": "5"
         }
       ],
       "correct": [
-        "2"
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-021",
       "type": "single",
-      "question": "The laboratory needs to perform forward ABO grouping on a patient. Which combination is appropriate?",
+      "question": "Which season comes after spring?",
       "choices": [
         {
           "id": "1",
-          "text": "Patient plasma and reagent A1/B red cells"
+          "text": "Summer"
         },
         {
           "id": "2",
-          "text": "Patient red cells and anti-A/anti-B reagents"
+          "text": "Winter"
         },
         {
           "id": "3",
-          "text": "Patient serum and an antibody screen only"
+          "text": "Autumn"
         },
         {
           "id": "4",
-          "text": "Patient red cells and reagent A1/B red cells"
+          "text": "Spring"
         }
       ],
       "correct": [
-        "2"
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-022",
-      "type": "single",
-      "question": "The laboratory needs to perform reverse ABO grouping on a patient. What should be tested?",
-      "choices": [
-        {
-          "id": "1",
-          "text": "Patient red cells with anti-D"
-        },
-        {
-          "id": "2",
-          "text": "Patient red cells with anti-A and anti-B"
-        },
-        {
-          "id": "3",
-          "text": "Patient plasma with reagent A1 and B red cells"
-        },
-        {
-          "id": "4",
-          "text": "Patient red cells against their own plasma only"
-        }
-      ],
-      "correct": [
-        "3"
-      ]
-    },
-    {
-      "id": "ABO-DEMO-023",
       "type": "multi",
-      "question": "A group AB recipient needs red cells. Which donor ABO groups are compatible based on ABO alone? Select all that apply.",
+      "question": "Select both shapes that have four sides.",
       "choices": [
         {
           "id": "1",
-          "text": "Group A"
+          "text": "Square"
         },
         {
           "id": "2",
-          "text": "Group B"
+          "text": "Rectangle"
         },
         {
           "id": "3",
-          "text": "Group AB"
+          "text": "Triangle"
         },
         {
           "id": "4",
-          "text": "Group O"
+          "text": "Circle"
         }
       ],
       "correct": [
         "1",
-        "2",
-        "3",
-        "4"
+        "2"
+      ]
+    },
+    {
+      "id": "ABO-DEMO-023",
+      "type": "single",
+      "question": "What is 3 + 4?",
+      "choices": [
+        {
+          "id": "1",
+          "text": "7"
+        },
+        {
+          "id": "2",
+          "text": "5"
+        },
+        {
+          "id": "3",
+          "text": "10"
+        },
+        {
+          "id": "4",
+          "text": "6"
+        }
+      ],
+      "correct": [
+        "1"
       ]
     },
     {
       "id": "ABO-DEMO-024",
       "type": "single",
-      "question": "An ABO result has unexpected disagreement between forward and reverse typing. Which action best protects accurate group assignment?",
+      "question": "Which word means the opposite of 'up'?",
       "choices": [
         {
           "id": "1",
-          "text": "Resolve the discrepancy using additional testing"
+          "text": "Down"
         },
         {
           "id": "2",
-          "text": "Randomly choose one result"
+          "text": "Left"
         },
         {
           "id": "3",
-          "text": "Use only the earliest recorded result"
+          "text": "East"
         },
         {
           "id": "4",
-          "text": "Automatically label the sample group O"
+          "text": "Over"
         }
       ],
       "correct": [
@@ -639,28 +636,29 @@ window.DEMO_QUESTION_BANK = {
     },
     {
       "id": "ABO-DEMO-025",
-      "type": "single",
-      "question": "A group O donor’s red cells do not react with either anti-A or anti-B. What explains this forward-typing result?",
+      "type": "multi",
+      "question": "Select both numbers greater than 10.",
       "choices": [
         {
           "id": "1",
-          "text": "The red cells express both A and B"
+          "text": "11"
         },
         {
           "id": "2",
-          "text": "The plasma lacks all antibodies"
+          "text": "12"
         },
         {
           "id": "3",
-          "text": "The red cells lack A and B antigens"
+          "text": "8"
         },
         {
           "id": "4",
-          "text": "The red cells express the B antigen only"
+          "text": "9"
         }
       ],
       "correct": [
-        "3"
+        "1",
+        "2"
       ]
     }
   ]
