@@ -25,21 +25,28 @@
       id: question.originQuestionId || question.id
     };
   }
+  function allOrigins(bank, q) {
+    return [origin(bank, q), ...(Array.isArray(q.alternateOrigins) ?
+      q.alternateOrigins.filter(o => o && o.bankId && o.version && o.id) : [])];
+  }
   function selected(bank, id) {
     const q = bank && bank.questions.find(x => x.id === id);
-    if (!q) return false;
-    const from = origin(bank, q);
-    return read(from.bankId, from.version).has(from.id);
+    return !!q && allOrigins(bank, q).some(o =>
+      read(o.bankId, o.version).has(o.id));
   }
   function list(bank) {
     const ids = new Set();
     if (!bank || !Array.isArray(bank.questions)) return ids;
     const cache = new Map();
     for (const q of bank.questions) {
-      const from = origin(bank, q);
-      const key = storageKey(from.bankId, from.version);
-      if (!cache.has(key)) cache.set(key, read(from.bankId, from.version));
-      if (cache.get(key).has(from.id)) ids.add(q.id);
+      for (const from of allOrigins(bank, q)) {
+        const key = storageKey(from.bankId, from.version);
+        if (!cache.has(key)) cache.set(key, read(from.bankId, from.version));
+        if (cache.get(key).has(from.id)) {
+          ids.add(q.id);
+          break;
+        }
+      }
     }
     return ids;
   }
@@ -47,11 +54,24 @@
     if (!bank || !Array.isArray(bank.questions)) return false;
     const q = bank.questions.find(x => x.id === id);
     if (!q) return false;
-    const from = origin(bank, q);
-    const saved = read(from.bankId, from.version);
-    if (saved.has(from.id)) saved.delete(from.id);
-    else saved.add(from.id);
-    return write(from.bankId, from.version, saved);
+    const refs = allOrigins(bank, q);
+    const isSaved = refs.some(o => read(o.bankId, o.version).has(o.id));
+    if (!isSaved) {
+      const first = refs[0];
+      const saved = read(first.bankId, first.version);
+      saved.add(first.id);
+      return write(first.bankId, first.version, saved);
+    }
+    let success = true;
+    // Removing a single deduplicated unit question must clear bookmarks
+    // for each underlying original, not leave an invisible duplicate.
+    for (const from of refs) {
+      const saved = read(from.bankId, from.version);
+      if (!saved.has(from.id)) continue;
+      saved.delete(from.id);
+      if (!write(from.bankId, from.version, saved)) success = false;
+    }
+    return success;
   }
-  root.MLT6Bookmarks = Object.freeze({ storageKey, read, origin, selected, list, toggle });
+  root.MLT6Bookmarks = Object.freeze({ storageKey, read, origin, allOrigins, selected, list, toggle });
 })(window);
