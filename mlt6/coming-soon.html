@@ -14,7 +14,7 @@
       const mode = params.get("mode");
       const test = Object.prototype.hasOwnProperty.call(window.MLT6_TESTS || {}, id)
         ? window.MLT6_TESTS[id] : null;
-      const modeName = ({ review: "Review", flashcards: "Flashcards", write: "Write", bookmarked: "Bookmarked Questions" })[mode] || null;
+      const modeName = ({ review: "Review", flashcards: "Flashcards", write: "Write", bookmarked: "Bookmarked Questions", exam: "Exam Mode" })[mode] || null;
       if (!test || !modeName) {
         document.getElementById("invalid-selection").hidden = false;
         return;
