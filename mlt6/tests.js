@@ -1,15 +1,68 @@
-/* MLT 6 chapter/topic catalog. Entries presently match ORIGINAL legacy test topics.
- * Exact textbook chapter numbering is assigned only when supplied source pages verify it.
- * Retain legacy tests and their links until verified chapter banks replace them. */
+/* MLT 106 Blood Bank (22 Oct 2025), table of contents, printed pp. 3–7.
+ * Six existing legacy test headings are the STUDY UNIT tiles, not individual lessons.
+ * Lesson numbers / page starts are sourced from the actual textbook.
+ * These study groupings differ from the book's official eight Unit divisions:
+ * for instance Test21 spans textbook Units 1 and 2; Tests26/27 split book Unit 7.
+ * Other book lessons not represented by the original six headings are not invented here. */
 (function () {
-  "use strict";
-  window.MLT6_CHAPTER_ORDER = Object.freeze(["21", "23", "24", "25", "26", "27"]);
-  window.MLT6_TESTS = Object.freeze({
-    "21": Object.freeze({ label: "Test21: Immun", chapterTitle: "Immun", quiz: "../OldTests/test21.html" }),
-    "23": Object.freeze({ label: "Test23: ABO", chapterTitle: "ABO", quiz: "../OldTests/test23.html" }),
-    "24": Object.freeze({ label: "Test24: Other Blood Groups", chapterTitle: "Other Blood Groups", quiz: "../OldTests/test24.html" }),
-    "25": Object.freeze({ label: "Test25: Transfusions", chapterTitle: "Transfusions", quiz: "../OldTests/test25.html" }),
-    "26": Object.freeze({ label: "Test26: TransDiseases", chapterTitle: "Transfusion Diseases", quiz: "../OldTests/test26.html" }),
-    "27": Object.freeze({ label: "Test27: AutoDiseases", chapterTitle: "Autoimmune Diseases", quiz: "../OldTests/test27.html" })
-  });
+  'use strict';
+  const lesson = (id, title, page) => Object.freeze({ id, title, page });
+  const units = {
+    '21': {
+      title: 'Immun', legacyLabel: 'Test21: Immun', quiz: '../OldTests/test21.html',
+      lessons: [
+        lesson('1.1', 'Fundamentals of Immunology', 12),
+        lesson('1.2', 'Cells and Soluble Mediators of the Immune System', 42),
+        lesson('1.3', 'Serologic Procedures', 59),
+        lesson('2.1', 'Immunology', 77),
+        lesson('2.2', 'Autoimmunity and Related Disorders', 88),
+        lesson('2.3', 'Immunoassays and Automated Procedures', 96)
+      ]
+    },
+    '23': {
+      title: 'ABO', legacyLabel: 'Test23: ABO', quiz: '../OldTests/test23.html',
+      lessons: [
+        lesson('4.1', 'The ABO Blood Group System', 169),
+        lesson('4.2', 'The Rh Blood Group System', 199),
+        lesson('4.3', 'Antibody Detection', 220)
+      ]
+    },
+    '24': {
+      title: 'Other Blood Groups', legacyLabel: 'Test24: Other Blood Groups', quiz: '../OldTests/test24.html',
+      lessons: [
+        lesson('5.1', 'Miscellaneous Blood Bank Testing', 233),
+        lesson('5.2', 'Other Major Blood Groups', 247),
+        lesson('5.3', 'Identification of Antibodies', 281),
+        lesson('5.4', 'Pretransfusion and Compatibility Testing', 289)
+      ]
+    },
+    '25': {
+      title: 'Transfusions', legacyLabel: 'Test25: Transfusions', quiz: '../OldTests/test25.html',
+      lessons: [
+        lesson('6.1', 'Donor Screening and Component Preparation', 308),
+        lesson('6.2', 'Transfusion Therapy', 352)
+      ]
+    },
+    '26': {
+      title: 'Transfusion Diseases', legacyLabel: 'Test26: TransDiseases', quiz: '../OldTests/test26.html',
+      lessons: [
+        lesson('7.1', 'Transfusion-Transmitted Diseases (TTD)', 392),
+        lesson('7.2', 'Hemolytic Disease of the Fetus and Newborn (HDFN)', 408)
+      ]
+    },
+    '27': {
+      title: 'Autoimmune Diseases', legacyLabel: 'Test27: AutoDiseases', quiz: '../OldTests/test27.html',
+      lessons: [
+        lesson('7.3', 'Autoimmune Hemolytic Anemias (AIHA)', 424)
+      ]
+    }
+  };
+  const frozen = {};
+  for (const [id, unit] of Object.entries(units)) {
+    unit.lessons = Object.freeze(unit.lessons);
+    frozen[id] = Object.freeze(unit);
+  }
+  window.MLT6_UNIT_ORDER = Object.freeze(['21', '23', '24', '25', '26', '27']);
+  window.MLT6_UNITS = Object.freeze(frozen);
+  window.MLT6_TESTS = window.MLT6_UNITS; // Old navigation pages keep resolving legacy test IDs.
 })();
