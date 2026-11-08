@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#14171b">
+  <title>Choose a Study Mode | 68K Learning Hub</title>
+  <link rel="stylesheet" href="../hub.css">
+  <script src="tests.js" defer></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      const id = new URLSearchParams(window.location.search).get("test");
+      const test = Object.prototype.hasOwnProperty.call(window.MLT6_TESTS || {}, id)
+        ? window.MLT6_TESTS[id] : null;
+      if (!test) {
+        document.getElementById("invalid-test").hidden = false;
+        return;
+      }
+      document.title = test.label + " | 68K Learning Hub";
+      document.getElementById("test-breadcrumb").textContent = test.label;
+      document.getElementById("test-title").textContent = test.label;
+      document.getElementById("multiple-choice").href = test.quiz;
+      document.getElementById("review").href = "coming-soon.html?test=" + encodeURIComponent(id) + "&mode=review";
+      document.getElementById("flashcards").href = "coming-soon.html?test=" + encodeURIComponent(id) + "&mode=flashcards";
+      document.getElementById("study-content").hidden = false;
+    });
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header wrap">
+    <a href="../index.html" class="brand-lockup" aria-label="68K Learning Hub home">
+      <span class="brand-mark" aria-hidden="true">68K</span>
+      <span class="brand-name">68K Learning Hub</span>
+    </a>
+    <span class="phase-tag">MLT 6</span>
+  </header>
+  <main id="content" class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">68K Learning Hub</a><span aria-hidden="true">/</span>
+      <a href="../index.html#mlt6">MLT 6</a><span aria-hidden="true">/</span>
+      <span id="test-breadcrumb">Test selection</span>
+    </nav>
+    <section id="study-content" hidden>
+      <div class="page-heading">
+        <p class="eyebrow">MLT 6 · Study selection</p>
+        <h1 id="test-title">Test</h1>
+        <p class="lead">Select one of the three ways to study this test.</p>
+      </div>
+      <div class="mode-grid" aria-label="Study choices">
+        <a id="multiple-choice" class="mode-card" href="../index.html">
+          <span class="mode-icon" aria-hidden="true">01</span>
+          <span><span class="mode-title">Multiple Choice</span><span class="mode-desc">Take the original quiz with immediate answer feedback.</span></span>
+          <span class="mode-action">Open original quiz →</span>
+        </a>
+        <a id="review" class="mode-card" href="../index.html">
+          <span class="mode-icon" aria-hidden="true">02</span>
+          <span><span class="mode-title">Review</span><span class="mode-desc">A dedicated review destination for this test.</span></span>
+          <span class="mode-action">Coming Soon →</span>
+        </a>
+        <a id="flashcards" class="mode-card" href="../index.html">
+          <span class="mode-icon" aria-hidden="true">03</span>
+          <span><span class="mode-title">Flashcards</span><span class="mode-desc">A dedicated flashcard destination for this test.</span></span>
+          <span class="mode-action">Coming Soon →</span>
+        </a>
+      </div>
+      <div class="page-actions"><a class="back-link" href="../index.html#mlt6">← Back to MLT 6</a></div>
+    </section>
+    <section id="invalid-test" class="page-heading" hidden>
+      <h1>Test not found</h1>
+      <p class="lead">This test is not part of the current MLT 6 selection.</p>
+      <div class="page-actions"><a class="back-link" href="../index.html#mlt6">← Back to MLT 6</a></div>
+    </section>
+    <noscript><p class="lead">Enable JavaScript to select a test study option. Your original quizzes are still available from the repository.</p></noscript>
+  </main>
+  <footer class="site-footer wrap">68K Learning Hub · MLT 6 foundation</footer>
+</body>
+</html>
