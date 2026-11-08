@@ -240,6 +240,8 @@
     bar.append(make('span', 'stage-label', reviewed ? 'Required review' : 'New question'));
     bar.append(make('span', 'counter', reviewed ? 'Review ' + (state.reviewIndex + 1) + ' of ' + state.reviewQueue.length : 'Question ' + (state.newIndex + 1) + ' of ' + bank.questions.length));
     target.append(bar);
+    if (q.chapterTitle && window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.kind === 'unit')
+      target.append(make('p', 'chapter-origin', 'Chapter: ' + q.chapterTitle));
     const tools = make('div', 'question-tools');
     tools.append(bookmarkButton(q.id));
     target.append(tools, make('h2', '', q.question));
