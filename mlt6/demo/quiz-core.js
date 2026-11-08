@@ -13,7 +13,7 @@
   function normalizeSettings(settings) {
     return {
       roundSize: settings && ROUND_OPTIONS.includes(Number(settings.roundSize)) ? Number(settings.roundSize) : ROUND_SIZE,
-      shuffleQuestions: !settings || settings.shuffleQuestions !== false,
+      shuffleQuestions: !!(settings && settings.shuffleQuestions === true),
       direction: normalizeDirection(settings && settings.direction)
     };
   }
