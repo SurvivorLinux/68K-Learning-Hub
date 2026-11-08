@@ -39,8 +39,10 @@
     root.append(outer);
     return outer;
   }
+  const sharedBookmarks = window.MLT6Bookmarks;
   const rawBookmarks = read(bookmarksKey);
-  const bookmarks = new Set(Array.isArray(rawBookmarks) ? rawBookmarks.filter(id => validIDs.has(id)) : []);
+  let bookmarks = sharedBookmarks ? sharedBookmarks.list(bank) :
+    new Set(Array.isArray(rawBookmarks) ? rawBookmarks.filter(id => validIDs.has(id)) : []);
   let state;
   let setup = quizCore.normalizeSettings({
     ...(read(settingsKey) || {}),
@@ -55,8 +57,13 @@
   }
   function persist() { if (state) save(examKey, state); }
   function toggleBookmark(id) {
-    if (bookmarks.has(id)) bookmarks.delete(id); else bookmarks.add(id);
-    save(bookmarksKey, [...bookmarks]);
+    if (sharedBookmarks) {
+      sharedBookmarks.toggle(bank, id);
+      bookmarks = sharedBookmarks.list(bank);
+    } else {
+      if (bookmarks.has(id)) bookmarks.delete(id); else bookmarks.add(id);
+      save(bookmarksKey, [...bookmarks]);
+    }
     render();
   }
   function bookmarkButton(id) {
@@ -161,7 +168,8 @@
     tools.append(make('span', 'counter', q.type === 'multi' ? 'Select all that apply' : 'Choose one answer'));
     tools.append(bookmarkButton(id));
     target.append(tools);
-    if (q.chapterTitle && window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.kind === 'unit')
+    if (q.chapterTitle && window.MLT6_BANK_CONTEXT &&
+        ['comprehensive', 'all-bookmarks'].includes(window.MLT6_BANK_CONTEXT.kind))
       target.append(make('p', 'chapter-origin', 'Chapter: ' + q.chapterTitle));
     target.append(make('h2', '', q.question));
     const answers = make('div', 'answers');
