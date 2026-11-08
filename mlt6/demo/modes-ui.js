@@ -4,7 +4,7 @@
   const bank = window.DEMO_QUESTION_BANK;
   const root = document.getElementById("mode-root");
   if (!bank || !Array.isArray(bank.questions) || !root) {
-    if (root) root.textContent = "The study question bank could not be loaded.";
+    if (root) root.textContent = (window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.message) || "The study question bank could not be loaded.";
     return;
   }
   const params = new URLSearchParams(window.location.search);
@@ -76,7 +76,15 @@
   }
   function link(label, href, css) {
     const a = el("a", css, label);
-    a.href = href;
+    const scope = window.MLT6_SCOPE_SUFFIX;
+    if (scope) {
+      const split = scope.indexOf("=");
+      const key = scope.slice(0, split);
+      const value = decodeURIComponent(scope.slice(split + 1));
+      const address = new URL(href, window.location.href);
+      address.searchParams.set(key, value);
+      a.href = address.href;
+    } else a.href = href;
     return a;
   }
   function saveProgress() { save(getProgressKey(), progress); }
@@ -227,17 +235,17 @@
     if (!chosen.length) {
       holder.append(el("p", "quiet", "Nothing bookmarked yet. Save difficult questions while using Multiple Choice, Review, Flashcards, or Write."));
       const links = el("div", "path-actions");
-      links.append(link("Browse all questions in Review", "modes.html?mode=review&v=direction-v7", "secondary path-link"));
-      links.append(link("Open Multiple Choice", "index.html?v=direction-v7", "secondary path-link"));
+      links.append(link("Browse all questions in Review", "modes.html?mode=review&v=chapters-v9", "secondary path-link"));
+      links.append(link("Open Multiple Choice", "index.html?v=chapters-v9", "secondary path-link"));
       holder.append(links);
       return;
     }
     holder.append(el("p", "quiet", "These bookmarks are shared by every mode for this test and are saved in this browser."));
     const links = el("div", "bookmarked-links");
-    links.append(link("Multiple Choice", "index.html?practice=bookmarks&v=direction-v7", "secondary path-link"));
-    links.append(link("Review", "modes.html?mode=review&scope=bookmarked&v=direction-v7", "secondary path-link"));
-    links.append(link("Flashcards", "modes.html?mode=flashcards&scope=bookmarked&v=direction-v7", "secondary path-link"));
-    links.append(link("Write", "modes.html?mode=write&scope=bookmarked&v=direction-v7", "secondary path-link"));
+    links.append(link("Multiple Choice", "index.html?practice=bookmarks&v=chapters-v9", "secondary path-link"));
+    links.append(link("Review", "modes.html?mode=review&scope=bookmarked&v=chapters-v9", "secondary path-link"));
+    links.append(link("Flashcards", "modes.html?mode=flashcards&scope=bookmarked&v=chapters-v9", "secondary path-link"));
+    links.append(link("Write", "modes.html?mode=write&scope=bookmarked&v=chapters-v9", "secondary path-link"));
     holder.append(links);
     const list = el("div", "bookmark-list");
     for (const q of chosen) {
@@ -285,8 +293,8 @@
     const root = document.getElementById("scope-actions");
     root.replaceChildren();
     if (mode === "bookmarked") return;
-    root.append(link("All questions", "modes.html?mode=" + mode + "&v=direction-v7", "scope-link" + (scope === "all" ? " active" : "")));
-    root.append(link("Bookmarked only", "modes.html?mode=" + mode + "&scope=bookmarked&v=direction-v7", "scope-link" + (scope === "bookmarked" ? " active" : "")));
+    root.append(link("All questions", "modes.html?mode=" + mode + "&v=chapters-v9", "scope-link" + (scope === "all" ? " active" : "")));
+    root.append(link("Bookmarked only", "modes.html?mode=" + mode + "&scope=bookmarked&v=chapters-v9", "scope-link" + (scope === "bookmarked" ? " active" : "")));
   }
   function render() {
     const list = items();
@@ -316,7 +324,7 @@
       const card = container();
       card.append(el("h2", "", "No bookmarked questions yet"));
       card.append(el("p", "quiet", "Bookmark a question in any study mode, then return here."));
-      card.append(link("Browse all " + title[mode] + " questions", "modes.html?mode=" + mode + "&v=direction-v7", "secondary path-link"));
+      card.append(link("Browse all " + title[mode] + " questions", "modes.html?mode=" + mode + "&v=chapters-v9", "secondary path-link"));
       return;
     }
     progress.index = Math.min(progress.index, list.length - 1);
