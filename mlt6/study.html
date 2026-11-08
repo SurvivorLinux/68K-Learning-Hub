@@ -1,66 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#14171b">
-  <title>Choose a Study Mode | 68K Learning Hub</title>
-  <link rel="stylesheet" href="../hub.css">
-  <script src="tests.js?v=chapters-v9" defer></script>
-  <script src="banks/approved-banks.js?v=chapters-v9" defer></script>
-  <script src="banks/scope-loader.js?v=chapters-v9" defer></script>
+  <meta name="description" content="Study MLT 106 by textbook lesson, then combine lessons into a unit comprehensive or all-bookmarks review.">
+  <title>Study unit · 68K Learning Hub</title>
+  <link rel="stylesheet" href="../hub.css?v=units-v10">
+  <script src="tests.js?v=units-v10" defer></script>
+  <script src="banks/approved-banks.js?v=units-v10" defer></script>
+  <script src="banks/bookmarks.js?v=units-v10" defer></script>
+  <script src="banks/scope-loader.js?v=units-v10" defer></script>
   <script defer>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener('DOMContentLoaded', function () {
       const params = new URLSearchParams(window.location.search);
-      const id = params.get("chapter") || params.get("test");
-      const test = Object.prototype.hasOwnProperty.call(window.MLT6_TESTS || {}, id)
-        ? window.MLT6_TESTS[id] : null;
-      if (!test) {
-        document.getElementById("invalid-test").hidden = false;
+      // Keep links from the old site functioning: ?chapter=23 and ?test=23 now
+      // resolve to the study unit, not an incorrectly named single chapter.
+      const unitId = params.get('unit') || params.get('chapter') || params.get('test');
+      const lessonId = params.get('lesson');
+      const units = window.MLT6_UNITS || {};
+      const unit = units[unitId];
+      const lib = window.MLT6Library;
+      const container = document.getElementById('dynamic-content');
+      function el(tag, className, text) {
+        const e = document.createElement(tag);
+        if (className) e.className = className;
+        if (text !== undefined) e.textContent = text;
+        return e;
+      }
+      function makeLink(label, url, css) {
+        const e = el('a', css, label);
+        e.href = url;
+        return e;
+      }
+      function addBreadcrumb(label, href) {
+        const crumb = document.getElementById('dynamic-breadcrumb');
+        crumb.append(el('span', '', '/'));
+        crumb.append(href ? makeLink(label, href) : el('span', '', label));
+      }
+      function modeCard(mode, title, detail, url, ready, index) {
+        const card = el(ready ? 'a' : 'div', 'mode-card' + (ready ? '' : ' mode-card-disabled'));
+        if (ready) card.href = url;
+        else card.setAttribute('aria-disabled', 'true');
+        card.append(el('span', 'mode-icon', String(index).padStart(2, '0')));
+        const middle = el('span');
+        middle.append(el('span', 'mode-title', title), el('span', 'mode-desc', detail));
+        card.append(middle);
+        card.append(el('span', 'mode-action', ready ? 'Open pathway →' : 'Awaiting verified questions'));
+        return card;
+      }
+      if (!unit || !lib) {
+        container.append(el('h1', '', 'Study unit unavailable'));
+        container.append(el('p', 'lead', 'Choose a study unit from the MLT 6 home page.'));
+        container.append(makeLink('← Back to study units', '../index.html#mlt6', 'back-link'));
         return;
       }
-      document.title = test.chapterTitle + " · MLT 6 Chapter Study | 68K Learning Hub";
-      document.getElementById("test-breadcrumb").textContent = test.chapterTitle;
-      document.getElementById("test-title").textContent = test.chapterTitle + " · Legacy Test" + id;
-      const possible = (window.MLT6_APPROVED_BANKS || {})[id];
-      const hasVerifiedBank = !!(window.MLT6BankCatalog && window.MLT6BankCatalog.checkBank(possible));
-      const hasDemoBank = id === "23" && !hasVerifiedBank;
-      const hasChapterBank = hasVerifiedBank || hasDemoBank;
-      const chapterQuery = "&chapter=" + encodeURIComponent(id);
-      const cards = [
-        ["multiple-choice", "multiple-choice", "demo/index.html?v=chapters-v9"],
-        ["exam", "exam", "demo/exam.html?v=chapters-v9"],
-        ["review", "review", "demo/modes.html?mode=review&v=chapters-v9"],
-        ["flashcards", "flashcards", "demo/modes.html?mode=flashcards&v=chapters-v9"],
-        ["write", "write", "demo/modes.html?mode=write&v=chapters-v9"],
-        ["bookmarked", "bookmarked", "demo/modes.html?mode=bookmarked&v=chapters-v9"]
-      ];
-      for (const [elementId, mode, demoRoute] of cards) {
-        const card = document.getElementById(elementId);
-        card.href = hasChapterBank ? demoRoute + chapterQuery :
-          (mode === "multiple-choice" ? test.quiz :
-            "coming-soon.html?test=" + encodeURIComponent(id) + "&mode=" + encodeURIComponent(mode));
-        card.querySelector(".mode-action").textContent =
-          hasVerifiedBank ? "Study chapter →" : hasDemoBank ? "Open demo →" :
-          (mode === "multiple-choice" ? "Open original quiz →" : "Coming Soon →");
+      addBreadcrumb(unit.title, lessonId ? 'study.html?unit=' + encodeURIComponent(unitId) : null);
+      document.title = unit.title + ' | 68K Learning Hub';
+      const heading = el('section', 'page-heading');
+      const eyebrow = el('p', 'eyebrow', lessonId ? 'MLT 106 · Individual lesson' : 'MLT 106 · Study unit');
+      heading.append(eyebrow);
+      const unitHref = 'study.html?unit=' + encodeURIComponent(unitId);
+      const status = lib.aggregate(unitId);
+      if (lessonId) {
+        const lesson = lib.lessonOf(unitId, lessonId);
+        if (!lesson) {
+          heading.append(el('h1', '', 'Lesson not found'),
+            el('p', 'lead', 'Choose one of the numbered lessons listed for this study unit.'));
+          container.append(heading, makeLink('← Back to ' + unit.title, unitHref, 'back-link'));
+          return;
+        }
+        addBreadcrumb('Lesson ' + lessonId, null);
+        heading.append(el('h1', '', 'Lesson ' + lesson.id + ': ' + lesson.title));
+        heading.append(el('p', 'lead', 'Printed textbook page ' + lesson.page +
+          ' · One lesson question bank, containing both C1 and C2 as supported by your approved marked material.'));
+        container.append(heading);
+        const verified = !!lib.verifiedLesson(unitId, lessonId);
+        const info = el('p', 'readiness-text', verified ?
+          'Verified question bank available. All six pathways use the same lesson questions.' :
+          'This lesson is organized and ready for questions. No verified course question bank has been imported yet.');
+        info.setAttribute('role', 'status');
+        container.append(info);
+        const scope = '&unit=' + encodeURIComponent(unitId) + '&lesson=' + encodeURIComponent(lessonId) + '&v=units-v10';
+        const choices = [
+          ['multiple-choice', 'Multiple Choice', 'Instant feedback and required reviews.', 'demo/index.html?v=units-v10&unit=' + encodeURIComponent(unitId) + '&lesson=' + encodeURIComponent(lessonId)],
+          ['exam', 'Exam Mode', 'Answers hidden until final submission.', 'demo/exam.html?v=units-v10&unit=' + encodeURIComponent(unitId) + '&lesson=' + encodeURIComponent(lessonId)],
+          ['review', 'Review', 'Read correct answers and textbook explanations.', 'demo/modes.html?mode=review' + scope],
+          ['flashcards', 'Flashcards', 'Flip and rate questions. Choose study direction.', 'demo/modes.html?mode=flashcards' + scope],
+          ['write', 'Write', 'Recall answers freely and self-assess.', 'demo/modes.html?mode=write' + scope],
+          ['bookmarked', 'Bookmarked Questions', 'Review only the questions saved in this lesson.', 'demo/modes.html?mode=bookmarked' + scope]
+        ];
+        const grid = el('nav', 'mode-grid');
+        grid.setAttribute('aria-label', 'Lesson study pathways');
+        choices.forEach(([mode, title, detail, href], i) =>
+          grid.append(modeCard(mode, title, detail, href, verified, i + 1)));
+        container.append(grid);
+        const actions = el('div', 'page-actions');
+        actions.append(makeLink('← All ' + unit.title + ' lessons', unitHref, 'back-link'));
+        if (verified) {
+          const lessonBank = lib.verifiedLesson(unitId, lessonId);
+          const count = window.MLT6Bookmarks.list(lessonBank).size;
+          actions.append(el('span', 'readiness-text', count + ' bookmarked in this lesson'));
+        }
+        container.append(actions);
+      } else {
+        heading.append(el('h1', '', unit.title));
+        heading.append(el('p', 'lead', unit.legacyLabel +
+          ' · Choose an individual textbook lesson for its study pathways, or use the comprehensive and all-bookmarks options below.'));
+        container.append(heading);
+        const section = el('section');
+        section.append(el('h2', 'section-title', 'Textbook lessons'));
+        section.append(el('p', 'muted', 'Lesson names and opening pages follow the MLT 106 Blood Bank course book, dated 22 Oct 2025. Lessons are shown in textbook order.'));
+        const grid = el('nav', 'lesson-grid');
+        grid.setAttribute('aria-label', unit.title + ' textbook lessons');
+        for (const lesson of unit.lessons) {
+          const bank = lib.verifiedLesson(unitId, lesson.id);
+          const card = makeLink('', unitHref + '&lesson=' + encodeURIComponent(lesson.id), 'lesson-card');
+          card.append(el('span', 'lesson-badge', lesson.id));
+          const text = el('span', 'lesson-card-copy');
+          text.append(el('strong', '', lesson.title), el('span', 'muted', 'Lesson ' + lesson.id + ' · Textbook p. ' + lesson.page),
+            el('span', bank ? 'lesson-state is-ready' : 'lesson-state',
+              bank ? bank.questions.length + ' verified questions · Ready to study' :
+                'Study pathways awaiting questions'));
+          card.append(text, el('span', 'arrow', '→'));
+          grid.append(card);
+        }
+        section.append(grid);
+        container.append(section);
+        const options = el('section', 'unit-level-options');
+        options.append(el('h2', 'section-title', 'Study the whole unit'));
+        options.append(el('p', 'muted', 'These options reuse the individual lesson banks—no duplicate question sets or separate bookmark stores.'));
+        const actionsGrid = el('div', 'unit-action-grid');
+        const comp = el(status.ready ? 'a' : 'div',
+          'unit-action-card' + (status.ready ? '' : ' is-disabled'));
+        if (status.ready) comp.href = 'comprehensive.html?unit=' + encodeURIComponent(unitId);
+        else comp.setAttribute('aria-disabled', 'true');
+        comp.append(el('span', 'eyebrow', 'All lessons'), el('h3', '', 'Comprehensive'),
+          el('p', '', 'Every verified lesson question together, in textbook order. Shuffle is optional.'),
+          el('span', 'mode-action', status.ready ?
+            'Open comprehensive →' : status.valid.length + ' / ' + unit.lessons.length + ' lessons verified'));
+        actionsGrid.append(comp);
+        const all = makeLink('', 'demo/modes.html?mode=bookmarked&unit=' +
+          encodeURIComponent(unitId) + '&bank=bookmarks&v=units-v10', 'unit-action-card');
+        all.append(el('span', 'eyebrow', 'Across every lesson'), el('h3', '', 'All Bookmarks'),
+          el('p', '', 'Every saved question from this unit in one place. Saved items appear once, even when also used in the comprehensive.'),
+          el('span', 'mode-action', status.bookmarkedCount + ' saved · Open bookmarks →'));
+        actionsGrid.append(all);
+        options.append(actionsGrid);
+        if (!status.ready) options.append(el('p', 'readiness-text',
+          'Comprehensive unlocks when every lesson has an approved question bank. All Bookmarks can already collect questions from any completed lessons.'));
+        container.append(options);
+        const legacy = el('div', 'page-actions');
+        legacy.append(makeLink('← All study units', '../index.html#mlt6', 'back-link'));
+        legacy.append(makeLink('Original ' + unit.legacyLabel + ' quiz →', unit.quiz, 'back-link'));
+        if (unitId === '23') legacy.append(makeLink('Try the 25-question interface demo →',
+          'demo/index.html?unit=23&demo=1&v=units-v10', 'back-link'));
+        container.append(legacy);
       }
-      if (hasChapterBank) {
-        const active = hasVerifiedBank ? possible : { bankId: "mlt6-test23-demo", version: "demo-easy-v2" };
-        const key = "68k:quiz:bookmarks:" + active.bankId + ":" + active.version;
-        let count = 0;
-        try {
-          const saved = JSON.parse(localStorage.getItem(key));
-          if (Array.isArray(saved)) count = saved.length;
-        } catch (_) { /* Optional browser storage */ }
-        document.querySelector("#bookmarked .mode-desc").textContent =
-          count ? count + " saved questions · study in any available mode." :
-            "Collect difficult questions and study them in any mode.";
-      }
-      document.getElementById("demo-description").textContent = hasDemoBank ?
-        "Test23 currently uses easy feature-demo questions, not verified blood bank material." :
-        !hasVerifiedBank ? "The original legacy multiple-choice quiz is available; the remaining modes await a verified chapter bank." :
-        "Verified course questions are available in all six study modes.";
-      document.getElementById("study-content").hidden = false;
     });
   </script>
 </head>
@@ -68,65 +164,19 @@
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header wrap">
     <a href="../index.html" class="brand-lockup" aria-label="68K Learning Hub home">
-      <span class="brand-mark" aria-hidden="true">68K</span>
-      <span class="brand-name">68K Learning Hub</span>
+      <span class="brand-mark" aria-hidden="true">68K</span><span class="brand-name">68K Learning Hub</span>
     </a>
     <span class="phase-tag">MLT 6</span>
   </header>
   <main id="content" class="wrap">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="../index.html">68K Learning Hub</a><span aria-hidden="true">/</span>
-      <a href="../index.html#mlt6">MLT 6</a><span aria-hidden="true">/</span>
-      <span id="test-breadcrumb">Test selection</span>
+      <a href="../index.html#mlt6">MLT 6</a>
+      <span id="dynamic-breadcrumb"></span>
     </nav>
-    <section id="study-content" hidden>
-      <div class="page-heading">
-        <p class="eyebrow">MLT 6 · Chapter / topic study</p>
-        <h1 id="test-title">Test</h1>
-        <p class="lead">Study this chapter on its own, or return to the unit-wide comprehensive. Marked course material will replace legacy topic groupings as chapters are verified.</p>
-        <p id="demo-description" class="muted"></p>
-      </div>
-      <div class="mode-grid" aria-label="Study choices">
-        <a id="multiple-choice" class="mode-card" href="../index.html">
-          <span class="mode-icon" aria-hidden="true">01</span>
-          <span><span class="mode-title">Multiple Choice</span><span class="mode-desc">One question at a time, with required reviews and instant feedback.</span></span>
-          <span class="mode-action">Open quiz →</span>
-        </a>
-        <a id="exam" class="mode-card" href="../index.html">
-          <span class="mode-icon" aria-hidden="true">02</span>
-          <span><span class="mode-title">Exam Mode</span><span class="mode-desc">Simulate an exam: no feedback until you submit, followed by detailed results.</span></span>
-          <span class="mode-action">Open exam →</span>
-        </a>
-        <a id="review" class="mode-card" href="../index.html">
-          <span class="mode-icon" aria-hidden="true">03</span>
-          <span><span class="mode-title">Review</span><span class="mode-desc">Browse answers, explanations, and verified textbook references.</span></span>
-          <span class="mode-action">Open review →</span>
-        </a>
-        <a id="flashcards" class="mode-card" href="../index.html">
-          <span class="mode-icon" aria-hidden="true">04</span>
-          <span><span class="mode-title">Flashcards</span><span class="mode-desc">Flip each card and mark whether you know the answer.</span></span>
-          <span class="mode-action">Open flashcards →</span>
-        </a>
-        <a id="write" class="mode-card" href="../index.html">
-          <span class="mode-icon" aria-hidden="true">05</span>
-          <span><span class="mode-title">Write</span><span class="mode-desc">Type an answer from memory, then check it yourself.</span></span>
-          <span class="mode-action">Open Write →</span>
-        </a>
-        <a id="bookmarked" class="mode-card" href="../index.html">
-          <span class="mode-icon" aria-hidden="true">06</span>
-          <span><span class="mode-title">Bookmarked Questions</span><span class="mode-desc">Access saved questions across all available study pathways.</span></span>
-          <span class="mode-action">View bookmarks →</span>
-        </a>
-      </div>
-      <div class="page-actions"><a class="back-link" href="../index.html#mlt6">← Back to MLT 6 chapters</a><a class="back-link" href="comprehensive.html">All-chapters comprehensive →</a></div>
-    </section>
-    <section id="invalid-test" class="page-heading" hidden>
-      <h1>Chapter not found</h1>
-      <p class="lead">This chapter or topic is not part of the current MLT 6 selection.</p>
-      <div class="page-actions"><a class="back-link" href="../index.html#mlt6">← Back to MLT 6</a></div>
-    </section>
-    <noscript><p class="lead">Enable JavaScript to select a test study option. Your original quizzes are still available from the repository.</p></noscript>
+    <div id="dynamic-content"></div>
+    <noscript><p class="lead">Enable JavaScript to browse the textbook lessons. The original quizzes remain available in the repository.</p></noscript>
   </main>
-  <footer class="site-footer wrap">68K Learning Hub · MLT 6 foundation</footer>
+  <footer class="site-footer wrap">68K Learning Hub · MLT 106 Blood Bank · Study by lesson</footer>
 </body>
 </html>
