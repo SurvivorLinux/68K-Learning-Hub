@@ -85,3 +85,10 @@
 .answer-detail-value { font-size: .92rem; line-height: 1.6; margin: 0; overflow-wrap: anywhere; }
 .answer-source-unavailable { color: var(--muted); font-style: italic; }
 .answer-direct-quote { margin: 5px 0 0; border-left: 3px solid var(--gold); padding: 9px 12px; background: #1e2329; color: var(--text); font-size: .9rem; line-height: 1.6; overflow-wrap: anywhere; }
+
+/* Compact cross-pathway navigation on the multiple-choice page. */
+.quiz-path-links { display:flex; gap:9px; flex-wrap:wrap; margin:21px 0 0; }
+.quiz-path-links a, .quiz-path-links span { display:inline-flex; padding:8px 12px; border:1px solid var(--border); border-radius:9px; background:var(--card); color:var(--muted); font-weight:650; text-decoration:none; font-size:.82rem; }
+.quiz-path-links span[aria-current=page] { border-color:#8e744b; background:#393325; color:var(--gold); }
+.quiz-path-links a:hover { border-color:var(--gold); color:var(--text); }
+@media(max-width:620px){ .quiz-path-links a,.quiz-path-links span { flex:1; justify-content:center; min-width:110px; } }
