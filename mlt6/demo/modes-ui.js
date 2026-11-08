@@ -19,7 +19,27 @@
     bookmarked: "Return to saved questions and choose which study mode to use."
   };
   const key = "68k:quiz:bookmarks:" + bank.bankId + ":" + bank.version;
-  const progressKey = "68k:mode:" + bank.bankId + ":" + bank.version + ":" + mode + ":" + scope;
+  const directionKey = "68k:quiz:direction:" + bank.bankId + ":" + bank.version;
+  const FORWARD = "term-to-definition";
+  const REVERSE = "definition-to-term";
+  const allowsReverse = bank.questions.every(q =>
+    typeof q.term === "string" && q.term.trim() &&
+    typeof q.definition === "string" && q.definition.trim());
+  let direction = readDirection();
+  function readDirection() {
+    let stored = null;
+    try { stored = JSON.parse(localStorage.getItem(directionKey)); } catch (_) { /* Optional */ }
+    return allowsReverse && stored === REVERSE ? REVERSE : FORWARD;
+  }
+  function getProgressKey() {
+    return "68k:mode:" + bank.bankId + ":" + bank.version + ":" + mode + ":" + scope +
+      (direction === REVERSE ? ":definition-to-term" : "");
+  }
+  function term(q) { return q.term || q.question; }
+  function definition(q) { return q.definition ||
+    q.choices.filter(c => q.correct.includes(c.id)).map(c => c.text).join("; "); }
+  function prompt(q) { return direction === REVERSE ? definition(q) : term(q); }
+  function answer(q) { return direction === REVERSE ? term(q) : definition(q); }
   const validIds = new Set(bank.questions.map(q => q.id));
   const questionMap = Object.fromEntries(bank.questions.map(q => [q.id, q]));
   function read(key) {
@@ -31,13 +51,17 @@
   }
   const storedBookmarks = read(key);
   let bookmarks = new Set(Array.isArray(storedBookmarks) ? storedBookmarks.filter(id => validIds.has(id)) : []);
-  const savedProgress = read(progressKey);
-  let progress = savedProgress && typeof savedProgress === "object" && !Array.isArray(savedProgress) ? savedProgress : {};
-  if (!progress.ratings || typeof progress.ratings !== "object" || Array.isArray(progress.ratings)) progress.ratings = {};
-  if (!progress.drafts || typeof progress.drafts !== "object" || Array.isArray(progress.drafts)) progress.drafts = {};
-  if (!progress.revealed || typeof progress.revealed !== "object" || Array.isArray(progress.revealed)) progress.revealed = {};
-  if (!Number.isInteger(progress.index) || progress.index < 0) progress.index = 0;
-  let flipped = false;
+  function loadProgress() {
+    const saved = read(getProgressKey());
+    const result = saved && typeof saved === "object" && !Array.isArray(saved) ? saved : {};
+    if (!result.ratings || typeof result.ratings !== "object" || Array.isArray(result.ratings)) result.ratings = {};
+    if (!result.drafts || typeof result.drafts !== "object" || Array.isArray(result.drafts)) result.drafts = {};
+    if (!result.revealed || typeof result.revealed !== "object" || Array.isArray(result.revealed)) result.revealed = {};
+    if (!Number.isInteger(result.index) || result.index < 0) result.index = 0;
+    return result;
+  }
+  let progress = loadProgress();
+  let flipped = false, settingsOpen = false;
   function el(tag, css, text) {
     const e = document.createElement(tag);
     if (css) e.className = css;
@@ -55,7 +79,7 @@
     a.href = href;
     return a;
   }
-  function saveProgress() { save(progressKey, progress); }
+  function saveProgress() { save(getProgressKey(), progress); }
   function items() {
     return scope === "bookmarked" ? bank.questions.filter(q => bookmarks.has(q.id)) : bank.questions;
   }
@@ -119,7 +143,7 @@
     card.append(row);
     const tools = el("div", "question-tools");
     tools.append(bookmarkControl(q));
-    card.append(tools, el("h2", "", q.question));
+    card.append(tools, el("h2", "", mode === "flashcards" || mode === "write" ? prompt(q) : q.question));
   }
   function renderReview(q, count) {
     const card = container();
@@ -132,7 +156,7 @@
     const card = container();
     heading(card, q, count);
     const known = progress.ratings[q.id];
-    const flip = btn(flipped ? "Answer: " + answers(q) : "Tap to reveal answer", "flashcard-face", () => {
+    const flip = btn(flipped ? "Answer: " + answer(q) : "Tap to reveal answer", "flashcard-face", () => {
       flipped = !flipped;
       render();
     });
@@ -185,7 +209,7 @@
       }));
       card.append(actions);
     } else {
-      card.append(el("p", "path-answer", "Approved answer: " + answers(q)));
+      card.append(el("p", "path-answer", "Approved answer: " + answer(q)));
       card.append(explanation(q));
       card.append(el("p", "quiet", "Self-assessment only. Different correct wording is possible; this demo does not automatically grade typed answers."));
       const actions = el("div", "path-actions");
@@ -225,6 +249,38 @@
     }
     holder.append(list);
   }
+  function renderDirectionSettings() {
+    const card = container();
+    card.append(el("p", "stage-label", "Study settings"));
+    card.append(el("h2", "", "Term and definition direction"));
+    card.append(el("p", "quiet", "Choose which side appears first. This preference is shared with Multiple Choice, Flashcards, and Write. Each direction remembers its own Flashcards and Write progress."));
+    let choice = direction;
+    const fieldset = el("fieldset", "direction-fieldset");
+    fieldset.append(el("legend", "", "Show first"));
+    for (const [value, text] of [[FORWARD, "Term → Definition"], [REVERSE, "Definition → Term"]]) {
+      const option = el("label", "direction-option");
+      const radio = el("input");
+      radio.type = "radio"; radio.name = "direction"; radio.value = value;
+      radio.checked = choice === value;
+      radio.disabled = value === REVERSE && !allowsReverse;
+      radio.addEventListener("change", function () { if (!radio.disabled) choice = value; });
+      option.append(radio, el("span", "", text));
+      fieldset.append(option);
+    }
+    card.append(fieldset);
+    if (!allowsReverse) card.append(el("p", "quiet", "This question bank needs reviewed term/definition pairs before reverse study is available."));
+    const actions = el("div", "path-actions");
+    actions.append(btn("Cancel", "secondary", () => { settingsOpen = false; render(); }));
+    actions.append(btn("Save direction", "primary", () => {
+      direction = choice;
+      save(directionKey, direction);
+      progress = loadProgress();
+      flipped = false;
+      settingsOpen = false;
+      render();
+    }));
+    card.append(actions);
+  }
   function renderScope() {
     const root = document.getElementById("scope-actions");
     root.replaceChildren();
@@ -240,6 +296,16 @@
     document.getElementById("mode-description").textContent = descriptions[mode];
     document.getElementById("tab-" + mode).setAttribute("aria-current", "page");
     renderScope();
+    const directionButton = document.getElementById("direction-settings");
+    directionButton.hidden = !(mode === "flashcards" || mode === "write");
+    if (mode === "flashcards" || mode === "write") {
+      directionButton.textContent = "Settings · " + (direction === REVERSE ? "Definition → Term" : "Term → Definition");
+    }
+    if (settingsOpen) {
+      document.getElementById("mode-status").textContent = "Choose study direction";
+      renderDirectionSettings();
+      return;
+    }
     if (mode === "bookmarked") {
       document.getElementById("mode-status").textContent = bookmarks.size + " saved questions";
       renderBookmarked();
@@ -257,11 +323,17 @@
     const done = list.filter(q => progress.ratings[q.id] === "know" || progress.ratings[q.id] === "miss").length;
     document.getElementById("mode-status").textContent = mode === "review" ?
       "Question " + (progress.index + 1) + " of " + list.length :
+      (direction === REVERSE ? "Definition → Term · " : "Term → Definition · ") +
       done + " of " + list.length + " rated · " + list.filter(q => progress.ratings[q.id] === "know").length + " known";
     const current = list[progress.index];
     if (mode === "review") renderReview(current, list.length);
     if (mode === "flashcards") renderFlashcard(current, list.length);
     if (mode === "write") renderWrite(current, list.length);
   }
+  document.getElementById("direction-settings").addEventListener("click", function () {
+    if (mode !== "flashcards" && mode !== "write") return;
+    settingsOpen = !settingsOpen;
+    render();
+  });
   render();
 })();
