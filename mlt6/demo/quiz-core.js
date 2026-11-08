@@ -24,6 +24,16 @@
       const choices = q.choices.map(c => c.id);
       if (new Set(choices).size !== 4 || q.choices.some(c => !c.text || !c.id)) throw new Error('Invalid answer choice: ' + q.id);
       if (!Array.isArray(q.correct) || q.correct.length < (q.type === 'multi' ? 2 : 1) || (q.type === 'single' && q.correct.length !== 1) || new Set(q.correct).size !== q.correct.length || q.correct.some(id => !choices.includes(id))) throw new Error('Invalid answer key: ' + q.id);
+      // Source fields are optional for the feature-test bank. Verified course banks can provide these.
+      if (q.explanation !== undefined) {
+        const ex = q.explanation;
+        if (!ex || typeof ex.summary !== 'string' || !ex.summary.trim() ||
+            (ex.pageNumber != null && !['string', 'number'].includes(typeof ex.pageNumber)) ||
+            (ex.sourceName != null && typeof ex.sourceName !== 'string') ||
+            (ex.directQuote != null && typeof ex.directQuote !== 'string')) {
+          throw new Error('Invalid explanation or source fields: ' + q.id);
+        }
+      }
     }
     return true;
   }
@@ -45,7 +55,7 @@
       stage: 'new', order: randomize(bank.questions.map(q => q.id)),
       newIndex: 0, reviewQueue: [], reviewIndex: 0,
       unresolved: [], mastered: [], firstMissed: [], firstCorrect: 0,
-      reviewAttempts: 0, optionOrder: [], response: null, missedHistory: []
+      reviewAttempts: 0, optionOrder: [], response: null, missedHistory: [], firstAttempts: {}
     };
     freshOptionOrder(state, bank);
     return state;
@@ -79,6 +89,30 @@
       if (!q || !Array.isArray(candidate.optionOrder) || candidate.optionOrder.length !== 4 || new Set(candidate.optionOrder).size !== 4 || candidate.optionOrder.some(id => !q.choices.some(c => c.id === id))) return null;
       if (candidate.response && (!Array.isArray(candidate.response.selected) || candidate.response.selected.some(id => !q.choices.some(c => c.id === id)))) return null;
     }
+    // Upgrade a previously saved demo session without erasing quiz progress.
+    // Old sessions stored incorrect attempts but did not preserve every first choice.
+    if (candidate.firstAttempts === undefined) candidate.firstAttempts = {};
+    if (!candidate.firstAttempts || typeof candidate.firstAttempts !== 'object' || Array.isArray(candidate.firstAttempts)) return null;
+    const results = candidate.firstAttempts;
+    const knownQuestions = indexBank(bank);
+    for (const [id, attempt] of Object.entries(results)) {
+      const question = knownQuestions[id];
+      if (!question || !attempt || typeof attempt.correct !== 'boolean' ||
+          (attempt.selected !== null && (!Array.isArray(attempt.selected) ||
+            new Set(attempt.selected).size !== attempt.selected.length ||
+            attempt.selected.some(choice => !question.choices.some(c => c.id === choice))))) return null;
+    }
+    const seen = candidate.order.slice(0, candidate.newIndex);
+    if (candidate.stage === 'new' && candidate.response) seen.push(candidate.order[candidate.newIndex]);
+    for (const id of seen) {
+      if (results[id]) continue;
+      const wasWrong = candidate.firstMissed.includes(id);
+      const oldMiss = candidate.missedHistory.find(entry => entry.questionId === id && entry.phase === 'new');
+      results[id] = {
+        correct: !wasWrong,
+        selected: wasWrong ? (oldMiss ? [...oldMiss.selected] : null) : [...knownQuestions[id].correct]
+      };
+    }
     return candidate;
   }
   function isCorrect(q, chosen) {
@@ -90,6 +124,8 @@
     if (!q || !Array.isArray(selected) || selected.length < 1 || (q.type === 'single' && selected.length !== 1) || new Set(selected).size !== selected.length || selected.some(id => !q.choices.some(c => c.id === id))) throw new Error('Please select a valid answer.');
     const correct = isCorrect(q, selected);
     if (state.stage === 'new') {
+      if (!state.firstAttempts) state.firstAttempts = {};
+      state.firstAttempts[q.id] = { correct, selected: [...selected] };
       if (correct) {
         state.firstCorrect += 1;
         if (!state.mastered.includes(q.id)) state.mastered.push(q.id);
@@ -157,6 +193,21 @@
       };
     });
   }
+  function questionReport(state, bank) {
+    const indexed = indexBank(bank);
+    return state.order.map((id, index) => {
+      const q = indexed[id];
+      const attempt = state.firstAttempts && state.firstAttempts[id];
+      return {
+        number: index + 1,
+        question: q,
+        firstCorrect: attempt ? attempt.correct : null,
+        firstSelection: attempt && attempt.selected ? [...attempt.selected] : null,
+        mastered: state.mastered.includes(id),
+        unresolved: state.unresolved.includes(id)
+      };
+    });
+  }
   function answeredNew(state) { return state.newIndex + (state.stage === 'new' && state.response ? 1 : 0); }
   function summary(state, bank) {
     const attempted = answeredNew(state);
@@ -170,5 +221,5 @@
       reviewAttempts: state.reviewAttempts
     };
   }
-  return { ROUND_SIZE, validateBank, startSession, restoreSession, currentQuestion, submit, advance, beginReview, summary, answeredNew, getMissedHistory };
+  return { ROUND_SIZE, validateBank, startSession, restoreSession, currentQuestion, submit, advance, beginReview, summary, answeredNew, getMissedHistory, questionReport };
 });
