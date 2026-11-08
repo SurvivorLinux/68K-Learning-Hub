@@ -6,7 +6,7 @@
   const examCore = window.ExamCore;
   const root = document.getElementById('exam-root');
   if (!bank || !quizCore || !examCore || !root) {
-    if (root) root.textContent = 'Unable to load Exam Mode.';
+    if (root) root.textContent = (window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.message) || 'Unable to load Exam Mode.';
     return;
   }
   const examKey = '68k:exam:session:' + bank.bankId + ':' + bank.version;
