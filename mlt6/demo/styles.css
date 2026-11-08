@@ -42,3 +42,36 @@
 .source-reference { color: var(--muted); font-size: .85rem; margin: 0 0 8px; }
 .source-quote { color: var(--text); margin: 9px 0 0; padding: 12px 16px; background: #24282d; border-left: 3px solid var(--gold); font-size: .88rem; font-style: italic; overflow-wrap: anywhere; }
 @media (max-width: 620px) { .result-marker { gap: 7px; } .result-number { width: 100%; } .result-badge { font-size: .67rem; } }
+
+/* Focused practice, persistent bookmarks, and unobtrusive study settings */
+.study-toolbar { display: flex; gap: 13px; flex-wrap: wrap; align-items: center; margin: 21px 0 8px; }
+.session-mode { font-size: .83rem; color: var(--gold); font-weight: 700; margin-right: auto; }
+.bookmark-count { color: var(--muted); font-size: .82rem; }
+.settings-button { padding: 8px 14px; min-height: 40px; white-space: nowrap; }
+.settings-notice { margin: 5px 0 0; min-height: 1.2em; color: var(--green); font-size: .81rem; }
+.checkpoint-note { color: var(--muted); font-size: .88rem; }
+.question-tools { display: flex; justify-content: flex-end; margin: 2px 0 -7px; }
+.bookmark-toggle { font: inherit; font-size: .79rem; border: 1px solid var(--border); border-radius: 8px; color: var(--muted); background: #292d32; min-height: 35px; padding: 5px 11px; cursor: pointer; white-space: nowrap; }
+.bookmark-toggle:hover { color: var(--gold); border-color: var(--gold); }
+.bookmark-toggle.is-bookmarked { color: var(--gold); border-color: #856c44; background: #3a3327; }
+.history-panel > .bookmark-toggle { margin-bottom: 15px; }
+.result-marker .bookmark-toggle { margin-left: auto; }
+.practice-options { border-top: 1px solid var(--border); margin-top: 24px; padding-top: 22px; }
+.practice-options h3 { margin: 0 0 7px; font-size: 1.15rem; }
+.practice-options p { color: var(--muted); font-size: .88rem; margin-bottom: 16px; }
+.practice-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.practice-actions .secondary { min-height: 48px; }
+.settings-fieldset { padding: 16px; margin: 16px 0 20px; border: 1px solid var(--border); border-radius: 12px; }
+.settings-fieldset legend { font-weight: 700; font-size: .91rem; padding: 0 8px; }
+.setting-option { display: flex; align-items: center; gap: 12px; padding: 11px; border-radius: 9px; cursor: pointer; }
+.setting-option:hover { background: #30373e; }
+.setting-option input { width: 18px; height: 18px; accent-color: var(--gold); flex: 0 0 auto; }
+.settings-description { color: var(--muted); font-size: .9rem; }
+.shuffle-option { margin-bottom: 12px; border: 1px solid var(--border); border-radius: 10px; }
+@media(max-width:620px) {
+  .study-toolbar { gap: 9px; }
+  .settings-button { width: 100%; }
+  .session-mode { width: 100%; }
+  .result-marker .bookmark-toggle { margin-left: 0; }
+  .practice-actions .secondary { width: 100%; }
+}
