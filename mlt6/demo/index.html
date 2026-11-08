@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16191d">
+  <title>MLT 6 | Modern Multiple Choice Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <div class="brand"><a href="../../index.html" class="logo" aria-label="68K Learning Hub home">68K</a><span>Learning Hub <small>Demo quiz engine</small></span></div>
+      <span class="demo-pill">LIVE DEMO</span>
+    </div>
+  </header>
+  <main class="shell">
+    <nav class="crumb" aria-label="Breadcrumb"><a href="../../index.html#mlt6">MLT 6</a> <span aria-hidden="true">/</span> <a href="../study.html?test=23">Test23: ABO</a> <span aria-hidden="true">/</span> Multiple Choice</nav>
+    <section class="intro">
+      <p class="eyebrow">Prototype · Test23: ABO</p>
+      <h1>Multiple Choice</h1>
+      <p>One question at a time. Every ten new questions, you'll review anything you missed before continuing.</p>
+    </section>
+    <aside class="notice" role="note"><strong>Demonstration questions only.</strong> These were authored for testing the interface and review cycle. They were <strong>not</strong> extracted from your future photos, Quizlet, or validated course notes.</aside>
+    <section class="scoreboard" aria-label="Quiz progress">
+      <div class="progress-label"><strong id="progress-text">0 of 25 new questions</strong><span id="phase-status">Learning round</span></div>
+      <div id="progress-track" class="progress-track" role="progressbar" aria-label="New questions completed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="metrics"><span>First-attempt accuracy <strong id="accuracy">—</strong></span><span>Mastered <strong id="mastered">0</strong></span><span>Unresolved <strong id="unresolved">0</strong></span></div>
+    </section>
+    <div id="app" aria-live="polite"></div>
+    <div class="bottom-actions"><button type="button" id="restart" class="text-button">Start over</button><span id="storage-note" class="quiet">Progress saves automatically in this browser.</span></div>
+  </main>
+  <script src="banks/test23-demo.js"></script>
+  <script src="quiz-core.js"></script>
+  <script src="quiz-ui.js"></script>
+</body>
+</html>
