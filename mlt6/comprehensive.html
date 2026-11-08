@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14171b">
+  <title>MLT 6 · All-Chapters Comprehensive | 68K Learning Hub</title>
+  <link rel="stylesheet" href="../hub.css?v=chapters-v9">
+  <script src="tests.js" defer></script>
+  <script src="banks/approved-banks.js" defer></script>
+  <script src="banks/scope-loader.js" defer></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      const status = window.MLT6_COMPREHENSIVE_STATUS;
+      const order = window.MLT6_CHAPTER_ORDER || [];
+      const entries = window.MLT6_TESTS || {};
+      const readySet = new Set(status.readyChapters);
+      const label = document.getElementById("readiness-label");
+      label.textContent = status.ready ?
+        "Ready · " + status.questionCount + " verified questions across " + status.chapterCount + " chapters." :
+        status.readyChapters.length + " of " + status.chapterCount + " chapter banks verified.";
+      const list = document.getElementById("chapter-readiness");
+      for (const id of order) {
+        const item = document.createElement("li");
+        const name = entries[id] ? entries[id].chapterTitle : "Chapter " + id;
+        const isInvalid = status.invalid.includes(id);
+        item.textContent = name + " (legacy Test" + id + ") — " +
+          (readySet.has(id) ? "Verified" : isInvalid ? "Needs correction" : "Awaiting verified course bank");
+        item.className = readySet.has(id) ? "chapter-ready" : "chapter-pending";
+        list.append(item);
+      }
+      const note = document.getElementById("comprehensive-note");
+      note.textContent = status.ready ?
+        "The comprehensive is assembled from the approved chapter banks in original chapter and textbook order. It is not authored as a separate question set. You can optionally shuffle when starting a quiz or exam." :
+        "The comprehensive will be available only after every listed chapter has a verified course question bank. The 25 easy Test23 demo questions are excluded. You can continue to study available chapters or use the original legacy tests.";
+      for (const card of document.querySelectorAll("[data-comprehensive-mode]")) {
+        if (status.ready) {
+          card.querySelector(".mode-action").textContent = "Open comprehensive →";
+        } else {
+          card.removeAttribute("href");
+          card.setAttribute("aria-disabled", "true");
+          card.classList.add("mode-card-disabled");
+          card.querySelector(".mode-action").textContent = "Awaiting chapter banks";
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header wrap">
+    <a href="../index.html" class="brand-lockup" aria-label="68K Learning Hub home">
+      <span class="brand-mark" aria-hidden="true">68K</span>
+      <span class="brand-name">68K Learning Hub</span>
+    </a>
+    <span class="phase-tag">MLT 6</span>
+  </header>
+  <main id="content" class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">68K Learning Hub</a><span aria-hidden="true">/</span>
+      <a href="../index.html#mlt6">MLT 6</a><span aria-hidden="true">/</span>
+      All-Chapters Comprehensive
+    </nav>
+    <section class="page-heading">
+      <p class="eyebrow">Optional · All chapters</p>
+      <h1>MLT 6 Comprehensive</h1>
+      <p class="lead">Study all chapters in one continuous question set, or return to an individual chapter. The same verified questions are reused without creating duplicates.</p>
+    </section>
+    <section class="surface-panel comprehensive-status" aria-labelledby="readiness-title">
+      <p class="eyebrow">Chapter-bank readiness</p>
+      <h2 id="readiness-title">Available material</h2>
+      <p id="readiness-label" role="status" aria-live="polite">Checking chapter banks…</p>
+      <ul id="chapter-readiness" class="chapter-readiness"></ul>
+      <p id="comprehensive-note" class="muted"></p>
+    </section>
+    <section class="comprehensive-choices" aria-labelledby="choose-mode">
+      <h2 id="choose-mode">Comprehensive study pathways</h2>
+      <div class="mode-grid" aria-label="All-chapters study modes">
+        <a class="mode-card" data-comprehensive-mode="multiple-choice" href="demo/index.html?bank=unit&v=chapters-v9">
+          <span class="mode-icon" aria-hidden="true">01</span>
+          <span><span class="mode-title">Multiple Choice</span><span class="mode-desc">Practice every chapter with instant feedback and required missed-question reviews.</span></span>
+          <span class="mode-action">Check availability</span>
+        </a>
+        <a class="mode-card" data-comprehensive-mode="exam" href="demo/exam.html?bank=unit&v=chapters-v9">
+          <span class="mode-icon" aria-hidden="true">02</span>
+          <span><span class="mode-title">Exam Mode</span><span class="mode-desc">Take a whole-unit exam and review answers only after submitting.</span></span>
+          <span class="mode-action">Check availability</span>
+        </a>
+        <a class="mode-card" data-comprehensive-mode="review" href="demo/modes.html?mode=review&bank=unit&v=chapters-v9">
+          <span class="mode-icon" aria-hidden="true">03</span>
+          <span><span class="mode-title">Review</span><span class="mode-desc">Follow the complete chapter/source sequence with verified explanations.</span></span>
+          <span class="mode-action">Check availability</span>
+        </a>
+        <a class="mode-card" data-comprehensive-mode="flashcards" href="demo/modes.html?mode=flashcards&bank=unit&v=chapters-v9">
+          <span class="mode-icon" aria-hidden="true">04</span>
+          <span><span class="mode-title">Flashcards</span><span class="mode-desc">Practice all chapters as flashcards.</span></span>
+          <span class="mode-action">Check availability</span>
+        </a>
+        <a class="mode-card" data-comprehensive-mode="write" href="demo/modes.html?mode=write&bank=unit&v=chapters-v9">
+          <span class="mode-icon" aria-hidden="true">05</span>
+          <span><span class="mode-title">Write</span><span class="mode-desc">Recall responses from memory and self-assess.</span></span>
+          <span class="mode-action">Check availability</span>
+        </a>
+        <a class="mode-card" data-comprehensive-mode="bookmarked" href="demo/modes.html?mode=bookmarked&bank=unit&v=chapters-v9">
+          <span class="mode-icon" aria-hidden="true">06</span>
+          <span><span class="mode-title">Bookmarked Questions</span><span class="mode-desc">Revisit saved questions from the comprehensive bank.</span></span>
+          <span class="mode-action">Check availability</span>
+        </a>
+      </div>
+    </section>
+    <div class="page-actions"><a class="back-link" href="../index.html#mlt6">← Back to MLT 6 chapters</a></div>
+    <noscript><p class="lead">JavaScript is required to check which comprehensive question banks are available.</p></noscript>
+  </main>
+  <footer class="site-footer wrap">68K Learning Hub · MLT 6 comprehensive</footer>
+</body>
+</html>
