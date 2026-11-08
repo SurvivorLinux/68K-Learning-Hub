@@ -45,7 +45,7 @@
       stage: 'new', order: randomize(bank.questions.map(q => q.id)),
       newIndex: 0, reviewQueue: [], reviewIndex: 0,
       unresolved: [], mastered: [], firstMissed: [], firstCorrect: 0,
-      reviewAttempts: 0, optionOrder: [], response: null
+      reviewAttempts: 0, optionOrder: [], response: null, missedHistory: []
     };
     freshOptionOrder(state, bank);
     return state;
@@ -59,6 +59,20 @@
     if (!Number.isInteger(candidate.newIndex) || candidate.newIndex < 0 || candidate.newIndex > ids.length || !Number.isInteger(candidate.reviewIndex) || candidate.reviewIndex < 0 || !Array.isArray(candidate.reviewQueue) || candidate.reviewIndex > candidate.reviewQueue.length) return null;
     for (const key of ['unresolved', 'mastered', 'firstMissed', 'reviewQueue']) if (!Array.isArray(candidate[key]) || candidate[key].some(id => !allIDs.has(id))) return null;
     if (!Number.isInteger(candidate.firstCorrect) || candidate.firstCorrect < 0 || candidate.firstCorrect > ids.length || !Number.isInteger(candidate.reviewAttempts) || candidate.reviewAttempts < 0) return null;
+    // Existing browser sessions predate saved answer snapshots; keep their progress.
+    if (candidate.missedHistory === undefined) candidate.missedHistory = [];
+    if (!Array.isArray(candidate.missedHistory)) return null;
+    const indexed = indexBank(bank);
+    for (const miss of candidate.missedHistory) {
+      const q = miss && indexed[miss.questionId];
+      if (!q || !['new', 'review'].includes(miss.phase) ||
+          !Array.isArray(miss.selected) || miss.selected.length === 0 ||
+          !Array.isArray(miss.optionOrder) || miss.optionOrder.length !== 4 ||
+          new Set(miss.optionOrder).size !== 4 ||
+          miss.optionOrder.some(id => !q.choices.some(c => c.id === id)) ||
+          new Set(miss.selected).size !== miss.selected.length ||
+          miss.selected.some(id => !q.choices.some(c => c.id === id))) return null;
+    }
     if ((candidate.stage === 'new' && candidate.newIndex >= ids.length) || (candidate.stage === 'review' && candidate.reviewIndex >= candidate.reviewQueue.length)) return null;
     if (candidate.stage === 'new' || candidate.stage === 'review') {
       const q = currentQuestion(candidate, bank);
@@ -89,6 +103,14 @@
         state.unresolved = state.unresolved.filter(id => id !== q.id);
         if (!state.mastered.includes(q.id)) state.mastered.push(q.id);
       }
+    }
+    if (!correct) {
+      state.missedHistory.push({
+        questionId: q.id,
+        phase: state.stage,
+        selected: [...selected],
+        optionOrder: [...state.optionOrder]
+      });
     }
     state.response = { selected: [...selected], correct };
     return correct;
@@ -122,6 +144,19 @@
     state.stage = 'review';
     freshOptionOrder(state, bank);
   }
+  function getMissedHistory(state, bank) {
+    const indexed = indexBank(bank);
+    return [...new Set(state.firstMissed)].filter(id => Boolean(indexed[id])).map(id => {
+      // Show the most recent incorrect submission while preserving earlier scores.
+      const latestMiss = [...(state.missedHistory || [])].reverse().find(entry => entry.questionId === id);
+      return {
+        question: indexed[id],
+        selected: latestMiss ? [...latestMiss.selected] : null,
+        optionOrder: latestMiss ? [...latestMiss.optionOrder] : indexed[id].choices.map(c => c.id),
+        unresolved: state.unresolved.includes(id)
+      };
+    });
+  }
   function answeredNew(state) { return state.newIndex + (state.stage === 'new' && state.response ? 1 : 0); }
   function summary(state, bank) {
     const attempted = answeredNew(state);
@@ -135,5 +170,5 @@
       reviewAttempts: state.reviewAttempts
     };
   }
-  return { ROUND_SIZE, validateBank, startSession, restoreSession, currentQuestion, submit, advance, beginReview, summary, answeredNew };
+  return { ROUND_SIZE, validateBank, startSession, restoreSession, currentQuestion, submit, advance, beginReview, summary, answeredNew, getMissedHistory };
 });
