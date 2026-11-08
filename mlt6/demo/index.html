@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#16191d">
   <title>MLT 6 | Easy Multiple Choice Feature Demo</title>
-  <link rel="stylesheet" href="styles.css?v=results-v3">
+  <link rel="stylesheet" href="styles.css?v=focused-v4">
 </head>
 <body>
   <header class="site-header">
@@ -19,9 +19,16 @@
     <section class="intro">
       <p class="eyebrow">Prototype · Test23: ABO · Easy test questions</p>
       <h1>Multiple Choice</h1>
-      <p>Try 25 very easy everyday questions to test the platform. Every ten new questions, you'll review anything you missed before continuing. Intentionally choose a wrong answer to test the missed-question history and required reviews.</p>
+      <p>Try 25 very easy everyday questions to test the platform. Intentionally choose a wrong answer to test the missed-question history and required reviews.</p>
+      <p id="checkpoint-note" class="checkpoint-note">Required review every 10 new questions when you have misses.</p>
     </section>
     <aside class="notice" role="note"><strong>Easy feature-test questions only.</strong> These are everyday questions, <strong>not</strong> ABO or medical course questions. Choose the correct answers for an easy run, or intentionally miss a few to test read-only swipe history and mandatory review checkpoints. This updated question bank starts a new demo session.</aside>
+    <div class="study-toolbar" aria-label="Study controls">
+      <span class="session-mode" id="active-mode">Full question bank</span>
+      <span class="bookmark-count" id="bookmark-count">0 bookmarked</span>
+      <button type="button" id="settings" class="secondary settings-button">⚙ Study settings</button>
+    </div>
+    <p id="settings-message" class="settings-notice" role="status" aria-live="polite"></p>
     <section class="scoreboard" aria-label="Quiz progress">
       <div class="progress-label"><strong id="progress-text">0 of 25 new questions</strong><span id="phase-status">Learning round</span></div>
       <div id="progress-track" class="progress-track" role="progressbar" aria-label="New questions completed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progress-fill"></div></div>
@@ -31,7 +38,7 @@
     <div class="bottom-actions"><button type="button" id="restart" class="text-button">Start over</button><span id="storage-note" class="quiet">Progress saves automatically in this browser.</span></div>
   </main>
   <script src="banks/test23-demo.js?v=results-v3"></script>
-  <script src="quiz-core.js?v=results-v3"></script>
-  <script src="quiz-ui.js?v=results-v3"></script>
+  <script src="quiz-core.js?v=focused-v4"></script>
+  <script src="quiz-ui.js?v=focused-v4"></script>
 </body>
 </html>
