@@ -175,6 +175,7 @@
     document.getElementById('phase-status').textContent = (sessionMode === 'main' ? '' :
       sessionMode === 'missed' ? 'Missed practice · ' : 'Bookmarked practice · ') + phase;
     document.getElementById('bookmark-count').textContent = bookmarks.size + ' bookmarked';
+    document.getElementById('return-full').hidden = sessionMode === 'main';
     document.getElementById('active-mode').textContent = sessionMode === 'main' ? 'Full question bank' :
       sessionMode === 'missed' ? 'Practicing missed questions' : 'Practicing bookmarks';
     document.getElementById('checkpoint-note').textContent =
@@ -458,5 +459,6 @@
   }
   document.getElementById('restart').addEventListener('click',reset);
   document.getElementById('settings').addEventListener('click',openSettings);
+  document.getElementById('return-full').addEventListener('click',returnToFull);
   save();render();
 })();
