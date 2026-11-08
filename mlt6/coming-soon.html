@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#14171b">
   <title>Coming Soon | 68K Learning Hub</title>
   <link rel="stylesheet" href="../hub.css">
-  <script src="tests.js" defer></script>
+  <script src="tests.js?v=units-v10" defer></script>
   <script defer>
     document.addEventListener("DOMContentLoaded", function () {
       const params = new URLSearchParams(window.location.search);
@@ -19,12 +19,12 @@
         document.getElementById("invalid-selection").hidden = false;
         return;
       }
-      document.title = modeName + " · " + test.label + " | 68K Learning Hub";
+      document.title = modeName + " · " + test.legacyLabel || test.title + " | 68K Learning Hub";
       document.getElementById("test-breadcrumb").textContent = test.label;
       document.getElementById("mode-breadcrumb").textContent = modeName;
       document.getElementById("mode-name").textContent = modeName;
       document.getElementById("test-name").textContent = test.label;
-      document.getElementById("back-to-test").href = "study.html?test=" + encodeURIComponent(id);
+      document.getElementById("back-to-test").href = "study.html?unit=" + encodeURIComponent(id);
       document.getElementById("placeholder-content").hidden = false;
     });
   </script>
@@ -50,19 +50,19 @@
         <p id="mode-name" class="eyebrow">Study option</p>
         <h1>Coming Soon.</h1>
         <p><strong id="test-name"></strong></p>
-        <p>This study pathway will be available once a verified question bank is added for this test. The original multiple-choice quiz is still accessible from its test page.</p>
+        <p>This study pathway will be available once a verified question bank is added for this textbook lesson. Your original multiple-choice quiz remains accessible on the study-unit page.</p>
         <div class="page-actions">
-          <a id="back-to-test" class="back-link" href="../index.html#mlt6">← Back to test</a>
+          <a id="back-to-test" class="back-link" href="../index.html#mlt6">← Back to study unit</a>
           <a class="back-link" href="../index.html#mlt6">Back to MLT 6</a>
         </div>
       </div>
     </section>
     <section id="invalid-selection" class="page-heading" hidden>
       <h1>Study option not found</h1>
-      <p class="lead">Choose an available MLT 6 test and study option.</p>
+      <p class="lead">Choose a study unit and then an individual textbook lesson.</p>
       <div class="page-actions"><a class="back-link" href="../index.html#mlt6">← Back to MLT 6</a></div>
     </section>
-    <noscript><p class="lead">Enable JavaScript to view this test-specific placeholder.</p></noscript>
+    <noscript><p class="lead">Enable JavaScript to view this study-unit placeholder.</p></noscript>
   </main>
   <footer class="site-footer wrap">68K Learning Hub · MLT 6 foundation</footer>
 </body>
