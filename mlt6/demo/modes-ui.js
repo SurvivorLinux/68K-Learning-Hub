@@ -254,7 +254,10 @@
     links.append(link("Review", "modes.html?mode=review&scope=bookmarked&v=units-v10", "secondary path-link"));
     links.append(link("Flashcards", "modes.html?mode=flashcards&scope=bookmarked&v=units-v10", "secondary path-link"));
     links.append(link("Write", "modes.html?mode=write&scope=bookmarked&v=units-v10", "secondary path-link"));
-    links.append(link("Exam Mode", "exam.html?v=units-v10", "secondary path-link"));
+    // Only All Bookmarks is already a subset bank. A lesson/comprehensive
+    // Exam Mode would otherwise silently include unbookmarked questions.
+    if (window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.kind === "all-bookmarks")
+      links.append(link("Exam Mode", "exam.html?v=units-v10", "secondary path-link"));
     holder.append(links);
     const list = el("div", "bookmark-list");
     for (const q of chosen) {
