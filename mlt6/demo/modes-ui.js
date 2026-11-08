@@ -49,8 +49,10 @@
     try { localStorage.setItem(key, JSON.stringify(value)); }
     catch (_) { document.getElementById("mode-storage-note").textContent = "Browser storage is unavailable; changes may not persist."; }
   }
+  const sharedBookmarks = window.MLT6Bookmarks;
   const storedBookmarks = read(key);
-  let bookmarks = new Set(Array.isArray(storedBookmarks) ? storedBookmarks.filter(id => validIds.has(id)) : []);
+  let bookmarks = sharedBookmarks ? sharedBookmarks.list(bank) :
+    new Set(Array.isArray(storedBookmarks) ? storedBookmarks.filter(id => validIds.has(id)) : []);
   function loadProgress() {
     const saved = read(getProgressKey());
     const result = saved && typeof saved === "object" && !Array.isArray(saved) ? saved : {};
@@ -78,11 +80,9 @@
     const a = el("a", css, label);
     const scope = window.MLT6_SCOPE_SUFFIX;
     if (scope) {
-      const split = scope.indexOf("=");
-      const key = scope.slice(0, split);
-      const value = decodeURIComponent(scope.slice(split + 1));
       const address = new URL(href, window.location.href);
-      address.searchParams.set(key, value);
+      for (const [key, value] of new URLSearchParams(scope))
+        address.searchParams.set(key, value);
       a.href = address.href;
     } else a.href = href;
     return a;
@@ -93,9 +93,14 @@
   }
   function toggleBookmark(id) {
     if (!validIds.has(id)) return;
-    if (bookmarks.has(id)) bookmarks.delete(id);
-    else bookmarks.add(id);
-    save(key, [...bookmarks]);
+    if (sharedBookmarks) {
+      sharedBookmarks.toggle(bank, id);
+      bookmarks = sharedBookmarks.list(bank);
+    } else {
+      if (bookmarks.has(id)) bookmarks.delete(id);
+      else bookmarks.add(id);
+      save(key, [...bookmarks]);
+    }
     flipped = false;
     render();
   }
@@ -149,7 +154,8 @@
     const row = el("div", "question-marker");
     row.append(el("span", "stage-label", title[mode]), el("span", "counter", "Question " + (progress.index + 1) + " of " + count));
     card.append(row);
-    if (q.chapterTitle && window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.kind === "unit")
+    if (q.chapterTitle && window.MLT6_BANK_CONTEXT &&
+        ["comprehensive", "all-bookmarks"].includes(window.MLT6_BANK_CONTEXT.kind))
       card.append(el("p", "chapter-origin", "Chapter: " + q.chapterTitle));
     const tools = el("div", "question-tools");
     tools.append(bookmarkControl(q));
@@ -237,23 +243,25 @@
     if (!chosen.length) {
       holder.append(el("p", "quiet", "Nothing bookmarked yet. Save difficult questions while using Multiple Choice, Review, Flashcards, or Write."));
       const links = el("div", "path-actions");
-      links.append(link("Browse all questions in Review", "modes.html?mode=review&v=chapters-v9", "secondary path-link"));
-      links.append(link("Open Multiple Choice", "index.html?v=chapters-v9", "secondary path-link"));
+      links.append(link("Browse all questions in Review", "modes.html?mode=review&v=units-v10", "secondary path-link"));
+      links.append(link("Open Multiple Choice", "index.html?v=units-v10", "secondary path-link"));
       holder.append(links);
       return;
     }
-    holder.append(el("p", "quiet", "These bookmarks are shared by every mode for this test and are saved in this browser."));
+    holder.append(el("p", "quiet", "Saved questions are shared with their original lesson, comprehensive and unit All Bookmarks, without duplicates. Bookmarks are saved on this device."));
     const links = el("div", "bookmarked-links");
-    links.append(link("Multiple Choice", "index.html?practice=bookmarks&v=chapters-v9", "secondary path-link"));
-    links.append(link("Review", "modes.html?mode=review&scope=bookmarked&v=chapters-v9", "secondary path-link"));
-    links.append(link("Flashcards", "modes.html?mode=flashcards&scope=bookmarked&v=chapters-v9", "secondary path-link"));
-    links.append(link("Write", "modes.html?mode=write&scope=bookmarked&v=chapters-v9", "secondary path-link"));
+    links.append(link("Multiple Choice", "index.html?practice=bookmarks&v=units-v10", "secondary path-link"));
+    links.append(link("Review", "modes.html?mode=review&scope=bookmarked&v=units-v10", "secondary path-link"));
+    links.append(link("Flashcards", "modes.html?mode=flashcards&scope=bookmarked&v=units-v10", "secondary path-link"));
+    links.append(link("Write", "modes.html?mode=write&scope=bookmarked&v=units-v10", "secondary path-link"));
+    links.append(link("Exam Mode", "exam.html?v=units-v10", "secondary path-link"));
     holder.append(links);
     const list = el("div", "bookmark-list");
     for (const q of chosen) {
       const item = el("article", "bookmark-item");
       const header = el("div", "bookmark-item-header");
       header.append(el("strong", "", q.question), bookmarkControl(q));
+      if (q.chapterTitle) item.append(el("p", "chapter-origin", q.chapterTitle));
       item.append(header, el("p", "quiet", "Answer: " + answers(q)));
       list.append(item);
     }
@@ -295,12 +303,14 @@
     const root = document.getElementById("scope-actions");
     root.replaceChildren();
     if (mode === "bookmarked") return;
-    root.append(link("All questions", "modes.html?mode=" + mode + "&v=chapters-v9", "scope-link" + (scope === "all" ? " active" : "")));
-    root.append(link("Bookmarked only", "modes.html?mode=" + mode + "&scope=bookmarked&v=chapters-v9", "scope-link" + (scope === "bookmarked" ? " active" : "")));
+    root.append(link("All questions", "modes.html?mode=" + mode + "&v=units-v10", "scope-link" + (scope === "all" ? " active" : "")));
+    root.append(link("Bookmarked only", "modes.html?mode=" + mode + "&scope=bookmarked&v=units-v10", "scope-link" + (scope === "bookmarked" ? " active" : "")));
   }
   function render() {
     const list = items();
-    document.title = title[mode] + " | Test23 | 68K Learning Hub";
+    document.title = title[mode] + " | " +
+      (window.MLT6_BANK_CONTEXT ? window.MLT6_BANK_CONTEXT.title : "Test23 demo") +
+      " | 68K Learning Hub";
     document.getElementById("crumb-mode").textContent = title[mode];
     document.getElementById("mode-title").textContent = title[mode];
     document.getElementById("mode-description").textContent = descriptions[mode];
@@ -326,7 +336,7 @@
       const card = container();
       card.append(el("h2", "", "No bookmarked questions yet"));
       card.append(el("p", "quiet", "Bookmark a question in any study mode, then return here."));
-      card.append(link("Browse all " + title[mode] + " questions", "modes.html?mode=" + mode + "&v=chapters-v9", "secondary path-link"));
+      card.append(link("Browse all " + title[mode] + " questions", "modes.html?mode=" + mode + "&v=units-v10", "secondary path-link"));
       return;
     }
     progress.index = Math.min(progress.index, list.length - 1);
