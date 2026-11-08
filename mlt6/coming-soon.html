@@ -14,7 +14,7 @@
       const mode = params.get("mode");
       const test = Object.prototype.hasOwnProperty.call(window.MLT6_TESTS || {}, id)
         ? window.MLT6_TESTS[id] : null;
-      const modeName = mode === "review" ? "Review" : mode === "flashcards" ? "Flashcards" : null;
+      const modeName = ({ review: "Review", flashcards: "Flashcards", write: "Write", bookmarked: "Bookmarked Questions" })[mode] || null;
       if (!test || !modeName) {
         document.getElementById("invalid-selection").hidden = false;
         return;
@@ -50,7 +50,7 @@
         <p id="mode-name" class="eyebrow">Study option</p>
         <h1>Coming Soon.</h1>
         <p><strong id="test-name"></strong></p>
-        <p>This study option is planned for a future phase. The original multiple-choice quiz remains available from the test selection page.</p>
+        <p>This study pathway will be available once a verified question bank is added for this test. The original multiple-choice quiz is still accessible from its test page.</p>
         <div class="page-actions">
           <a id="back-to-test" class="back-link" href="../index.html#mlt6">← Back to test</a>
           <a class="back-link" href="../index.html#mlt6">Back to MLT 6</a>
