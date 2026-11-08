@@ -190,6 +190,39 @@
     try { core.submit(state, bank, selected); save(); render(); }
     catch (err) { alert(err.message); }
   }
+  // Render the same source-grounded explanation after a correct or incorrect answer.
+  // The demo has no textbook citations: never invent page numbers or quotations.
+  function renderAnswerDetails(q) {
+    const explanation = q.explanation || {};
+    const details = make('section', 'answer-details');
+    details.setAttribute('aria-label', 'Answer explanation and source');
+    details.append(make('h3', 'answer-details-heading', 'Answer explanation'));
+    if (explanation.sourceName) {
+      details.append(make('p', 'answer-source-name', 'Source: ' + explanation.sourceName));
+    }
+    const page = make('div', 'answer-detail-row');
+    page.append(make('strong', 'answer-detail-label', 'Textbook page'));
+    page.append(make('p', 'answer-detail-value',
+      explanation.pageNumber != null && String(explanation.pageNumber).trim() ?
+        'Page ' + explanation.pageNumber : 'Not available for this demo question.'));
+    details.append(page);
+    const summary = make('div', 'answer-detail-row');
+    summary.append(make('strong', 'answer-detail-label', 'Summarized explanation'));
+    summary.append(make('p', 'answer-detail-value',
+      explanation.summary && explanation.summary.trim() ?
+        explanation.summary : 'Summary has not been provided for this question.'));
+    details.append(summary);
+    const quote = make('div', 'answer-detail-row');
+    quote.append(make('strong', 'answer-detail-label', 'Direct source quote'));
+    if (explanation.directQuote && explanation.directQuote.trim()) {
+      quote.append(make('blockquote', 'answer-direct-quote', explanation.directQuote));
+    } else {
+      quote.append(make('p', 'answer-detail-value answer-source-unavailable',
+        'Not available for this demo question. A verbatim quotation will appear when verified source text is provided.'));
+    }
+    details.append(quote);
+    return details;
+  }
   function renderQuestion() {
     const q = core.currentQuestion(state, bank);
     const reviewed = state.stage === 'review';
@@ -228,9 +261,10 @@
     if (graded) {
       const feedback = make('div', 'feedback ' + (state.response.correct ? 'good' : 'bad'));
       feedback.append(make('strong', '', state.response.correct ? 'Correct!' : 'Not quite.'));
-      if (!state.response.correct) feedback.append(make('p', '', 'Correct answer: ' + q.choices.filter(c => q.correct.includes(c.id)).map(c => c.text).join('; ')));
+      feedback.append(make('p', '', 'Correct answer: ' +
+        q.choices.filter(c => q.correct.includes(c.id)).map(c => c.text).join('; ')));
       if (reviewed && !state.response.correct) feedback.append(make('p','', 'This question stays unresolved and will return at a later review checkpoint (or in your final results).'));
-      target.append(feedback);
+      target.append(feedback, renderAnswerDetails(q));
     }
     const actions = make('div','actions');
     if (graded) actions.append(button('Continue →','primary',function () { core.advance(state, bank); selected=[]; save(); render(); }));
