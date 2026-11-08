@@ -4,7 +4,7 @@
   const core = window.QuizCore;
   const app = document.getElementById('app');
   if (!fullBank || !core || !app) {
-    if (app) app.textContent = 'Unable to load the demonstration quiz.';
+    if (app) app.textContent = (window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.message) || 'Unable to load the question bank.';
     return;
   }
   const key = '68k:quiz:session:' + fullBank.bankId;
