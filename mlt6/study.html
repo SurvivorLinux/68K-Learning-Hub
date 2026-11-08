@@ -6,39 +6,46 @@
   <meta name="theme-color" content="#14171b">
   <title>Choose a Study Mode | 68K Learning Hub</title>
   <link rel="stylesheet" href="../hub.css">
-  <script src="tests.js" defer></script>
+  <script src="tests.js?v=chapters-v9" defer></script>
+  <script src="banks/approved-banks.js?v=chapters-v9" defer></script>
   <script defer>
     document.addEventListener("DOMContentLoaded", function () {
-      const id = new URLSearchParams(window.location.search).get("test");
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("chapter") || params.get("test");
       const test = Object.prototype.hasOwnProperty.call(window.MLT6_TESTS || {}, id)
         ? window.MLT6_TESTS[id] : null;
       if (!test) {
         document.getElementById("invalid-test").hidden = false;
         return;
       }
-      document.title = test.label + " | 68K Learning Hub";
-      document.getElementById("test-breadcrumb").textContent = test.label;
-      document.getElementById("test-title").textContent = test.label;
-      const hasDemoBank = id === "23";
+      document.title = test.chapterTitle + " · MLT 6 Chapter Study | 68K Learning Hub";
+      document.getElementById("test-breadcrumb").textContent = test.chapterTitle;
+      document.getElementById("test-title").textContent = test.chapterTitle + " · Legacy Test" + id;
+      const possible = (window.MLT6_APPROVED_BANKS || {})[id];
+      const hasVerifiedBank = !!(possible && possible.verified === true && Array.isArray(possible.questions) && possible.questions.length);
+      const hasDemoBank = id === "23" && !hasVerifiedBank;
+      const hasChapterBank = hasVerifiedBank || hasDemoBank;
+      const chapterQuery = "&chapter=" + encodeURIComponent(id);
       const cards = [
-        ["multiple-choice", "multiple-choice", "demo/index.html?v=exam-v8"],
-        ["exam", "exam", "demo/exam.html?v=exam-v8"],
-        ["review", "review", "demo/modes.html?mode=review&v=exam-v8"],
-        ["flashcards", "flashcards", "demo/modes.html?mode=flashcards&v=exam-v8"],
-        ["write", "write", "demo/modes.html?mode=write&v=exam-v8"],
-        ["bookmarked", "bookmarked", "demo/modes.html?mode=bookmarked&v=exam-v8"]
+        ["multiple-choice", "multiple-choice", "demo/index.html?v=chapters-v9"],
+        ["exam", "exam", "demo/exam.html?v=chapters-v9"],
+        ["review", "review", "demo/modes.html?mode=review&v=chapters-v9"],
+        ["flashcards", "flashcards", "demo/modes.html?mode=flashcards&v=chapters-v9"],
+        ["write", "write", "demo/modes.html?mode=write&v=chapters-v9"],
+        ["bookmarked", "bookmarked", "demo/modes.html?mode=bookmarked&v=chapters-v9"]
       ];
       for (const [elementId, mode, demoRoute] of cards) {
         const card = document.getElementById(elementId);
-        card.href = hasDemoBank ? demoRoute :
+        card.href = hasChapterBank ? demoRoute + chapterQuery :
           (mode === "multiple-choice" ? test.quiz :
             "coming-soon.html?test=" + encodeURIComponent(id) + "&mode=" + encodeURIComponent(mode));
         card.querySelector(".mode-action").textContent =
-          hasDemoBank ? "Open demo →" :
+          hasVerifiedBank ? "Study chapter →" : hasDemoBank ? "Open demo →" :
           (mode === "multiple-choice" ? "Open original quiz →" : "Coming Soon →");
       }
-      if (hasDemoBank) {
-        const key = "68k:quiz:bookmarks:mlt6-test23-demo:demo-easy-v2";
+      if (hasChapterBank) {
+        const active = hasVerifiedBank ? possible : { bankId: "mlt6-test23-demo", version: "demo-easy-v2" };
+        const key = "68k:quiz:bookmarks:" + active.bankId + ":" + active.version;
         let count = 0;
         try {
           const saved = JSON.parse(localStorage.getItem(key));
@@ -48,6 +55,10 @@
           count ? count + " saved questions · study in any available mode." :
             "Collect difficult questions and study them in any mode.";
       }
+      document.getElementById("demo-description").textContent = hasDemoBank ?
+        "Test23 currently uses easy feature-demo questions, not verified blood bank material." :
+        !hasVerifiedBank ? "The original legacy multiple-choice quiz is available; the remaining modes await a verified chapter bank." :
+        "Verified course questions are available in all six study modes.";
       document.getElementById("study-content").hidden = false;
     });
   </script>
@@ -69,9 +80,10 @@
     </nav>
     <section id="study-content" hidden>
       <div class="page-heading">
-        <p class="eyebrow">MLT 6 · Study selection</p>
+        <p class="eyebrow">MLT 6 · Chapter / topic study</p>
         <h1 id="test-title">Test</h1>
-        <p class="lead">Choose a study pathway. Save difficult questions to revisit across modes.</p>
+        <p class="lead">Study this chapter on its own, or return to the unit-wide comprehensive. Marked course material will replace legacy topic groupings as chapters are verified.</p>
+        <p id="demo-description" class="muted"></p>
       </div>
       <div class="mode-grid" aria-label="Study choices">
         <a id="multiple-choice" class="mode-card" href="../index.html">
@@ -105,11 +117,11 @@
           <span class="mode-action">View bookmarks →</span>
         </a>
       </div>
-      <div class="page-actions"><a class="back-link" href="../index.html#mlt6">← Back to MLT 6</a></div>
+      <div class="page-actions"><a class="back-link" href="../index.html#mlt6">← Back to MLT 6 chapters</a><a class="back-link" href="comprehensive.html">All-chapters comprehensive →</a></div>
     </section>
     <section id="invalid-test" class="page-heading" hidden>
-      <h1>Test not found</h1>
-      <p class="lead">This test is not part of the current MLT 6 selection.</p>
+      <h1>Chapter not found</h1>
+      <p class="lead">This chapter or topic is not part of the current MLT 6 selection.</p>
       <div class="page-actions"><a class="back-link" href="../index.html#mlt6">← Back to MLT 6</a></div>
     </section>
     <noscript><p class="lead">Enable JavaScript to select a test study option. Your original quizzes are still available from the repository.</p></noscript>
