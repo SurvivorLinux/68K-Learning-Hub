@@ -40,9 +40,11 @@
     return core.normalizeSettings({ ...settings,
       direction: readStorage(directionKey) || settings.direction });
   }
+  const sharedBookmarks = window.MLT6Bookmarks;
   const savedBookmarks = readStorage(bookmarksKey);
-  let bookmarks = new Set(Array.isArray(savedBookmarks) ?
-    savedBookmarks.filter(id => typeof id === 'string' && questionIDs.has(id)) : []);
+  let bookmarks = sharedBookmarks ? sharedBookmarks.list(fullBank) :
+    new Set(Array.isArray(savedBookmarks) ?
+      savedBookmarks.filter(id => typeof id === 'string' && questionIDs.has(id)) : []);
   let bank = fullBank, state, mainState, selected = [], screen = 'quiz';
   let previousScreen = 'quiz', historyIndex = 0, sessionMode = 'main', practiceIDs = [];
   let settingsMessage = '';
@@ -76,12 +78,17 @@
       store(practiceKey, { kind: sessionMode, ids: practiceIDs, state });
     }
   }
-  function saveBookmarks() { store(bookmarksKey, [...bookmarks]); }
+  function saveBookmarks() { if (!sharedBookmarks) store(bookmarksKey, [...bookmarks]); }
   function isBookmarked(id) { return bookmarks.has(id); }
   function toggleBookmark(id) {
     if (!questionIDs.has(id)) return;
-    if (isBookmarked(id)) bookmarks.delete(id); else bookmarks.add(id);
-    saveBookmarks();
+    if (sharedBookmarks) {
+      sharedBookmarks.toggle(fullBank, id);
+      bookmarks = sharedBookmarks.list(fullBank);
+    } else {
+      if (isBookmarked(id)) bookmarks.delete(id); else bookmarks.add(id);
+      saveBookmarks();
+    }
     render();
   }
   function bookmarkButton(id) {
@@ -240,7 +247,8 @@
     bar.append(make('span', 'stage-label', reviewed ? 'Required review' : 'New question'));
     bar.append(make('span', 'counter', reviewed ? 'Review ' + (state.reviewIndex + 1) + ' of ' + state.reviewQueue.length : 'Question ' + (state.newIndex + 1) + ' of ' + bank.questions.length));
     target.append(bar);
-    if (q.chapterTitle && window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.kind === 'unit')
+    if (q.chapterTitle && window.MLT6_BANK_CONTEXT &&
+        ['comprehensive', 'all-bookmarks'].includes(window.MLT6_BANK_CONTEXT.kind))
       target.append(make('p', 'chapter-origin', 'Chapter: ' + q.chapterTitle));
     const tools = make('div', 'question-tools');
     tools.append(bookmarkButton(q.id));
@@ -353,7 +361,7 @@
     const s = core.summary(state, bank);
     target.append(make('p', 'stage-label', 'Session complete'));
     target.append(make('h2', '', sessionMode === 'main' ?
-      'You finished the demo question bank.' : 'You finished your practice session.'));
+      'You finished the question bank.' : 'You finished your practice session.'));
     target.append(make('p', '', 'First-attempt accuracy is fixed after each new question. Correctly answered review questions can increase mastery without inflating that accuracy.'));
     const grid = make('div', 'summary-grid');
     for (const [num, label] of [[s.firstAttemptAccuracy + '%', 'First-attempt accuracy'], [s.mastered + '/' + s.total, 'Mastered'], [String(s.unresolved), 'Still unresolved']]) {
