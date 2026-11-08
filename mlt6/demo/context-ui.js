@@ -1,55 +1,72 @@
-/* Adapt the shared six-mode engine to a chapter or all-chapters bank.
- * Legacy bare Test23 demo URLs continue to display their original demo labels. */
+/* Keep lesson, comprehensive, and All Bookmarks study modes in their own scope.
+ * A content page never silently falls back to the Test23 easy demo. */
 (function () {
   'use strict';
-  const context = window.MLT6_BANK_CONTEXT;
-  if (!context || context.kind === 'demo') return;
-  const params = new URLSearchParams(window.location.search);
-  const scopeParameter = context.kind === 'unit' ? 'bank' : 'chapter';
-  const scopeValue = context.kind === 'unit' ? 'unit' : context.id;
-  function preserveScope(href) {
-    const address = new URL(href, window.location.href);
-    address.searchParams.set(scopeParameter, scopeValue);
-    return address.href;
+  const ctx = window.MLT6_BANK_CONTEXT;
+  if (!ctx) return; // Legacy direct demo bookmark remains compatible.
+  const scope = new URLSearchParams();
+  if (ctx.unitId) scope.set('unit', ctx.unitId);
+  if (ctx.kind === 'lesson') scope.set('lesson', ctx.lessonId);
+  else if (ctx.kind === 'comprehensive') scope.set('bank', 'unit');
+  else if (ctx.kind === 'all-bookmarks') scope.set('bank', 'bookmarks');
+  else if (ctx.kind === 'demo') scope.set('demo', '1');
+  window.MLT6_SCOPE_SUFFIX = scope.toString();
+  function preserved(href) {
+    const url = new URL(href, window.location.href);
+    for (const [key, value] of scope) url.searchParams.set(key, value);
+    return url.href;
   }
-  const heading = document.querySelector('.intro .eyebrow');
-  const warning = document.querySelector('.notice');
+  const eyebrow = document.querySelector('.intro .eyebrow');
+  const hint = document.querySelector('.notice');
   const small = document.querySelector('.brand small');
-  const scopeCrumb = document.querySelector('.crumb a[href*="study.html"]');
+  const demoPill = document.querySelector('.demo-pill');
+  const sourceCrumb = document.querySelector('.crumb a[href*="study.html"]');
   const footer = document.querySelector('.mode-footer a');
-  const backHref = context.kind === 'unit' ? '../comprehensive.html' :
-    '../study.html?chapter=' + encodeURIComponent(context.id);
-  const displayName = context.title;
-  if (heading) heading.textContent = context.kind === 'unit' ?
-    'MLT 6 · All-chapters comprehensive' : 'MLT 6 · Verified chapter bank';
-  if (small) small.textContent = displayName;
-  if (scopeCrumb) {
-    scopeCrumb.textContent = context.kind === 'unit' ? 'All-Chapters Comprehensive' : displayName;
-    scopeCrumb.href = backHref;
+  const contextName = ctx.title;
+  const backHref = ctx.backHref || '../index.html#mlt6';
+  if (small) small.textContent = contextName;
+  if (demoPill && ctx.kind !== 'demo') demoPill.textContent = 'MLT 106';
+  if (eyebrow) eyebrow.textContent = (ctx.kind === 'lesson' ?
+    'MLT 106 · Individual lesson' : ctx.kind === 'comprehensive' ?
+    'MLT 106 · Unit comprehensive' : ctx.kind === 'all-bookmarks' ?
+    'MLT 106 · All Bookmarks' : ctx.kind === 'demo' ?
+    'MLT 106 · Easy feature demo' : 'MLT 106 · Not yet available');
+  if (sourceCrumb) {
+    sourceCrumb.textContent = contextName;
+    sourceCrumb.href = backHref;
   }
   if (footer) {
-    footer.textContent = context.kind === 'unit' ?
-      '← Back to all-chapters comprehensive' : '← Back to chapter study';
+    footer.textContent = ctx.kind === 'lesson' ?
+      '← Back to unit lessons' : ctx.kind === 'demo' ?
+      '← Back to ABO unit' : '← Back to this study unit';
     footer.href = backHref;
   }
-  if (warning) {
-    warning.textContent = context.kind === 'unit' ?
-      'Verified chapter question banks are combined in textbook order. The comprehensive is a derived view, not a duplicated bank.' :
-      'This chapter uses verified course-source questions. Explanations and quotations follow the applicable study-mode feedback rules.';
+  if (hint && ctx.kind !== 'demo') {
+    hint.textContent = ctx.kind === 'all-bookmarks' ?
+      'This unit bookmark collection gathers approved questions across its lessons without duplicates. Changing a bookmark here also changes it within its original lesson.' :
+      ctx.kind === 'comprehensive' ?
+      'These are verified course questions from every lesson in this unit, shown in textbook order by default. Bookmarks are shared with the original lessons.' :
+      ctx.kind === 'lesson' ?
+      'Verified course questions from this textbook lesson. Save questions here to review them individually or under your unit’s All Bookmarks.' :
+      ctx.message;
   }
-  const note = document.querySelector('.intro p:not(.eyebrow):not(.checkpoint-note)');
-  if (note) note.textContent = context.kind === 'unit' ?
-    'Practice the complete verified unit across chapters. Default question order follows the source; enable shuffle in settings if preferred.' :
-    'Practice this verified chapter on its own. Default question order follows the book; enable shuffle in settings if preferred.';
-  for (const link of document.querySelectorAll('.study-tabs a, .quiz-path-links a')) {
-    link.href = preserveScope(link.href);
+  const description = document.querySelector('.intro p:not(.eyebrow):not(.checkpoint-note)');
+  if (description && ctx.kind !== 'demo') {
+    description.textContent = ctx.kind === 'all-bookmarks' ?
+      'Your saved questions across this unit, each displayed once.' :
+      ctx.kind === 'comprehensive' ?
+      'Practice all lessons together. The source order is fixed unless you turn on shuffle.' :
+      ctx.kind === 'lesson' ?
+      'Study this lesson with required reviews, flashcards, written recall, or exam simulation.' :
+      ctx.message;
   }
-  document.title = document.title.replace('Test23: ABO', displayName);
-  // preserveScope is also used by modes-ui for links created after this script runs.
-  window.MLT6_SCOPE_SUFFIX = scopeParameter + '=' + encodeURIComponent(scopeValue);
-  if (!window.DEMO_QUESTION_BANK && context.message) {
-    const location = document.getElementById('app') ||
+  for (const a of document.querySelectorAll('.study-tabs a, .quiz-path-links a')) {
+    a.href = preserved(a.href);
+  }
+  document.title = contextName + ' | 68K Learning Hub';
+  if (!window.DEMO_QUESTION_BANK && ctx.message) {
+    const host = document.getElementById('app') ||
       document.getElementById('mode-root') || document.getElementById('exam-root');
-    if (location) location.textContent = context.message;
+    if (host) host.textContent = ctx.message;
   }
 })();
