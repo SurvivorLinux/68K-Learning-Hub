@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#14171b">
   <title>Unit Comprehensive | 68K Learning Hub</title>
-  <link rel="stylesheet" href="../hub.css?v=units-v10">
-  <script src="tests.js?v=units-v10" defer></script>
-  <script src="banks/approved-banks.js?v=units-v10" defer></script>
-  <script src="banks/bookmarks.js?v=units-v10" defer></script>
-  <script src="banks/scope-loader.js?v=units-v10" defer></script>
+  <link rel="stylesheet" href="../hub.css?v=progressive-v11">
+  <script src="tests.js?v=progressive-v11" defer></script>
+  <script src="banks/approved-banks.js?v=progressive-v11" defer></script>
+  <script src="banks/bookmarks.js?v=progressive-v11" defer></script>
+  <script src="banks/scope-loader.js?v=progressive-v11" defer></script>
   <script defer>
     document.addEventListener('DOMContentLoaded', function () {
       const unitId = new URLSearchParams(location.search).get('unit');
@@ -44,14 +44,15 @@
       root.append(el('p', 'eyebrow', 'MLT 106 · Unit comprehensive'));
       root.append(el('h1', '', unit.title + ' Comprehensive'));
       root.append(el('p', 'lead',
-        'All questions from the individual textbook lessons are combined in their original order, without duplicate copies. You can choose to shuffle within a session.'));
+        'Comprehensive is always available. It includes currently approved questions from this unit’s lessons in original source order, with no duplicates, and grows as new lessons are added. Shuffle remains optional.'));
       const status = el('section', 'surface-panel comprehensive-status');
       status.append(el('h2', '', 'Lesson readiness'));
       const msg = el('p', 'readiness-text',
-        data.ready ? data.questionCount + ' unique questions across all ' +
-          unit.lessons.length + ' lessons.' :
-          data.valid.length + ' of ' + unit.lessons.length +
-          ' textbook lesson banks verified. The comprehensive unlocks when all are ready.');
+        data.questionCount + ' unique approved questions currently available from ' +
+        data.valid.length + ' of ' + unit.lessons.length + ' textbook lessons. ' +
+        (data.questionCount ?
+          'You can study these now; new lesson questions join automatically.' :
+          'Comprehensive is open now. Questions will appear when the first lesson bank is approved.'));
       msg.setAttribute('role', 'status');status.append(msg);
       const list = el('ul', 'chapter-readiness');
       for (const lesson of unit.lessons) {
@@ -64,30 +65,29 @@
       root.append(status);
       root.append(el('h2', 'section-title', 'Study pathways'));
       const grid = el('div', 'mode-grid');
-      const qs = '&unit=' + encodeURIComponent(unitId) + '&bank=unit&v=units-v10';
+      const qs = '&unit=' + encodeURIComponent(unitId) + '&bank=unit&v=progressive-v11';
       const links = [
-        ['Multiple Choice', 'Instant answers and required reviews.', 'demo/index.html?v=units-v10&unit=' + encodeURIComponent(unitId) + '&bank=unit'],
-        ['Exam Mode', 'No answers until submission.', 'demo/exam.html?v=units-v10&unit=' + encodeURIComponent(unitId) + '&bank=unit'],
+        ['Multiple Choice', 'Instant answers and required reviews.', 'demo/index.html?v=progressive-v11&unit=' + encodeURIComponent(unitId) + '&bank=unit'],
+        ['Exam Mode', 'No answers until submission.', 'demo/exam.html?v=progressive-v11&unit=' + encodeURIComponent(unitId) + '&bank=unit'],
         ['Review', 'Read answers and source explanations.', 'demo/modes.html?mode=review' + qs],
         ['Flashcards', 'Flip cards from every lesson.', 'demo/modes.html?mode=flashcards' + qs],
         ['Write', 'Practice recall and self-assessment.', 'demo/modes.html?mode=write' + qs],
         ['Bookmarked Questions', 'Review bookmarked questions within the comprehensive.', 'demo/modes.html?mode=bookmarked' + qs]
       ];
       links.forEach(([title,description,url],i) => {
-        const card = el(data.ready ? 'a' : 'div', 'mode-card' + (data.ready ? '' : ' mode-card-disabled'));
-        if (data.ready) card.href = url;
-        else card.setAttribute('aria-disabled','true');
+        const card = link('', url, 'mode-card');
         const copy = el('span');
         copy.append(el('span','mode-title',title),el('span','mode-desc',description));
         card.append(el('span','mode-icon',String(i+1).padStart(2,'0')),copy,
-          el('span','mode-action',data.ready ? 'Open pathway →' : 'Awaiting verified lessons'));
+          el('span','mode-action',data.questionCount ?
+            'Open pathway →' : 'Open pathway · No questions yet →'));
         grid.append(card);
       });
       root.append(grid);
       const actions = el('div','page-actions');
       actions.append(link('← Back to ' + unit.title + ' lessons', 'study.html?unit=' + encodeURIComponent(unitId), 'back-link'));
       actions.append(link('All Bookmarks (' + data.bookmarkedCount + ') →',
-        'demo/modes.html?mode=bookmarked&unit=' + encodeURIComponent(unitId) + '&bank=bookmarks&v=units-v10',
+        'demo/modes.html?mode=bookmarked&unit=' + encodeURIComponent(unitId) + '&bank=bookmarks&v=progressive-v11',
         'back-link'));
       root.append(actions);
     });
