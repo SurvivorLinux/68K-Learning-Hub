@@ -6,6 +6,13 @@
 })(typeof window !== 'undefined' ? window : undefined, function () {
   'use strict';
   const ROUND_SIZE = 10;
+  const ROUND_OPTIONS = [5, 10, 15];
+  function normalizeSettings(settings) {
+    return {
+      roundSize: settings && ROUND_OPTIONS.includes(Number(settings.roundSize)) ? Number(settings.roundSize) : ROUND_SIZE,
+      shuffleQuestions: !settings || settings.shuffleQuestions !== false
+    };
+  }
   const randomize = function (array) {
     const out = [...array];
     for (let i = out.length - 1; i > 0; i--) {
@@ -48,11 +55,14 @@
     const q = currentQuestion(state, bank);
     state.optionOrder = q ? randomize(q.choices.map(c => c.id)) : [];
   }
-  function startSession(bank) {
+  function startSession(bank, settings) {
     validateBank(bank);
+    const config = normalizeSettings(settings);
+    const ids = bank.questions.map(q => q.id);
     const state = {
       format: 1, bankId: bank.bankId, bankVersion: bank.version,
-      stage: 'new', order: randomize(bank.questions.map(q => q.id)),
+      stage: 'new', order: config.shuffleQuestions ? randomize(ids) : ids,
+      roundSize: config.roundSize, shuffleQuestions: config.shuffleQuestions,
       newIndex: 0, reviewQueue: [], reviewIndex: 0,
       unresolved: [], mastered: [], firstMissed: [], firstCorrect: 0,
       reviewAttempts: 0, optionOrder: [], response: null, missedHistory: [], firstAttempts: {}
@@ -69,6 +79,10 @@
     if (!Number.isInteger(candidate.newIndex) || candidate.newIndex < 0 || candidate.newIndex > ids.length || !Number.isInteger(candidate.reviewIndex) || candidate.reviewIndex < 0 || !Array.isArray(candidate.reviewQueue) || candidate.reviewIndex > candidate.reviewQueue.length) return null;
     for (const key of ['unresolved', 'mastered', 'firstMissed', 'reviewQueue']) if (!Array.isArray(candidate[key]) || candidate[key].some(id => !allIDs.has(id))) return null;
     if (!Number.isInteger(candidate.firstCorrect) || candidate.firstCorrect < 0 || candidate.firstCorrect > ids.length || !Number.isInteger(candidate.reviewAttempts) || candidate.reviewAttempts < 0) return null;
+    // Keep existing saved sessions that were created before adjustable settings.
+    if (candidate.roundSize === undefined) candidate.roundSize = ROUND_SIZE;
+    if (candidate.shuffleQuestions === undefined) candidate.shuffleQuestions = true;
+    if (!ROUND_OPTIONS.includes(candidate.roundSize) || typeof candidate.shuffleQuestions !== 'boolean') return null;
     // Existing browser sessions predate saved answer snapshots; keep their progress.
     if (candidate.missedHistory === undefined) candidate.missedHistory = [];
     if (!Array.isArray(candidate.missedHistory)) return null;
@@ -157,7 +171,7 @@
     state.response = null;
     if (wasNew) {
       state.newIndex += 1;
-      if ((state.newIndex % ROUND_SIZE === 0 || state.newIndex === bank.questions.length) && state.unresolved.length) {
+      if ((state.newIndex % state.roundSize === 0 || state.newIndex === bank.questions.length) && state.unresolved.length) {
         state.reviewQueue = [...state.unresolved];
         state.reviewIndex = 0;
         state.stage = 'review-intro';
@@ -221,5 +235,5 @@
       reviewAttempts: state.reviewAttempts
     };
   }
-  return { ROUND_SIZE, validateBank, startSession, restoreSession, currentQuestion, submit, advance, beginReview, summary, answeredNew, getMissedHistory, questionReport };
+  return { ROUND_SIZE, ROUND_OPTIONS, normalizeSettings, validateBank, startSession, restoreSession, currentQuestion, submit, advance, beginReview, summary, answeredNew, getMissedHistory, questionReport };
 });
