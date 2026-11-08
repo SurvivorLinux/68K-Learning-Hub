@@ -10,6 +10,7 @@
   const key = '68k:quiz:session:' + fullBank.bankId;
   const practiceKey = '68k:quiz:practice:' + fullBank.bankId;
   const settingsKey = '68k:quiz:settings:' + fullBank.bankId;
+  const directionKey = '68k:quiz:direction:' + fullBank.bankId + ':' + fullBank.version;
   const bookmarksKey = '68k:quiz:bookmarks:' + fullBank.bankId + ':' + fullBank.version;
   const questionIDs = new Set(fullBank.questions.map(q => q.id));
   function readStorage(storageKey) {
@@ -29,10 +30,16 @@
       bankId: fullBank.bankId + ':practice:' + kind,
       version: fullBank.version + ':subset:' + ids.join('|'),
       title: kind === 'missed' ? 'Practice missed questions' : 'Practice bookmarks',
-      questions: fullBank.questions.filter(q => allowed.has(q.id))
+      questions: fullBank.questions.filter(q => allowed.has(q.id)),
+      reversePool: fullBank.questions
     };
   }
-  let settings = core.normalizeSettings(readStorage(settingsKey));
+  let settings = core.normalizeSettings({ ...readStorage(settingsKey),
+    direction: readStorage(directionKey) || core.TERM_FIRST });
+  function sessionSettings() {
+    return core.normalizeSettings({ ...settings,
+      direction: readStorage(directionKey) || settings.direction });
+  }
   const savedBookmarks = readStorage(bookmarksKey);
   let bookmarks = new Set(Array.isArray(savedBookmarks) ?
     savedBookmarks.filter(id => typeof id === 'string' && questionIDs.has(id)) : []);
@@ -42,7 +49,7 @@
   try {
     core.validateBank(fullBank);
     mainState = core.restoreSession(fullBank, readStorage(key)) ||
-      core.startSession(fullBank, settings);
+      core.startSession(fullBank, sessionSettings());
     state = mainState;
     const savedPractice = readStorage(practiceKey);
     if (savedPractice && ['missed', 'bookmarks'].includes(savedPractice.kind) &&
@@ -94,7 +101,7 @@
     practiceIDs = ids;
     sessionMode = kind;
     bank = practiceBank(kind, ids);
-    state = core.startSession(bank, settings);
+    state = core.startSession(bank, sessionSettings());
     screen = 'quiz'; selected = []; historyIndex = 0;
     save(); render();
   }
@@ -179,7 +186,9 @@
     document.getElementById('active-mode').textContent = sessionMode === 'main' ? 'Full question bank' :
       sessionMode === 'missed' ? 'Practicing missed questions' : 'Practicing bookmarks';
     document.getElementById('checkpoint-note').textContent =
-      'Required review every ' + state.roundSize + ' new questions when you have misses. Your results include all original questions and explanations.';
+      (state.direction === core.DEF_FIRST ? 'Definition → Term' : 'Term → Definition') +
+      ' · Required review every ' + state.roundSize +
+      ' new questions when you have misses. Results include original answers and explanations.';
     document.getElementById('settings-message').textContent = settingsMessage;
     document.getElementById('accuracy').textContent = progress.answeredNew === 0 ? '—' : progress.firstAttemptAccuracy + '%';
     document.getElementById('mastered').textContent = progress.mastered;
@@ -436,7 +445,7 @@
       'Restart the full demonstration? Your full-test results will be replaced. Bookmarks are kept.' :
       'Restart this focused practice set? Your original full-test results are safe.';
     if (!window.confirm(message)) return;
-    state = core.startSession(bank, settings);
+    state = core.startSession(bank, sessionSettings());
     selected = []; screen = 'quiz'; historyIndex = 0;
     save(); render();
   }
@@ -451,8 +460,30 @@
     target.append(make('p', 'stage-label', 'Study settings'));
     target.append(make('h2', '', 'Customize your next study session'));
     target.append(make('p', 'settings-description',
-      'These settings apply when you start or restart a session. They do not rearrange or reset the current quiz.'));
+      'Question direction is shared with Flashcards and Write. Multiple Choice changes apply when you start or restart a session, not halfway through a quiz.'));
     let roundSize = settings.roundSize, shuffle = settings.shuffleQuestions;
+    let direction = core.normalizeDirection(readStorage(directionKey) || settings.direction);
+    const directionSet = make('fieldset', 'settings-fieldset');
+    directionSet.append(make('legend', '', 'Question direction'));
+    for (const [value, text] of [
+      [core.TERM_FIRST, 'Term → Definition (default)'],
+      [core.DEF_FIRST, 'Definition → Term']]) {
+      const label = make('label', 'setting-option');
+      const radio = make('input');
+      radio.type = 'radio';
+      radio.name = 'question-direction';
+      radio.value = value;
+      radio.checked = direction === value;
+      if (value === core.DEF_FIRST && !core.supportsReverse(fullBank)) radio.disabled = true;
+      radio.addEventListener('change', function () { if (!radio.disabled) direction = value; });
+      label.append(radio, make('span', '', text));
+      directionSet.append(label);
+    }
+    target.append(directionSet);
+    if (!core.supportsReverse(fullBank)) {
+      target.append(make('p', 'settings-description',
+        'Reverse direction requires a verified term and definition pair for each question.'));
+    }
     const fieldset = make('fieldset', 'settings-fieldset');
     fieldset.append(make('legend', '', 'Required review after every…'));
     for (const num of core.ROUND_OPTIONS) {
@@ -472,13 +503,14 @@
     target.append(shuffleLabel);
     target.append(make('p', 'settings-description',
       'Answer choices remain shuffled for fairness. Your current session uses ' + state.roundSize +
-      '-question checkpoints. Saved bookmarks are not deleted when starting over.'));
+      '-question checkpoints in ' + (state.direction === core.DEF_FIRST ? 'Definition → Term' : 'Term → Definition') + ' direction. Saved bookmarks are not deleted when starting over.'));
     const actions = make('div', 'actions');
     actions.append(button('Cancel', 'secondary', closeSettings));
     actions.append(button('Save settings', 'primary', function () {
-      settings = core.normalizeSettings({ roundSize, shuffleQuestions: shuffle });
-      store(settingsKey, settings);
-      settingsMessage = 'Settings saved for your next session. Use Start over to apply them now.';
+      settings = core.normalizeSettings({ roundSize, shuffleQuestions: shuffle, direction });
+      store(settingsKey, { roundSize: settings.roundSize, shuffleQuestions: settings.shuffleQuestions });
+      store(directionKey, settings.direction);
+      settingsMessage = 'Settings saved across Multiple Choice, Flashcards, and Write. Start or restart Multiple Choice to apply the new direction.';
       closeSettings();
     }));
     target.append(actions);
