@@ -92,3 +92,6 @@
 .quiz-path-links span[aria-current=page] { border-color:#8e744b; background:#393325; color:var(--gold); }
 .quiz-path-links a:hover { border-color:var(--gold); color:var(--text); }
 @media(max-width:620px){ .quiz-path-links a,.quiz-path-links span { flex:1; justify-content:center; min-width:110px; } }
+
+/* Preserve visible chapter origin while studying the all-chapters comprehensive. */
+.chapter-origin{margin:6px 0 14px;color:var(--gold);font-size:.86rem;font-weight:720;letter-spacing:.015em}
