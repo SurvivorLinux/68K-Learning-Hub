@@ -49,6 +49,13 @@
     return 'question:' + String(q.question).replace(/\s+/g, ' ').trim().toLowerCase() +
       '|answers:' + correctTexts.join('|');
   }
+  function compactVersion(text) {
+    // Keep localStorage keys short even when hundreds of questions are saved.
+    let h = 2166136261;
+    for (let i = 0; i < text.length; i++)
+      h = Math.imul(h ^ text.charCodeAt(i), 16777619) >>> 0;
+    return h.toString(36);
+  }
   function aggregate(unitId) {
     const unit = units[unitId];
     if (!unit) return null;
@@ -109,8 +116,8 @@
       bookmarkBank: {
         verified: true,
         bankId: 'mlt6-unit-' + unitId + '-all-bookmarks',
-        version: 'bookmarks-v2-' + versions.join('~') + '-' +
-          bookmarkQuestions.map(q => q.id).join('|'),
+        version: 'bookmarks-v2-' + bookmarkQuestions.length + '-' +
+          compactVersion(versions.join('~') + '|' + bookmarkQuestions.map(q => q.id).join('|')),
         title: unit.title + ' · All Bookmarks',
         questions: bookmarkQuestions,
         reversePool: questions
