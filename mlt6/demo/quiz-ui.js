@@ -153,6 +153,55 @@
     addHistoryAction(actions);
     target.append(actions);
   }
+  function answerText(question, selected) {
+    if (!selected) return 'Not recorded in this older saved session';
+    return question.choices.filter(c => selected.includes(c.id)).map(c => c.text).join('; ');
+  }
+  function resultLine(label, text) {
+    const line = make('p', 'result-line');
+    line.append(make('strong', '', label + ' '));
+    line.append(make('span', '', text));
+    return line;
+  }
+  function renderFullAnswerReport(target) {
+    const report = make('section', 'question-report');
+    report.id = 'question-report';
+    report.setAttribute('aria-label', 'Complete question-by-question results');
+    report.append(make('h2', '', 'All questions and explanations'));
+    report.append(make('p', 'report-intro', 'Questions are listed in the order you encountered them. Correct and incorrect reflect your FIRST attempt; reviewing a missed question later does not erase the original result.'));
+    const entries = core.questionReport(state, bank);
+    for (const entry of entries) {
+      const q = entry.question;
+      const item = make('article', 'result-item ' + (entry.firstCorrect ? 'result-correct' : 'result-incorrect'));
+      const marker = make('div', 'result-marker');
+      marker.append(make('span', 'result-number', 'Question ' + entry.number + ' of ' + entries.length));
+      marker.append(make('span', 'result-badge ' + (entry.firstCorrect ? 'is-correct' : 'is-incorrect'), entry.firstCorrect ? 'Correct on first try' : 'Incorrect on first try'));
+      if (!entry.firstCorrect) marker.append(make('span', 'result-badge ' + (entry.unresolved ? 'is-unresolved' : 'is-resolved'), entry.unresolved ? 'Still unresolved' : 'Corrected in review'));
+      item.append(marker, make('h3', '', q.question));
+      item.append(resultLine('Your first answer:', answerText(q, entry.firstSelection)));
+      item.append(resultLine('Correct answer:', answerText(q, q.correct)));
+      const explanation = q.explanation;
+      const why = make('div', 'result-explanation');
+      why.append(make('strong', '', 'Why this answer is correct'));
+      why.append(make('p', '', explanation && explanation.summary ?
+        explanation.summary : 'Explanation not yet provided for this question.'));
+      item.append(why);
+      if (explanation && (explanation.pageNumber != null || explanation.sourceName || explanation.directQuote)) {
+        const source = make('div', 'result-source');
+        const parts = [];
+        if (explanation.sourceName) parts.push(explanation.sourceName);
+        if (explanation.pageNumber != null) parts.push('Page ' + explanation.pageNumber);
+        if (parts.length) source.append(make('p', 'source-reference', 'Source: ' + parts.join(' · ')));
+        if (explanation.directQuote) {
+          source.append(make('strong', '', 'Direct source quote'));
+          source.append(make('blockquote', 'source-quote', explanation.directQuote));
+        }
+        item.append(source);
+      }
+      report.append(item);
+    }
+    target.append(report);
+  }
   function renderDone() {
     const target = panel();
     const s = core.summary(state,bank);
@@ -164,11 +213,12 @@
       const cell=make('div','summary-cell'); cell.append(make('strong','',num),make('span','',label));grid.append(cell);
     }
     target.append(grid);
-    target.append(make('p','', s.unresolved ? 'Unresolved questions are listed in your result count. A future version can offer optional targeted practice after completion.' : 'No unresolved questions remain.'));
+    target.append(make('p','', s.unresolved ? 'Some questions remain unresolved after the final review.' : 'No unresolved questions remain.'));
     const actions=make('div','actions');
     actions.append(button('Practice again','primary',reset));
     addHistoryAction(actions);
     target.append(actions);
+    renderFullAnswerReport(target);
   }
   function renderMissedHistory() {
     const misses = core.getMissedHistory(state, bank);
