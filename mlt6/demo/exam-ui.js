@@ -161,6 +161,8 @@
     tools.append(make('span', 'counter', q.type === 'multi' ? 'Select all that apply' : 'Choose one answer'));
     tools.append(bookmarkButton(id));
     target.append(tools);
+    if (q.chapterTitle && window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.kind === 'unit')
+      target.append(make('p', 'chapter-origin', 'Chapter: ' + q.chapterTitle));
     target.append(make('h2', '', q.question));
     const answers = make('div', 'answers');
     const letters = ['A', 'B', 'C', 'D'];
@@ -261,7 +263,10 @@
       header.append(make('span', 'result-badge ' + (record.correct ? 'is-correct' : 'is-incorrect'),
         record.correct ? 'Correct' : record.skipped ? 'Unanswered' : 'Incorrect'));
       header.append(bookmarkButton(record.id));
-      item.append(header, make('h3', '', q.question));
+      item.append(header);
+      if (q.chapterTitle && window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.kind === 'unit')
+        item.append(make('p', 'chapter-origin', 'Chapter: ' + q.chapterTitle));
+      item.append(make('h3', '', q.question));
       const chosen = make('p', 'result-line');
       chosen.append(make('strong', '', 'Your answer: '), make('span', '', optionText(q, record.chosen)));
       const correct = make('p', 'result-line');
