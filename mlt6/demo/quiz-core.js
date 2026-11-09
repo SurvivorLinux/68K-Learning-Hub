@@ -52,9 +52,21 @@
   function reverseSource(bank) {
     return Array.isArray(bank.reversePool) && bank.reversePool.length ? bank.reversePool : bank.questions;
   }
+  function hasStudyPairs(questions) {
+    if (!questions.length || !questions.every(q => q && q.reversible !== false &&
+        typeof q.term === 'string' && q.term.trim() &&
+        typeof q.definition === 'string' && q.definition.trim())) return false;
+    // Keep the legacy demo's settings. New audited pairs must be unambiguous
+    // in both directions, including when lessons are combined.
+    if (!questions.some(q => q.reversible === true)) return true;
+    const normalize = text => text.normalize('NFC').replace(/\s+/g, ' ').trim().toLowerCase();
+    return ['term', 'definition'].every(key =>
+      new Set(questions.map(q => normalize(q[key]))).size === questions.length);
+  }
   function supportsReverse(bank) {
     const pool = reverseSource(bank);
-    if (!Array.isArray(pool) || pool.length < 4) return false;
+    if (!Array.isArray(pool) || pool.length < 4 ||
+        !hasStudyPairs(pool) || !hasStudyPairs(bank.questions)) return false;
     const known = new Set();
     for (const q of pool) {
       if (!q || typeof q.term !== 'string' || !q.term.trim() ||
@@ -284,5 +296,5 @@
       reviewAttempts: state.reviewAttempts
     };
   }
-  return { ROUND_SIZE, ROUND_OPTIONS, TERM_FIRST, DEF_FIRST, normalizeSettings, normalizeDirection, supportsReverse, directionalQuestion, validateBank, startSession, restoreSession, currentQuestion, submit, advance, beginReview, summary, answeredNew, getMissedHistory, questionReport };
+  return { ROUND_SIZE, ROUND_OPTIONS, TERM_FIRST, DEF_FIRST, normalizeSettings, normalizeDirection, hasStudyPairs, supportsReverse, directionalQuestion, validateBank, startSession, restoreSession, currentQuestion, submit, advance, beginReview, summary, answeredNew, getMissedHistory, questionReport };
 });

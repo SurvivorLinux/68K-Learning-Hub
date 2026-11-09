@@ -4,7 +4,8 @@
  *
  * window.MLT6_APPROVED_BANKS = Object.freeze({
  *   "5.1": {
- *     verified: true,
+ *     schemaVersion: "1.0", lessonId: "5.1", parentUnit: "5",
+ *     releaseStatus: "APPROVED", verified: true,
  *     bankId: "mlt106-lesson-5.1",
  *     version: "approved-v1",
  *     title: "Lesson 5.1: Miscellaneous Blood Bank Testing",
@@ -12,8 +13,8 @@
  *   }
  * });
  *
- * Do not publish a lesson until every question has a verified answer key,
- * summarized explanation, printed textbook page, and exact supporting quote.
+ * Use the canonical release only after verifying its approved manifest,
+ * independent audit and exact file hashes. See docs/lesson-integration-status.md.
  * The study engines derive unit comprehensive and All Bookmarks automatically.
  * This empty registry deliberately contains NO invented textbook questions.
  */

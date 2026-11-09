@@ -3,7 +3,7 @@
   const fullBank = window.DEMO_QUESTION_BANK;
   const core = window.QuizCore;
   const app = document.getElementById('app');
-  if (!fullBank || !core || !app) {
+  if (!fullBank || !core || !app || (Array.isArray(fullBank.questions) && !fullBank.questions.length)) {
     if (app) app.textContent = (window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.message) || 'Unable to load the question bank.';
     return;
   }

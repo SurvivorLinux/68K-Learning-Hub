@@ -6,7 +6,7 @@
   if (!ctx) return; // Legacy direct demo bookmark remains compatible.
   const scope = new URLSearchParams();
   if (ctx.unitId) scope.set('unit', ctx.unitId);
-  if (ctx.kind === 'lesson') scope.set('lesson', ctx.lessonId);
+  if (ctx.lessonId) scope.set('lesson', ctx.lessonId);
   else if (ctx.kind === 'comprehensive') scope.set('bank', 'unit');
   else if (ctx.kind === 'all-bookmarks') scope.set('bank', 'bookmarks');
   else if (ctx.kind === 'demo') scope.set('demo', '1');

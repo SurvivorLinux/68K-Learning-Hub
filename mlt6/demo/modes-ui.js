@@ -22,9 +22,7 @@
   const directionKey = "68k:quiz:direction:" + bank.bankId + ":" + bank.version;
   const FORWARD = "term-to-definition";
   const REVERSE = "definition-to-term";
-  const allowsReverse = bank.questions.every(q =>
-    typeof q.term === "string" && q.term.trim() &&
-    typeof q.definition === "string" && q.definition.trim());
+  const allowsReverse = window.QuizCore.hasStudyPairs(bank.questions);
   let direction = readDirection();
   function readDirection() {
     let stored = null;
@@ -76,9 +74,9 @@
     b.addEventListener("click", action);
     return b;
   }
-  function link(label, href, css) {
+  function link(label, href, css, keepScope = true) {
     const a = el("a", css, label);
-    const scope = window.MLT6_SCOPE_SUFFIX;
+    const scope = keepScope && window.MLT6_SCOPE_SUFFIX;
     if (scope) {
       const address = new URL(href, window.location.href);
       for (const [key, value] of new URLSearchParams(scope))
@@ -243,8 +241,8 @@
     if (!chosen.length) {
       holder.append(el("p", "quiet", "Nothing bookmarked yet. Save difficult questions while using Multiple Choice, Review, Flashcards, or Write."));
       const links = el("div", "path-actions");
-      links.append(link("Browse all questions in Review", "modes.html?mode=review&v=units-v10", "secondary path-link"));
-      links.append(link("Open Multiple Choice", "index.html?v=units-v10", "secondary path-link"));
+      links.append(browseAll("Browse all questions in Review", "modes.html?mode=review"));
+      links.append(browseAll("Open Multiple Choice", "index.html?"));
       holder.append(links);
       return;
     }
@@ -269,6 +267,16 @@
       list.append(item);
     }
     holder.append(list);
+  }
+  function browseAll(label, href) {
+    const ctx = window.MLT6_BANK_CONTEXT;
+    if (ctx && ctx.kind === "all-bookmarks") {
+      const url = new URL(href, window.location.href);
+      url.searchParams.set("unit", ctx.unitId);
+      url.searchParams.set("bank", "unit");
+      return link(label, url.href, "secondary path-link", false);
+    }
+    return link(label, href, "secondary path-link");
   }
   function renderDirectionSettings() {
     const card = container();
@@ -339,7 +347,7 @@
       const card = container();
       card.append(el("h2", "", "No bookmarked questions yet"));
       card.append(el("p", "quiet", "Bookmark a question in any study mode, then return here."));
-      card.append(link("Browse all " + title[mode] + " questions", "modes.html?mode=" + mode + "&v=units-v10", "secondary path-link"));
+      card.append(browseAll("Browse all " + title[mode] + " questions", "modes.html?mode=" + mode));
       return;
     }
     progress.index = Math.min(progress.index, list.length - 1);

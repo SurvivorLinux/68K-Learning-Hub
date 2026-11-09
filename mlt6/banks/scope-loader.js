@@ -7,47 +7,83 @@
   const units = root.MLT6_UNITS || {};
   const registered = root.MLT6_APPROVED_BANKS || {};
   const bookmarks = root.MLT6Bookmarks;
+  const nonempty = value => typeof value === 'string' && value.trim().length > 0;
   function checkBank(bank) {
-    if (!bank || bank.verified !== true || typeof bank.bankId !== 'string' ||
-        !bank.bankId || typeof bank.version !== 'string' || !bank.version ||
+    if (!bank || bank.verified !== true || !nonempty(bank.bankId) || !nonempty(bank.version) ||
+        (bank.releaseStatus !== undefined && bank.releaseStatus !== 'APPROVED') ||
         !Array.isArray(bank.questions) || !bank.questions.length) return false;
     const seen = new Set();
     for (const q of bank.questions) {
-      if (!q || typeof q.id !== 'string' || !q.id || seen.has(q.id) ||
-          !['single', 'multi'].includes(q.type) || !String(q.question || '').trim() ||
+      if (!q || !nonempty(q.id) || seen.has(q.id) ||
+          !['single', 'multi'].includes(q.type) || !nonempty(q.question) ||
           !Array.isArray(q.choices) || q.choices.length !== 4 ||
-          q.choices.some(c => !c || typeof c.id !== 'string' || !c.id || !String(c.text || '').trim()) ||
+          q.choices.some(c => !c || !nonempty(c.id) || !nonempty(c.text)) ||
           new Set(q.choices.map(c => c.id)).size !== 4 ||
           !Array.isArray(q.correct) || !q.correct.length ||
           new Set(q.correct).size !== q.correct.length ||
           (q.type === 'single' ? q.correct.length !== 1 : q.correct.length < 2) ||
           q.correct.some(id => !q.choices.some(c => c.id === id)) ||
-          !q.explanation || typeof q.explanation.summary !== 'string' ||
-          !q.explanation.summary.trim() ||
-          q.explanation.pageNumber == null ||
-          typeof q.explanation.directQuote !== 'string' ||
-          !q.explanation.directQuote.trim()) return false;
+          !q.explanation || !nonempty(q.explanation.summary) ||
+          !(nonempty(q.explanation.pageNumber) ||
+            (Number.isInteger(q.explanation.pageNumber) && q.explanation.pageNumber > 0)) ||
+          !nonempty(q.explanation.directQuote) ||
+          (q.explanation.sourceName != null && typeof q.explanation.sourceName !== 'string')) return false;
       seen.add(q.id);
     }
     return true;
   }
+  function normalizeBank(bank, lessonId) {
+    if (!checkBank(bank) || (bank.lessonId !== undefined && bank.lessonId !== lessonId)) return null;
+    if (bank.schemaVersion === undefined) return bank; // Legacy runtime format.
+    if (bank.schemaVersion !== '1.0' || bank.releaseStatus !== 'APPROVED' ||
+        bank.lessonId !== lessonId || String(bank.parentUnit) !== lessonId.split('.')[0]) return null;
+    const positions = new Set();
+    const questions = [];
+    for (const q of bank.questions) {
+      const study = q.study;
+      if (q.lessonId !== lessonId || !Number.isSafeInteger(q.sourceOrder) ||
+          q.sourceOrder < 1 || positions.has(q.sourceOrder) ||
+          !study || typeof study.reversible !== 'boolean' ||
+          (study.reversible && (!nonempty(study.term) || !nonempty(study.definition)))) return null;
+      positions.add(q.sourceOrder);
+      const runtime = { ...q, reversible: study.reversible };
+      // Forward recall uses the published stem and answer key unless the source
+      // audit explicitly approves this question as a reversible pair.
+      runtime.term = study.reversible ? study.term : q.question;
+      runtime.definition = study.reversible ? study.definition :
+        q.choices.filter(c => q.correct.includes(c.id)).map(c => c.text).join('; ');
+      questions.push(runtime);
+    }
+    questions.sort((a, b) => a.sourceOrder - b.sourceOrder);
+    return { ...bank, questions };
+  }
+  const approved = new Map();
+  const bankCounts = new Map();
+  for (const unit of Object.values(units)) {
+    for (const lesson of unit.lessons) {
+      const bank = normalizeBank(registered[lesson.id], lesson.id);
+      if (!bank) continue;
+      approved.set(lesson.id, bank);
+      bankCounts.set(bank.bankId, (bankCounts.get(bank.bankId) || 0) + 1);
+    }
+  }
   function lessonOf(unitId, lessonId) {
-    const unit = units[unitId];
+    const unit = Object.hasOwn(units, unitId) && units[unitId];
     return unit && unit.lessons.find(x => x.id === lessonId);
   }
   function verifiedLesson(unitId, lessonId) {
-    return lessonOf(unitId, lessonId) && checkBank(registered[lessonId]) ?
-      registered[lessonId] : null;
+    const bank = approved.get(lessonId);
+    return lessonOf(unitId, lessonId) && bank && bankCounts.get(bank.bankId) === 1 ? bank : null;
   }
   function dedupeKey(q) {
     if (typeof q.canonicalId === 'string' && q.canonicalId.trim())
       return 'canonical:' + q.canonicalId.trim();
     // Equivalent stems with equivalent answer keys count as one question, even
     // if they were accidentally imported under two lesson identifiers.
+    const normalize = value => value.normalize('NFC').replace(/\s+/g, ' ').trim().toLowerCase();
     const correctTexts = q.choices.filter(c => q.correct.includes(c.id))
-      .map(c => String(c.text).replace(/\s+/g, ' ').trim().toLowerCase()).sort();
-    return 'question:' + String(q.question).replace(/\s+/g, ' ').trim().toLowerCase() +
-      '|answers:' + correctTexts.join('|');
+      .map(c => normalize(c.text)).sort();
+    return JSON.stringify([normalize(q.question), correctTexts]);
   }
   function compactVersion(text) {
     // Keep localStorage keys short even when hundreds of questions are saved.
@@ -57,19 +93,18 @@
     return h.toString(36);
   }
   function aggregate(unitId) {
-    const unit = units[unitId];
+    const unit = Object.hasOwn(units, unitId) && units[unitId];
     if (!unit) return null;
     const valid = [], missing = [], invalid = [], versions = [], questions = [];
-    const seen = new Map(), bankIDs = new Set();
+    const seen = new Map();
     for (const lesson of unit.lessons) {
-      const bank = registered[lesson.id];
-      if (!bank) { missing.push(lesson.id); continue; }
-      if (!checkBank(bank) || bankIDs.has(bank.bankId)) {
+      if (!Object.hasOwn(registered, lesson.id)) { missing.push(lesson.id); continue; }
+      const bank = verifiedLesson(unitId, lesson.id);
+      if (!bank) {
         invalid.push(lesson.id);
         continue;
       }
       valid.push(lesson.id);
-      bankIDs.add(bank.bankId);
       versions.push(lesson.id + '@' + bank.version);
       for (const q of bank.questions) {
         const fingerprint = dedupeKey(q);
@@ -138,7 +173,7 @@
   const view = params.get('bank');
   const demo = params.get('demo');
   if (!unitId && !lessonId && !view && !demo) return; // legacy bare demo.
-  const unit = units[unitId];
+  const unit = Object.hasOwn(units, unitId) && units[unitId];
   const rootHref = '../study.html?unit=' + encodeURIComponent(unitId || '');
   function context(kind, title, backHref, message) {
     return { kind, unitId, lessonId, title, backHref, message: message || '' };

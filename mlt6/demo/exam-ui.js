@@ -5,7 +5,7 @@
   const quizCore = window.QuizCore;
   const examCore = window.ExamCore;
   const root = document.getElementById('exam-root');
-  if (!bank || !quizCore || !examCore || !root) {
+  if (!bank || !quizCore || !examCore || !root || (Array.isArray(bank.questions) && !bank.questions.length)) {
     if (root) root.textContent = (window.MLT6_BANK_CONTEXT && window.MLT6_BANK_CONTEXT.message) || 'Unable to load Exam Mode.';
     return;
   }
