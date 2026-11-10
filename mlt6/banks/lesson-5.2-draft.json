@@ -1,0 +1,423 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "5.2",
+  "parentUnit": "5",
+  "releaseStatus": "DRAFT",
+  "verified": false,
+  "bankId": "mlt106-lesson-5.2",
+  "version": "workbook-reconciliation-in-progress",
+  "title": "Lesson 5.2: Other Major Blood Groups",
+  "description": "Draft source-faithful bank, not yet registered or released",
+  "questions": [
+    {
+      "id": "mlt106-5.2-q001",
+      "canonicalId": "mlt106-5.2-workbook-row-2",
+      "lessonId": "5.2",
+      "sourceOrder": 1,
+      "type": "single",
+      "question": "Which gene controls ABH secretions in the Lewis system?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Le"
+        },
+        {
+          "id": "b",
+          "text": "H"
+        },
+        {
+          "id": "c",
+          "text": "FY"
+        },
+        {
+          "id": "d",
+          "text": "Se"
+        }
+      ],
+      "correct": [
+        "d"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The Se gene codes for the fucosyltransferase involved in type 1 precursor chains and soluble ABH secretions.",
+        "pageNumber": 249,
+        "directQuote": "The Se gene is located on chromosome 19 (same as the H gene).",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q002",
+      "canonicalId": "mlt106-5.2-workbook-row-3",
+      "lessonId": "5.2",
+      "sourceOrder": 2,
+      "type": "single",
+      "question": "Which gene determines Lewis antigen production?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Le"
+        },
+        {
+          "id": "b",
+          "text": "Se"
+        },
+        {
+          "id": "c",
+          "text": "H"
+        },
+        {
+          "id": "d",
+          "text": "LU"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Lewis antigen production depends on the Lewis (Le) gene; the Se gene affects secretor status.",
+        "pageNumber": 250,
+        "directQuote": "The two alleles at this locus are Le and le.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q003",
+      "canonicalId": "mlt106-5.2-workbook-row-4",
+      "lessonId": "5.2",
+      "sourceOrder": 3,
+      "type": "single",
+      "question": "Which gene produces an enzyme that adds L-fucose to type 2 precursor chains?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "LU"
+        },
+        {
+          "id": "b",
+          "text": "H"
+        },
+        {
+          "id": "c",
+          "text": "Le"
+        },
+        {
+          "id": "d",
+          "text": "Se"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The H gene produces fucosyltransferase acting on type 2 chains; this question uses the user-approved corrected wording.",
+        "pageNumber": 249,
+        "directQuote": "except the H gene enzymes adds the sugar L-fucose to",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q004",
+      "canonicalId": "mlt106-5.2-workbook-row-5",
+      "lessonId": "5.2",
+      "sourceOrder": 4,
+      "type": "single",
+      "question": "Which Lewis phenotype is associated with secretor status?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Le(a-b-)"
+        },
+        {
+          "id": "b",
+          "text": "Le(a+b+)"
+        },
+        {
+          "id": "c",
+          "text": "Le(a-b+)"
+        },
+        {
+          "id": "d",
+          "text": "Le(a+b-)"
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Le(a-b+) requires Le and Se genes and corresponds to ABH secretor status.",
+        "pageNumber": 251,
+        "directQuote": "All are secretors of ABH soluble antigens.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q005",
+      "canonicalId": "mlt106-5.2-workbook-row-6",
+      "lessonId": "5.2",
+      "sourceOrder": 5,
+      "type": "single",
+      "question": "Which gene is inherited to produce Lewis antigens?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Se"
+        },
+        {
+          "id": "b",
+          "text": "FY"
+        },
+        {
+          "id": "c",
+          "text": "LU"
+        },
+        {
+          "id": "d",
+          "text": "Le"
+        }
+      ],
+      "correct": [
+        "d"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Le is the inherited gene required for Lewis antigen production.",
+        "pageNumber": 250,
+        "directQuote": "Lewis genes produce two antigens, Lea and Leb.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q006",
+      "canonicalId": "mlt106-5.2-workbook-row-7",
+      "lessonId": "5.2",
+      "sourceOrder": 6,
+      "type": "single",
+      "question": "At which phase do Lewis antibodies react most often?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Room temperature"
+        },
+        {
+          "id": "b",
+          "text": "37 C"
+        },
+        {
+          "id": "c",
+          "text": "AHG"
+        },
+        {
+          "id": "d",
+          "text": "Enzyme phase"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Lewis antibodies, including anti-Leb, most often react at room temperature.",
+        "pageNumber": 253,
+        "directQuote": "Most often reacts at room temperature, usually IgM",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q007",
+      "canonicalId": "mlt106-5.2-workbook-row-8",
+      "lessonId": "5.2",
+      "sourceOrder": 7,
+      "type": "single",
+      "question": "Which Lewis antibody is usually an IgM antibody?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Anti-Jka"
+        },
+        {
+          "id": "b",
+          "text": "Anti-Lea"
+        },
+        {
+          "id": "c",
+          "text": "Anti-K"
+        },
+        {
+          "id": "d",
+          "text": "Anti-Fya"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Anti-Lea is predominantly IgM.",
+        "pageNumber": 253,
+        "directQuote": "Vast majority of anti-Lea is IgM and is not clinically significant.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q008",
+      "canonicalId": "mlt106-5.2-workbook-row-9",
+      "lessonId": "5.2",
+      "sourceOrder": 8,
+      "type": "single",
+      "question": "Which two antigens are carried on glycophorin A?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "P1 and Pk"
+        },
+        {
+          "id": "b",
+          "text": "K and k"
+        },
+        {
+          "id": "c",
+          "text": "M and N"
+        },
+        {
+          "id": "d",
+          "text": "S and s"
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Glycophorin A carries the M and N antigens.",
+        "pageNumber": 255,
+        "directQuote": "The M and N antigens are found on glycophorin A (GPA)",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q009",
+      "canonicalId": "mlt106-5.2-workbook-row-10",
+      "lessonId": "5.2",
+      "sourceOrder": 9,
+      "type": "single",
+      "question": "Which two antigens are carried on glycophorin B?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "M and N"
+        },
+        {
+          "id": "b",
+          "text": "K and k"
+        },
+        {
+          "id": "c",
+          "text": "Lua and Lub"
+        },
+        {
+          "id": "d",
+          "text": "S and s"
+        }
+      ],
+      "correct": [
+        "d"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Glycophorin B carries S and s (and U).",
+        "pageNumber": 255,
+        "directQuote": "The S, s, and U antigens are found on the smaller glycoprotein called",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q010",
+      "canonicalId": "mlt106-5.2-workbook-row-11",
+      "lessonId": "5.2",
+      "sourceOrder": 10,
+      "type": "single",
+      "question": "Which glycophorin carries the U antigen?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Glycophorin B"
+        },
+        {
+          "id": "b",
+          "text": "Glycophorin A"
+        },
+        {
+          "id": "c",
+          "text": "Duffy glycoprotein"
+        },
+        {
+          "id": "d",
+          "text": "Kell glycoprotein"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The U antigen is carried by glycophorin B.",
+        "pageNumber": 255,
+        "directQuote": "The S, s, and U antigens are found on the smaller glycoprotein called",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    }
+  ]
+}
