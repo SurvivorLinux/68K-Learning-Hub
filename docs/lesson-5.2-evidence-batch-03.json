@@ -84,8 +84,9 @@
       "pageNumber": 270,
       "directQuote": "The antigens have not been found on platelets, lymphocytes,",
       "explanation": "The textbook says Duffy antigens are absent from platelets, lymphocytes, monocytes and granulocytes, which are ALL FOUR workbook options. The workbook single-answer key is invalid.",
-      "releaseStatus": "BLOCKED_AMBIGUOUS_KEY",
-      "approvedCorrection": false
+      "releaseStatus": "USER_APPROVED_MULTISELECT",
+      "approvedCorrection": false,
+      "approvalNote": "User approved all four options correct, change single to multi."
     },
     {
       "questionNumber": 35,
