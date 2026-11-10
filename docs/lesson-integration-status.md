@@ -13,15 +13,23 @@ The user explicitly authorized the existing Kahoot workbook `MLT_106_Master_Down
 - Lesson route: `mlt6/study.html?unit=24&lesson=5.3`. Unit Comprehensive and All Bookmarks derive this bank automatically.
 - The workbook has no separate textbook evidence or explanations, so these were added by checking the textbook. The original instructor mark colors are not independently verified.
 
+## Published lesson: 5.4 — Pretransfusion and Compatibility Testing
+- **22/22 workbook questions** registered from workbook rows 66–87, using source printed pages 290–300.
+- Original stems, choices, and keys retained; each record includes a rationale, source page, and textbook quotation.
+- Content covers purpose, patient identification, specimen freshness, donor selection, compatibility testing, plasma products and neonatal transfusion.
+- Source-specific caution: the course says neonatal blood should be no older than 7 days; this is a textbook-specific answer, not a universal contemporary transfusion standard.
+- All reverse-study flags are false pending independently approved reversible pairs.
+- Lesson route: `mlt6/study.html?unit=24&lesson=5.4`.
+
 ## Remaining unpublished workbook content
 | Lesson | Questions | Status |
 | --- | ---: | --- |
 | 5.2 · Other Major Blood Groups | 58 | Pending individual textbook answer, quote, and rationale audit |
 | 5.3 · Identification of Antibodies | 6 | Published with per-question textbook evidence |
-| 5.4 · Pretransfusion and Compatibility Testing | 22 | Pending individual textbook answer, quote, and rationale audit |
-| **Total** | **86** | **6 published; 80 pending** |
+| 5.4 · Pretransfusion and Compatibility Testing | 22 | Registered with per-question textbook evidence |
+| **Total** | **86** | **28 registered; 58 pending** |
 
-Do not change the 80 pending questions to approved merely to populate the interface. No new questions may be invented from the textbook. The existing OldTests and `main` branch are out of scope.
+Do not change the 58 pending questions to approved merely to populate the interface. No new questions may be invented from the textbook. The existing OldTests and `main` branch are out of scope.
 
 ## Release verification
 GitHub Pages success must be verified for the **exact final feature-branch SHA**, followed by direct testing of the lesson page and all six pathways. A pushed commit does not by itself establish successful deployment or browser verification. This report is not a substitute for the remaining full Runbook v2.2 independent audit and release evidence.
