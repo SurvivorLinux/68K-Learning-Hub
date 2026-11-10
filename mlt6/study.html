@@ -73,7 +73,8 @@
         addBreadcrumb('Lesson ' + lessonId, null);
         heading.append(el('h1', '', 'Lesson ' + lesson.id + ': ' + lesson.title));
         heading.append(el('p', 'lead', 'Printed textbook page ' + lesson.page +
-          ' · One lesson question bank, containing both C1 and C2 as supported by your approved marked material.'));
+          ' · One verified question bank per lesson, using the approved course workbook.'));
+        if (lesson.description) heading.append(el('p', 'muted', lesson.description));
         container.append(heading);
         const verified = !!lib.verifiedLesson(unitId, lessonId);
         const info = el('p', 'readiness-text', verified ?
@@ -118,7 +119,9 @@
           const card = makeLink('', unitHref + '&lesson=' + encodeURIComponent(lesson.id), 'lesson-card');
           card.append(el('span', 'lesson-badge', lesson.id));
           const text = el('span', 'lesson-card-copy');
-          text.append(el('strong', '', lesson.title), el('span', 'muted', 'Lesson ' + lesson.id + ' · Textbook p. ' + lesson.page),
+          text.append(el('strong', '', lesson.title), el('span', 'muted', 'Lesson ' + lesson.id + ' · Textbook p. ' + lesson.page));
+          if (lesson.description) text.append(el('span', 'muted', lesson.description));
+          text.append(
             el('span', bank ? 'lesson-state is-ready' : 'lesson-state',
               bank ? bank.questions.length + ' verified questions · Ready to study' :
                 'Study pathways awaiting questions'));
