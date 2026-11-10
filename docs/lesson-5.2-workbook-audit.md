@@ -2,7 +2,7 @@
 
 **Sources:** `MLT_106_Master_Download.xlsx`, `Source Audit` rows 2–13; `MLT 106 Blood Bank` (22 Oct 2025), Unit 5. Question stems, choices and keys are preserved. Page references below are printed textbook pages.
 
-**Status: DRAFT / NOT PUBLISHED.** The user explicitly approved a correction to Q3 on 9 Nov 2026. The audit now covers all 58 workbook questions; the lesson bank remains unpublished until evidence and QA are complete.
+**Status: DRAFT / NOT PUBLISHED.** The user explicitly approved the correction to Q3 and subsequently approved corrections to Q18, Q30, and Q41. The audit now covers all 58 workbook questions; the lesson bank remains unpublished until evidence and QA are complete.
 
 | Workbook Q | Workbook page | Key | Finding | Disposition |
 | --- | ---: | --- | --- | --- |
@@ -50,7 +50,7 @@
 | 15 | p | p.258: “p- Considered the P null phenotype.” | Supported |
 | 16 | Chromosome 3 | p.259: “GLOB gene resides on chromosome 3.” | Supported |
 | 17 | Anti-i | p.265: “Anti-i is associated with infectious mononucleosis.” | Supported; workbook page 260 is wrong |
-| 18 | Anti-I | p.264 links anti-I to cold agglutinin syndrome; p.265 describes transient abrupt hemolysis with Mycoplasma pneumoniae, **not** a severe hemolytic transfusion reaction | **Requires stronger evidence or exclusion; do not approve from this passage** |
+| 18 | Anti-I | p.264 associates anti-I with cold agglutinin syndrome; original severe HTR claim unsupported | **Approved replacement:** “Which antibody is associated with cold agglutinin syndrome?”; preserve answer choices and key |
 | 19 | Mycoplasma pneumoniae infection | p.265: anti-I associated with Mycoplasma pneumoniae infection | Supported; workbook page 261 is wrong |
 | 20 | Cold agglutination | pp.264–265: anti-I and anti-i are cold-reactive agglutinins | Supported |
 | 21 | Anti-I | p.264: “Anti-I is associated with cold agglutinin syndrome.” | Supported |
@@ -59,7 +59,7 @@
 | 24 | No Kell antigens | p.266: homozygous KoKo is Kell-null, produces no Kell antigens | Supported |
 | 25 | Kx | p.266: Kx is essential for normal expression of Kell antigens | Supported |
 
-**Batch 2:** 12 supported answer keys and 1 unresolved (Q18), subject to final quote-level and page metadata review. The source-page label for Q17 and Q19 is clearly offset. The textbook's 79% and 21% figures are historical course-specific statistics; preserve their course framing rather than asserting current population estimates.
+**Batch 2:** 12 supported original answer keys and 1 approved corrected stem (Q18), subject to final quote-level and page metadata review. The source-page label for Q17 and Q19 is clearly offset. The textbook's 79% and 21% figures are historical course-specific statistics; preserve their course framing rather than asserting current population estimates.
 
 ## Batch 3: workbook questions 26–35 (printed pages 267–270)
 
@@ -69,14 +69,14 @@
 | 27 | Anti-K | p.268: “After ABO and Rh antibodies, anti-K is the most clinically significant antibody seen in the blood bank.” | Supported |
 | 28 | AHG | p.268: anti-K “Usually detected at 37oC and AHG phase of testing” | Supported |
 | 29 | Anti-K | p.268: anti-K associated with severe HTR and HDFN | Supported |
-| 30 | Ficin, papain, bromelin | p.269 explicitly names papain and ficin as enzymes that do not denature Kell; bromelin not explicitly named there | **Hold pending explicit bromelin evidence** |
+| 30 | Ficin, papain, bromelin | p.269 explicitly names papain and ficin as enzymes that do not denature Kell; bromelin not explicitly named there | **Approved replacement:** stem “Which enzymes are specifically named as not denaturing Kell antigens?” and option 1 “Ficin and papain”; correct position remains 1 |
 | 31 | FY | p.270: “The Fy gene is responsible for the production of the transmembrane carrier molecule for Duffy glycoprotein.” | Supported |
 | 32 | Plasmodium vivax | p.270: Fy gene affects susceptibility to RBC invasion by Plasmodium vivax | Supported |
 | 33 | Fya and Fyb | p.270: detectable on fetal RBCs as early as 6 weeks gestation | Supported |
 | 34 | Platelets | p.270: Duffy antigens not found on platelets, lymphocytes, monocytes, **or granulocytes** | **Ambiguous single-answer item:** four cell types are absent, but only platelets appears among the answer options; key supported within listed choices |
 | 35 | Fy(a-b-) | p.270: phenotype reported in approximately 68% of African Americans and nearly 100% of African Black population | Supported as course-specific population statement |
 
-**Batch 3:** 9 answer keys supported (including Q34 as a single-answer question within its given options), 1 held for missing explicit enzyme evidence (Q30). Source-specific population statistics are reported as textbook claims, not current epidemiologic estimates.
+**Batch 3:** 9 original answer keys supported (including Q34 as a single-answer question within its given options), 1 approved corrected question/option (Q30). Source-specific population statistics are reported as textbook claims, not current epidemiologic estimates.
 
 ## Batch 4: workbook questions 36–58 (printed pp. 271–278)
 
@@ -89,7 +89,7 @@ The workbook row index equals question number + 1; these are questions 36–58 (
 | 38 | Fy3 | p.271: White Fy(a-b-) individuals express Fy3 | Supported as course wording |
 | 39 | Anti-Fya and anti-Fyb | p.271: two most likely encountered Duffy antibodies | Supported |
 | 40 | Acute and delayed HTR | p.271: anti-Fya/Fyb associated with both | Supported |
-| 41 | Resistance to RBC invasion | p.271: cells Fy(a-b-) **and lacking Fy6** are resistant | **Needs stem qualification**: Fy(a-b-) alone omits textbook's Fy6 condition |
+| 41 | Resistance to RBC invasion | p.271: cells Fy(a-b-) **and lacking Fy6** are resistant | **Approved replacement:** “A patient has Fy(a-b-) red cells that also lack the Fy6 receptor and lives in a P. vivax-endemic region. What protection is expected?”; original choices/key retained |
 | 42 | Neuraminidase and purified trypsin | p.272: “Duffy is not destroyed by neuraminidase or purified trypsin.” | Supported |
 | 43 | Rapid loss of detectable titer | p.274: anti-Jka/Jkb fade quickly from circulation | Supported |
 | 44 | Anti-Jk3 | p.274: anti-Jk3 is inseparable from anti-Jka or anti-Jkb | Supported |
@@ -108,12 +108,12 @@ The workbook row index equals question number + 1; these are questions 36–58 (
 | 57 | Recessive Lu/Lu | p.277: recessive Lu null phenotype associated with anti-Lu3 | Supported |
 | 58 | Ficin, papain, bromelin | p.278: these routine enzymes do not destroy Lutheran antigens | Supported |
 
-### Outstanding corrections and limitations
+### Approved corrections and remaining limitations
 
 - **Q3:** user approved revised wording: “Which gene produces an enzyme that adds L-fucose to type 2 precursor chains?” Key H unchanged.
-- **Q18 (confirmed blocker):** exact workbook stem is “Which antibody can cause severe hemolytic transfusion reactions?” with key anti-I. The Ii chapter on printed pp.264–265 describes anti-I association with cold agglutinin syndrome and transient abrupt hemolysis in Mycoplasma pneumoniae infection, **not severe hemolytic transfusion reactions**. The workbook key cannot be verified against this passage. Proposed replacement, requiring user approval: “Which antibody is associated with cold agglutinin syndrome?” (answer anti-I; preserve choices).
-- **Q30 (confirmed evidence limitation):** exact workbook answer is “Ficin, papain, bromelin.” Printed p.269 states Kell antigens are not denatured by “routine blood bank enzymes, papain and ficin,” but does not individually name bromelin. The answer is consistent with the general category but not independently confirmed word-for-word. Proposed replacement, requiring user approval: stem “Which enzymes are specifically named as not denaturing Kell antigens?”; replace option 1 with “Ficin and papain,” preserving its correct answer position. Do not claim the original triple is directly quoted.
-- **Q41:** proposed revised stem, pending approval: “A patient has Fy(a-b-) red cells that also lack the Fy6 receptor and lives in a P. vivax-endemic region. What protection is expected?” All four options and the correct answer remain unchanged.
+- **Q18 (confirmed blocker):** exact workbook stem is “Which antibody can cause severe hemolytic transfusion reactions?” with key anti-I. The Ii chapter on printed pp.264–265 describes anti-I association with cold agglutinin syndrome and transient abrupt hemolysis in Mycoplasma pneumoniae infection, **not severe hemolytic transfusion reactions**. The workbook key cannot be verified against this passage. User-approved replacement: “Which antibody is associated with cold agglutinin syndrome?” (answer anti-I; preserve choices).
+- **Q30 (confirmed evidence limitation):** exact workbook answer is “Ficin, papain, bromelin.” Printed p.269 states Kell antigens are not denatured by “routine blood bank enzymes, papain and ficin,” but does not individually name bromelin. The answer is consistent with the general category but not independently confirmed word-for-word. User-approved replacement: stem “Which enzymes are specifically named as not denaturing Kell antigens?”; replace option 1 with “Ficin and papain,” preserving its correct answer position. Do not claim the original triple is directly quoted.
+- **Q41:** user-approved revised stem: “A patient has Fy(a-b-) red cells that also lack the Fy6 receptor and lives in a P. vivax-endemic region. What protection is expected?” All four options and the correct answer remain unchanged.
 - **Q36:** source p.271 specifies both Fy(a-b-) and lack of Fy6; preserve this condition in its explanation rather than implying the phenotype alone is sufficient.
 - **Q45:** correct workbook source-page metadata from 274 to 275.
 - The source's population-specific phenotype descriptions are retained strictly as claims of this course text; they are not generalized beyond that source.
@@ -123,6 +123,19 @@ The workbook row index equals question number + 1; these are questions 36–58 (
 
 - **Q18** workbook answer anti-I is **not textbook-verifiable for the original severe HTR claim**. Source pp.264–265: “Anti-I is associated with cold agglutinin syndrome”; Mycoplasma pneumoniae may cause transient abrupt hemolysis. This is not the same as a severe hemolytic **transfusion** reaction. Do not release the original wording.
 - **Q30** source p.269: “Kell antigens are not denatured by routine blood bank enzymes, papain and ficin.” Bromelin is not individually named in this Kell paragraph. The original keyed option cannot be directly quoted in full; seek approval for a narrow wording/option correction.
-- **Q41** source p.271: “Cells that are Fy(a-b-) and lack the Fy6 receptor are resistant to malaria invasion.” The original question omits the second condition; the proposed correction explicitly includes it.
+- **Q41** source p.271: “Cells that are Fy(a-b-) and lack the Fy6 receptor are resistant to malaria invasion.” The original question omits the second condition; the user-approved correction explicitly includes it.
 
-**Release gate:** Obtain user approval for Q18, Q30, Q41 corrections, or omit those questions and publish only individually validated records. Do not label any question APPROVED without its own direct textbook evidence and rationale.
+**Release gate:** User approval for Q18, Q30 and Q41 is recorded. Integrate these corrected versions only after each record has exact textbook evidence, an explanation, structural QA, manifest/hash verification and six-mode validation. Do not label any question APPROVED without its own direct textbook evidence and rationale.
+
+## User approval and immutable correction ledger
+
+The user approved **all three** textbook-supported edits to Q18, Q30, and Q41 after the initial audit. Q3 was approved earlier. No other workbook question or answer option is authorized for modification.
+
+| Question | Original workbook text | Authorized replacement | Correct answer |
+| --- | --- | --- | --- |
+| 3 | Which gene produces the precursor H substance? | Which gene produces an enzyme that adds L-fucose to type 2 precursor chains? | H (option 2) |
+| 18 | Which antibody can cause severe hemolytic transfusion reactions? | Which antibody is associated with cold agglutinin syndrome? | Anti-I (option 1) |
+| 30 | Which enzymes do NOT destroy Kell antigens? | Which enzymes are specifically named as not denaturing Kell antigens? | Ficin and papain (option 1; replace original option 1 only) |
+| 41 | A Fy(a-b-) patient is in a P. vivax-endemic region. What protection is expected? | A patient has Fy(a-b-) red cells that also lack the Fy6 receptor and lives in a P. vivax-endemic region. What protection is expected? | Resistance to RBC invasion (option 4) |
+
+**Verification checkpoint:** Corrected Q30 remains a single-answer item because the other three answer options contain additional enzymes not explicitly supported by the cited Kell paragraph. Before final release, verify all four options and source quotations against the full textbook, not just the summary table above.
