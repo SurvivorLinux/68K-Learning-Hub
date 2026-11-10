@@ -97,7 +97,7 @@ The workbook row index equals question number + 1; these are questions 36–58 (
 | 46 | Kidd | p.274: Kidd antibodies may become undetectable within months | Supported |
 | 47 | Pregnancy and transfusion | p.275: Kidd antibodies stimulated by pregnancy or transfusion | Supported |
 | 48 | Delayed HTR | pp.274–275: declining titer leads to delayed HTR | Supported |
-| 49 | Papain and ficin | p.275: Kidd antigens not denatured by papain or ficin | Supported |
+| 49 | Papain and ficin | p.275 literally says **Kidd antibodies** are not denatured by papain or ficin, while workbook asks about **Kidd antigens** | **BLOCKED pending approval of terminology correction** |
 | 50 | High prevalence | p.276: most Lutheran antigens high prevalence | Supported |
 | 51 | Lua | p.276: Lua low-frequency antigen | Supported |
 | 52 | Lub | p.276: Lub high-frequency antigen | Supported |
@@ -145,3 +145,17 @@ The user approved **all three** textbook-supported edits to Q18, Q30, and Q41 af
 The initial audit erroneously claimed only “Platelets” appeared among the options. A fresh direct read of workbook row 35 confirms all four options are **Platelets, Monocytes, Lymphocytes, Granulocytes**, and the textbook p.270 states that Duffy antigens have **not** been found on any of those four cell types. Therefore **all four are correct** and the original workbook key `1` is wrong. The question must not be released as a single-answer item.
 
 **Recommended minimal correction (needs user approval):** keep the original stem and four original choices, change the answer key from `1` to `1,2,3,4` and the question type to multi-select. Alternatively replace three distractors, but that would change the source more substantially. This correction is **not** covered by the prior approval for Q3/Q18/Q30/Q41.
+
+## Q49 — precise textbook terminology discrepancy (additional release blocker)
+
+Workbook Q49 stem: “Which enzyme pair does NOT destroy Kidd antigens?” Correct workbook option 2: “Papain and ficin.” Printed textbook p.275 literally states: “Kidd antibodies are not denatured by papain or ficin.” The chapter's review question on printed p.279 also asks: “What blood group antibodies are not denatured by papain or ficin?” This source **does not literally support the workbook's word ‘antigens’**. The chapter separately says treating RBCs with enzymes generally enhances Kidd-antibody reactivity. The prior first-pass audit mistakenly substituted “antigens” for “antibodies.”
+
+**Recommended source-faithful correction requiring user approval:** Change only Q49 stem to “Which enzyme pair does NOT denature Kidd antibodies according to the textbook?” Keep all four original options and correct answer 2 (papain and ficin). Do not publish the original wording as textbook-verified unless the user approves an alternative source or correction.
+
+## Q34 approval
+
+The user explicitly approved converting Q34 to multi-select with **all four original options** correct. Its exact workbook stem is “Which cell type lacks detected Duffy antigens?” The approved minimal grammatical revision is “Which cell types lack detected Duffy antigens? (Select all that apply.)” Original choices remain Platelets, Monocytes, Lymphocytes, Granulocytes; correct positions change from `1` to `1,2,3,4`. This is documented in `docs/lesson-5.2-approved-corrections.json`.
+
+## Evidence completeness checkpoint
+
+Individual draft evidence files now cover all 58 questions: batches 01 (Q1–12), 02 (Q13–25), 03 (Q26–35), and 04 (Q36–58). **Coverage is not approval**. The direct quotes require an independent byte-for-byte comparison to textbook text, the four original choices and keys must be reconciled with the workbook, Q49 needs a decision, and final runtime/manifest/browser testing remains outstanding.
