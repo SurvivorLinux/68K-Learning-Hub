@@ -17,7 +17,7 @@
 | 9 | 256 | S and s | p.255: S/s reside on glycophorin B | Supported; citation page 255 |
 | 10 | 256 | Glycophorin B | p.255: U antigen resides on glycophorin B | Supported; citation page 255 |
 | 11 | 257 | Anti-M | p.256: anti-M is usually a saline agglutinin at room temperature | Supported; citation page 256 |
-| 12 | 257 | Anti-U | Exact anti-U IgG and 37°C wording still needs verification | **Pending evidence** |
+| 12 | 257 | Anti-U | p.257: anti-U is usually IgG with optimal reactivity at 37°C | Supported |
 
 ## Source evidence
 
@@ -29,11 +29,12 @@
 - p.255: “The M and N antigens are found on glycophorin A (GPA)”
 - p.255: “The S, s, and U antigens are found on the smaller glycoprotein called glycophorin B (GPB)”
 - p.256: “Anti-M is detected quite frequently in human sera”
+- p.257: “Usually, IgG in nature with optimal reactivity at 37oC, binds complement.”
 
 ## Release blockers
 
 1. Q3's stem is not supported as phrased; obtain approval before changing or excluding it.
-2. Q12 still needs exact evidence.
+2. Q12 is supported by the anti-U paragraph on printed p.257.
 3. Several workbook source-page references are offset from the actual printed pages and require metadata correction.
 4. The remaining 46 questions need independent answer, rationale and quotation audits.
 5. Runbook manifest/checksums and six-mode browser validation remain incomplete.
