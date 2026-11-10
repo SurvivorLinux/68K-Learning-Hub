@@ -33,3 +33,9 @@ Do not change the 58 pending questions to approved merely to populate the interf
 
 ## Release verification
 GitHub Pages success must be verified for the **exact final feature-branch SHA**, followed by direct testing of the lesson page and all six pathways. A pushed commit does not by itself establish successful deployment or browser verification. This report is not a substitute for the remaining full Runbook v2.2 independent audit and release evidence.
+
+## Lesson 5.2 correction approval checkpoint
+
+All 58 workbook questions have a first-pass answer-key comparison recorded in `docs/lesson-5.2-workbook-audit.md`. The user approved four narrowly scoped edits to Q3, Q18, Q30 and Q41; the exact changes are locked in `docs/lesson-5.2-approved-corrections.json`. All four original workbook stems, option positions and answers were rechecked against the source workbook. Only Q30 changes one option text; every answer position remains unchanged.
+
+**Not yet a release:** Lesson 5.2 still has no published bank. Per-question verbatim quotes and explanations, the independent manifest/hash audit, and six-mode runtime/browser verification remain pending. The existing 5.3/5.4 registration count remains 28, not 86. Do not confuse first-pass answer-key support with Runbook v2.2 approval.
