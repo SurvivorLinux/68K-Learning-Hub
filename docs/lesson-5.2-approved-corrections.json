@@ -50,8 +50,8 @@
     {
       "questionNumber": 34,
       "sourcePage": 270,
-      "originalStem": "On which cell type are Duffy antigens NOT found?",
-      "approvedStem": "On which cell types are Duffy antigens NOT found? (Select all that apply.)",
+      "originalStem": "Which cell type lacks detected Duffy antigens?",
+      "approvedStem": "Which cell types lack detected Duffy antigens? (Select all that apply.)",
       "correctOptions": [
         1,
         2,
