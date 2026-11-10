@@ -43,3 +43,7 @@ All 58 workbook questions have a first-pass answer-key comparison recorded in `d
 ## Lesson 5.2 per-question evidence work
 
 The first **12 of 58** Lesson 5.2 records now have individually stored printed-page citations, source quotations, and explanations in `docs/lesson-5.2-evidence-batch-01.json`. These are **audit records**, not released quiz-bank questions. Q3 uses the explicitly approved H-gene correction. The workbook is still the source for all question stems, four answer options and correct-option positions. Lesson 5.2 stays unpublished until all 58 evidence records and full structural/independent QA are complete.
+
+### Evidence batch 2 checkpoint
+
+`docs/lesson-5.2-evidence-batch-02.json` now stores **13 individual records (Q13–Q25)** with printed textbook pages, exact contiguous source quotations and explanations. All 13 quoted excerpts were checked for exact occurrence in the extracted Unit 5 textbook text. Together with batch 1, this gives **25/58 individual evidence records**; Q18 uses the approved anti-I/cold agglutinin syndrome wording. **No Lesson 5.2 release yet.** The remaining Q26–Q58 need individual evidence, then original workbook option/key reconciliation, manifest/hash verification, runtime and six-mode QA.
