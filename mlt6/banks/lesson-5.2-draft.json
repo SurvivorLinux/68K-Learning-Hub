@@ -38,7 +38,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lewis secretor gene",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The Se gene codes for the fucosyltransferase involved in type 1 precursor chains and soluble ABH secretions.",
@@ -79,7 +79,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lewis secretor gene",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Lewis antigen production depends on the Lewis (Le) gene; the Se gene affects secretor status.",
@@ -120,7 +120,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lewis secretor gene",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The H gene produces fucosyltransferase acting on type 2 chains; this question uses the user-approved corrected wording.",
@@ -161,7 +161,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lewis secretor gene",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Le(a-b+) requires Le and Se genes and corresponds to ABH secretor status.",
@@ -202,7 +202,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lewis antigens",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Le is the inherited gene required for Lewis antigen production.",
@@ -243,7 +243,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lewis antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Lewis antibodies, including anti-Leb, most often react at room temperature.",
@@ -284,7 +284,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lewis antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Anti-Lea is predominantly IgM.",
@@ -325,7 +325,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "MNS system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Glycophorin A carries the M and N antigens.",
@@ -366,7 +366,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "MNS system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Glycophorin B carries S and s (and U).",
@@ -407,7 +407,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "MNS system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The U antigen is carried by glycophorin B.",
@@ -448,7 +448,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "MNS antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Anti-M commonly reacts at room temperature.",
@@ -489,7 +489,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "MNS antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Anti-U is usually IgG and reacts optimally at 37°C.",
@@ -530,7 +530,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "P system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The course text lists the P1 phenotype in 79% of White individuals; P1 is the keyed answer.",
@@ -571,7 +571,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "P system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The P2 phenotype is listed in 21% of White individuals.",
@@ -612,7 +612,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "P system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The p phenotype lacks P, P1 and Pk antigens and is the P-null phenotype.",
@@ -653,7 +653,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "P system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The GLOB gene is on chromosome 3.",
@@ -694,7 +694,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "I system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The association is with autoanti-i; the workbook's anti-i answer is supported with that qualification.",
@@ -735,7 +735,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "I system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The approved corrected stem asks about cold agglutinin syndrome rather than severe hemolytic transfusion reactions.",
@@ -776,7 +776,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "I system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Mycoplasma pneumoniae infection is associated with anti-I specificity.",
@@ -817,7 +817,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Ii system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Ii antibodies often react as cold agglutinins; the text describes anti-I as IgM and enhanced by cold testing.",
@@ -858,7 +858,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Ii system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Anti-I is the antibody associated with cold agglutinin syndrome.",
@@ -899,7 +899,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Ii system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The antibody associated with infectious mononucleosis is autoanti-i.",
@@ -940,7 +940,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kell system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Kell antigens are detectable in fetal red cells and well developed at birth.",
@@ -981,7 +981,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kell system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Homozygous KoKo produces no Kell antigens.",
@@ -1022,7 +1022,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kell system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The Kx system is essential for normal expression of Kell antigens.",
@@ -1063,7 +1063,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kell system",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The McLeod phenotype lacks Kx antigen; the question is about its association with Kx.",
@@ -1104,7 +1104,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kell antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Anti-K is the most clinically significant antibody of the Kell system.",
@@ -1145,7 +1145,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kell antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Anti-K is detected at the AHG phase (and often 37°C).",
@@ -1186,7 +1186,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kell antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Anti-K is associated with HDFN.",
@@ -1227,7 +1227,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kell antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The approved stem and answer choice now specifically name ficin and papain, the two enzymes explicitly cited.",
@@ -1268,7 +1268,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Duffy antigens",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The FY gene produces the Duffy carrier glycoprotein.",
@@ -1309,7 +1309,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Duffy antigens",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Plasmodium vivax is the parasite linked to Duffy-mediated red-cell invasion.",
@@ -1350,7 +1350,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Duffy antigens",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Fya and Fyb can be identified on fetal RBCs at six weeks.",
@@ -1394,7 +1394,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Duffy antigens",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The textbook says Duffy antigens are absent from platelets, lymphocytes, monocytes and granulocytes, which are ALL FOUR workbook options. The workbook single-answer key is invalid.",
@@ -1435,7 +1435,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Duffy phenotypes",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The course describes Fy(a-b-) as prevalent among African Black populations; the quoted sentence has a confusing 'very rare' qualifier and should be contextualized.",
@@ -1476,7 +1476,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Duffy phenotypes",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The text qualifies malaria resistance with both Fy(a-b-) and absence of Fy6; do not assume Fy(a-b-) alone is sufficient.",
@@ -1517,7 +1517,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Duffy phenotypes",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The textbook associates Fy4 with Black individuals who have Fy(a-b-), as a source-specific statement.",
@@ -1558,7 +1558,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Duffy phenotypes",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The textbook associates Fy3 with White individuals who have Fy(a-b-), as a source-specific statement.",
@@ -1599,7 +1599,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Duffy antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Anti-Fya and anti-Fyb are the most frequently encountered Duffy antibodies.",
@@ -1640,7 +1640,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Duffy antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Anti-Fya and anti-Fyb are associated with acute and delayed hemolytic transfusion reactions.",
@@ -1680,8 +1680,8 @@
       "correct": [
         "d"
       ],
-      "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "cognitiveLevel": "C2",
+      "topicObjective": "Duffy phenotypes",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The user-approved revised question includes the absent Fy6 receptor; resistance to red-cell invasion is the expected protection.",
@@ -1722,7 +1722,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Duffy testing",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "These two treatments do not destroy Duffy antigens; common proteolytic enzymes do.",
@@ -1763,7 +1763,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kidd antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Anti-Jka and anti-Jkb can become virtually undetectable after a few months.",
@@ -1804,7 +1804,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kidd antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Anti-Jk3 reacts with Jka-positive and Jkb-positive cells and cannot be separated from anti-Jka or anti-Jkb.",
@@ -1845,7 +1845,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kidd antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Pregnancy or transfusion commonly stimulates Kidd antibody formation.",
@@ -1885,8 +1885,8 @@
       "correct": [
         "a"
       ],
-      "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "cognitiveLevel": "C2",
+      "topicObjective": "Kidd antibodies",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Kidd antibodies can fall below detectable titers months after transfusion.",
@@ -1927,7 +1927,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kidd clinical significance",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Pregnancy and transfusion are the common immunizing events for Kidd antibodies.",
@@ -1968,7 +1968,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kidd clinical significance",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The waning Kidd antibody titer explains the association with delayed HTR.",
@@ -2009,7 +2009,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Kidd testing",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "The course specifically states Kidd antibodies are not denatured by papain or ficin, although the workbook stem asks about Kidd antigens; this is a terminology mismatch requiring a check.",
@@ -2050,7 +2050,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lutheran antigens",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Most Lutheran antigens are high-prevalence antigens.",
@@ -2091,7 +2091,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lutheran antigens",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Lua is low frequency.",
@@ -2132,7 +2132,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lutheran antigens",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Lub is high frequency.",
@@ -2173,7 +2173,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lutheran antigens",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Lutheran antigens may be detected at 10–12 weeks of gestation.",
@@ -2214,7 +2214,7 @@
         "c"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lutheran phenotypes",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Dominant In(Lu) suppresses Lutheran antigen expression.",
@@ -2255,7 +2255,7 @@
         "d"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lutheran phenotypes",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Recessive Lu-null individuals can produce anti-Lu3.",
@@ -2296,7 +2296,7 @@
         "a"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lutheran phenotypes",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "A recessive X-linked suppressor can inhibit Lutheran antigen expression.",
@@ -2336,8 +2336,8 @@
       "correct": [
         "b"
       ],
-      "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "cognitiveLevel": "C2",
+      "topicObjective": "Lutheran phenotypes",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Recessive Lu-null inheritance fits an anti-Lu3-producing Lu(a-b-) patient.",
@@ -2378,7 +2378,7 @@
         "b"
       ],
       "cognitiveLevel": "C1",
-      "topicObjective": "Other Major Blood Groups",
+      "topicObjective": "Lutheran testing",
       "markingBasis": "workbook-authorized",
       "explanation": {
         "summary": "Ficin, papain and bromelin do not destroy Lutheran antigens.",
