@@ -3,7 +3,7 @@
   "lessonId": "5.2",
   "source": "MLT_106_Master_Download.xlsx",
   "textbook": "MLT 106 Blood Bank (22 Oct 2025), Unit 5",
-  "status": "USER_APPROVED_FIVE_CORRECTIONS_NOT_PUBLISHED",
+  "status": "USER_APPROVED_SIX_CORRECTIONS_NOT_PUBLISHED",
   "corrections": [
     {
       "questionNumber": 3,
@@ -70,6 +70,16 @@
         "to": "multi"
       },
       "approval": "User explicitly approved all four choices correct; preserve original four options."
+    },
+    {
+      "questionNumber": 49,
+      "sourcePage": 275,
+      "originalStem": "Which enzyme pair does NOT destroy Kidd antigens?",
+      "approvedStem": "Which enzyme pair does NOT denature Kidd antibodies according to the textbook?",
+      "correctOption": 2,
+      "correctText": "Papain and ficin",
+      "approvedOptionChanges": [],
+      "approval": "Explicit user approval in current conversation; retain all four options and answer position 2."
     }
   ]
 }
