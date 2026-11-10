@@ -2,7 +2,7 @@
 
 **Sources:** `MLT_106_Master_Download.xlsx`, `Source Audit` rows 2–13; `MLT 106 Blood Bank` (22 Oct 2025), Unit 5. Question stems, choices and keys are preserved. Page references below are printed textbook pages.
 
-**Status: DRAFT / NOT PUBLISHED.** The user explicitly approved a correction to Q3 on 9 Nov 2026. The audit now covers 35 of 58 questions; the lesson bank remains unpublished until evidence and QA are complete.
+**Status: DRAFT / NOT PUBLISHED.** The user explicitly approved a correction to Q3 on 9 Nov 2026. The audit now covers all 58 workbook questions; the lesson bank remains unpublished until evidence and QA are complete.
 
 | Workbook Q | Workbook page | Key | Finding | Disposition |
 | --- | ---: | --- | --- | --- |
@@ -36,10 +36,10 @@
 1. Q3's original stem is superseded by the user-approved corrected stem above. Preserve all four options and the original answer key.
 2. Q12 is supported by the anti-U paragraph on printed p.257.
 3. Several workbook source-page references are offset from the actual printed pages and require metadata correction.
-4. The remaining 23 questions need independent answer, rationale and quotation audits.
+4. All 58 questions have undergone an initial textbook comparison. Remaining work: resolve flagged items, produce individual explanations and quotations, and run independent release QA.
 5. Runbook manifest/checksums and six-mode browser validation remain incomplete.
 
-**Next:** Audit the remaining 23 records, then present any additional proposed content corrections before publishing lesson 5.2.
+**Next:** Resolve flagged questions and verify per-question evidence before registering lesson 5.2.
 
 ## Batch 2: workbook questions 13–25 (printed pages 258–266)
 
@@ -77,3 +77,44 @@
 | 35 | Fy(a-b-) | p.270: phenotype reported in approximately 68% of African Americans and nearly 100% of African Black population | Supported as course-specific population statement |
 
 **Batch 3:** 9 answer keys supported (including Q34 as a single-answer question within its given options), 1 held for missing explicit enzyme evidence (Q30). Source-specific population statistics are reported as textbook claims, not current epidemiologic estimates.
+
+## Batch 4: workbook questions 36–58 (printed pp. 271–278)
+
+The workbook row index equals question number + 1; these are questions 36–58 (rows 37–59).
+
+| Q | Correct workbook answer | Source evidence / reasoning | Status |
+| --- | --- | --- | --- |
+| 36 | Fy(a-b-) | p.271: Fy(a-b-) lacking Fy6 receptor resists malaria invasion | Supported, with receptor qualification |
+| 37 | Fy4 | p.271: Black Fy(a-b-) individuals express Fy4 | Supported as course wording |
+| 38 | Fy3 | p.271: White Fy(a-b-) individuals express Fy3 | Supported as course wording |
+| 39 | Anti-Fya and anti-Fyb | p.271: two most likely encountered Duffy antibodies | Supported |
+| 40 | Acute and delayed HTR | p.271: anti-Fya/Fyb associated with both | Supported |
+| 41 | Resistance to RBC invasion | p.271: cells Fy(a-b-) **and lacking Fy6** are resistant | **Needs stem qualification**: Fy(a-b-) alone omits textbook's Fy6 condition |
+| 42 | Neuraminidase and purified trypsin | p.272: “Duffy is not destroyed by neuraminidase or purified trypsin.” | Supported |
+| 43 | Rapid loss of detectable titer | p.274: anti-Jka/Jkb fade quickly from circulation | Supported |
+| 44 | Anti-Jk3 | p.274: anti-Jk3 is inseparable from anti-Jka or anti-Jkb | Supported |
+| 45 | Pregnancy or transfusion | p.275: Kidd antibodies normally made in response to pregnancy or transfusion | Supported; workbook page 274 should be 275 |
+| 46 | Kidd | p.274: Kidd antibodies may become undetectable within months | Supported |
+| 47 | Pregnancy and transfusion | p.275: Kidd antibodies stimulated by pregnancy or transfusion | Supported |
+| 48 | Delayed HTR | pp.274–275: declining titer leads to delayed HTR | Supported |
+| 49 | Papain and ficin | p.275: Kidd antigens not denatured by papain or ficin | Supported |
+| 50 | High prevalence | p.276: most Lutheran antigens high prevalence | Supported |
+| 51 | Lua | p.276: Lua low-frequency antigen | Supported |
+| 52 | Lub | p.276: Lub high-frequency antigen | Supported |
+| 53 | 10–12 weeks gestation | p.276: Lutheran antigens detected on fetuses at 10–12 weeks | Supported |
+| 54 | In(Lu) | p.277: dominant inhibitor suppresses Lutheran expression | Supported |
+| 55 | Anti-Lu3 | p.277: recessive Lu null phenotype can produce anti-Lu3 | Supported |
+| 56 | X chromosome | p.277: recessive X-linked inhibitor suppresses Lutheran expression | Supported |
+| 57 | Recessive Lu/Lu | p.277: recessive Lu null phenotype associated with anti-Lu3 | Supported |
+| 58 | Ficin, papain, bromelin | p.278: these routine enzymes do not destroy Lutheran antigens | Supported |
+
+### Outstanding corrections and limitations
+
+- **Q3:** user approved revised wording: “Which gene produces an enzyme that adds L-fucose to type 2 precursor chains?” Key H unchanged.
+- **Q18:** earlier batch overstated evidence for severe transfusion reactions. Re-evaluate exact stem and source, rather than treating an association with cold agglutinin syndrome as proof of severe transfusion reaction.
+- **Q30:** textbook p.269 names ficin and papain as enzymes that do not denature Kell, but bromelin is not explicitly named in that passage. Confirm an explicit source or revise with user approval before publication.
+- **Q41:** proposed revised stem, pending approval: “A patient has Fy(a-b-) red cells that also lack the Fy6 receptor and lives in a P. vivax-endemic region. What protection is expected?” All four options and the correct answer remain unchanged.
+- **Q36:** source p.271 specifies both Fy(a-b-) and lack of Fy6; preserve this condition in its explanation rather than implying the phenotype alone is sufficient.
+- **Q45:** correct workbook source-page metadata from 274 to 275.
+- The source's population-specific phenotype descriptions are retained strictly as claims of this course text; they are not generalized beyond that source.
+- This is a **first-pass answer-key audit**, not a finished Runbook v2.2 approved bank: individual exact quotations, explanations, manifest/hash checks and six-mode QA still must be completed.
