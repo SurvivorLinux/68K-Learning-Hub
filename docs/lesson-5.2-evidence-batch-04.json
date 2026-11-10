@@ -128,8 +128,9 @@
       "pageNumber": 275,
       "directQuote": "Kidd antibodies are not denatured by papain or ficin.",
       "explanation": "The course specifically states Kidd antibodies are not denatured by papain or ficin, although the workbook stem asks about Kidd antigens; this is a terminology mismatch requiring a check.",
-      "releaseStatus": "NEEDS_TERMINOLOGY_REVIEW",
-      "correctionApproved": false
+      "releaseStatus": "USER_APPROVED_STEM",
+      "correctionApproved": false,
+      "approvalNote": "User approved changing antigens to antibodies; correct option 2 remains papain and ficin."
     },
     {
       "questionNumber": 50,
