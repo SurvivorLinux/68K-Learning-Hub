@@ -73,10 +73,10 @@
 | 31 | FY | p.270: “The Fy gene is responsible for the production of the transmembrane carrier molecule for Duffy glycoprotein.” | Supported |
 | 32 | Plasmodium vivax | p.270: Fy gene affects susceptibility to RBC invasion by Plasmodium vivax | Supported |
 | 33 | Fya and Fyb | p.270: detectable on fetal RBCs as early as 6 weeks gestation | Supported |
-| 34 | Platelets | p.270: Duffy antigens not found on platelets, lymphocytes, monocytes, **or granulocytes** | **Ambiguous single-answer item:** four cell types are absent, but only platelets appears among the answer options; key supported within listed choices |
+| 34 | Platelets (workbook marks option 1 only) | p.270: Duffy antigens not found on platelets, lymphocytes, monocytes, **or granulocytes**. These are exactly options 1, 2, 3, 4 in the original workbook | **BLOCKED: all four choices are correct; single-answer key is invalid** |
 | 35 | Fy(a-b-) | p.270: phenotype reported in approximately 68% of African Americans and nearly 100% of African Black population | Supported as course-specific population statement |
 
-**Batch 3:** 9 original answer keys supported (including Q34 as a single-answer question within its given options), 1 approved corrected question/option (Q30). Source-specific population statistics are reported as textbook claims, not current epidemiologic estimates.
+**Batch 3:** 8 original answer keys supported, 1 approved corrected question/option (Q30), and **Q34 blocked** because all four original options are correct. Source-specific population statistics are reported as textbook claims, not current epidemiologic estimates.
 
 ## Batch 4: workbook questions 36–58 (printed pp. 271–278)
 
@@ -139,3 +139,9 @@ The user approved **all three** textbook-supported edits to Q18, Q30, and Q41 af
 | 41 | A Fy(a-b-) patient is in a P. vivax-endemic region. What protection is expected? | A patient has Fy(a-b-) red cells that also lack the Fy6 receptor and lives in a P. vivax-endemic region. What protection is expected? | Resistance to RBC invasion (option 4) |
 
 **Verification checkpoint:** Corrected Q30 remains a single-answer item because the other three answer options contain additional enzymes not explicitly supported by the cited Kell paragraph. Before final release, verify all four options and source quotations against the full textbook, not just the summary table above.
+
+## Critical new finding during individual evidence verification — Q34
+
+The initial audit erroneously claimed only “Platelets” appeared among the options. A fresh direct read of workbook row 35 confirms all four options are **Platelets, Monocytes, Lymphocytes, Granulocytes**, and the textbook p.270 states that Duffy antigens have **not** been found on any of those four cell types. Therefore **all four are correct** and the original workbook key `1` is wrong. The question must not be released as a single-answer item.
+
+**Recommended minimal correction (needs user approval):** keep the original stem and four original choices, change the answer key from `1` to `1,2,3,4` and the question type to multi-select. Alternatively replace three distractors, but that would change the source more substantially. This correction is **not** covered by the prior approval for Q3/Q18/Q30/Q41.
