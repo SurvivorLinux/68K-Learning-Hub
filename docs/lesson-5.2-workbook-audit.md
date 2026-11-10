@@ -2,13 +2,13 @@
 
 **Sources:** `MLT_106_Master_Download.xlsx`, `Source Audit` rows 2–13; `MLT 106 Blood Bank` (22 Oct 2025), Unit 5. Question stems, choices and keys are preserved. Page references below are printed textbook pages.
 
-**Status: DRAFT / NOT APPROVED.** First 12 of 58 questions examined. No lesson 5.2 bank published.
+**Status: DRAFT / NOT PUBLISHED.** The user explicitly approved a correction to Q3 on 9 Nov 2026. The audit now covers 25 of 58 questions; the lesson bank remains unpublished until evidence and QA are complete.
 
 | Workbook Q | Workbook page | Key | Finding | Disposition |
 | --- | ---: | --- | --- | --- |
 | 1 | 249 | Se | p.249: Se adds L-fucose to type 1 chains and governs soluble ABH secretion | Supported |
 | 2 | 249 | Le | p.250: Le/le alleles govern Lewis antigen production | Supported; citation page 250 |
-| 3 | 249 | H | p.249: H enzyme adds L-fucose to type 2 precursor chains; stem says “produces the precursor H substance” | **Stem correction or exclusion requires approval** |
+| 3 | 249 | H | p.249: H gene encodes the enzyme that adds L-fucose to type 2 precursor chains | **User-approved correction:** “Which gene produces an enzyme that adds L-fucose to type 2 precursor chains?”; answer stays H |
 | 4 | 249 | Le(a-b+) | p.251: Le(a-b+) individuals are all ABH secretors | Supported; citation page 251 |
 | 5 | 251 | Le | pp.250–251: Le is required for Lewis antigen production | Supported |
 | 6 | 253 | Room temperature | p.253: both anti-Lea and anti-Leb react best/most often at room temperature | Supported |
@@ -33,10 +33,30 @@
 
 ## Release blockers
 
-1. Q3's stem is not supported as phrased; obtain approval before changing or excluding it.
+1. Q3's original stem is superseded by the user-approved corrected stem above. Preserve all four options and the original answer key.
 2. Q12 is supported by the anti-U paragraph on printed p.257.
 3. Several workbook source-page references are offset from the actual printed pages and require metadata correction.
-4. The remaining 46 questions need independent answer, rationale and quotation audits.
+4. The remaining 33 questions need independent answer, rationale and quotation audits.
 5. Runbook manifest/checksums and six-mode browser validation remain incomplete.
 
-**Next:** Audit the remaining 46 records, then present proposed content corrections before publishing lesson 5.2.
+**Next:** Audit the remaining 33 records, then present any additional proposed content corrections before publishing lesson 5.2.
+
+## Batch 2: workbook questions 13–25 (printed pages 258–266)
+
+| Q | Key | Textbook evidence and finding | Disposition |
+| --- | --- | --- | --- |
+| 13 | P1 | p.258: P1 phenotype “Present in 79% of whites and 94% of blacks” | Supported |
+| 14 | P2 | p.258: P2 phenotype “Present in 21% of whites and 6% of blacks” | Supported |
+| 15 | p | p.258: “p- Considered the P null phenotype.” | Supported |
+| 16 | Chromosome 3 | p.259: “GLOB gene resides on chromosome 3.” | Supported |
+| 17 | Anti-i | p.265: “Anti-i is associated with infectious mononucleosis.” | Supported; workbook page 260 is wrong |
+| 18 | Anti-I | p.264: “Anti-I is associated with cold agglutinin syndrome.” p.265 describes severe hemolytic transfusion reactions in cold agglutinin syndrome | Supported; citation pp.264–265 |
+| 19 | Mycoplasma pneumoniae infection | p.265: anti-I associated with Mycoplasma pneumoniae infection | Supported; workbook page 261 is wrong |
+| 20 | Cold agglutination | pp.264–265: anti-I and anti-i are cold-reactive agglutinins | Supported |
+| 21 | Anti-I | p.264: “Anti-I is associated with cold agglutinin syndrome.” | Supported |
+| 22 | Anti-i | p.265: “Anti-i is associated with infectious mononucleosis.” | Supported |
+| 23 | At birth | p.266: Kell system antigens “well developed at birth” | Supported |
+| 24 | No Kell antigens | p.266: homozygous KoKo is Kell-null, produces no Kell antigens | Supported |
+| 25 | Kx | p.266: Kx is essential for normal expression of Kell antigens | Supported |
+
+**Batch 2:** 13 supported answer keys, subject to final quote-level and page metadata review. The source-page label for Q17 and Q19 is clearly offset. The textbook's 79% and 21% figures are historical course-specific statistics; preserve their course framing rather than asserting current population estimates.
