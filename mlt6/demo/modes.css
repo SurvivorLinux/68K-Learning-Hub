@@ -1,0 +1,50 @@
+/* Restrained, mobile-friendly study pathway styling. */
+.skip-to{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--bg);padding:10px}
+.skip-to:focus{left:10px;z-index:1000}
+.study-tabs{display:flex;flex-wrap:wrap;gap:9px;margin:25px 0 13px;padding:0}
+.study-tabs a{display:inline-flex;padding:9px 14px;text-decoration:none;border:1px solid var(--border);background:var(--card);color:var(--muted);border-radius:9px;font-weight:650;font-size:.83rem}
+.study-tabs a[aria-current=page]{background:#393325;color:var(--gold);border-color:#8e744b}
+.study-tabs a:hover{color:var(--text);border-color:var(--gold)}
+.mode-status-line{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 20px;color:var(--muted);font-size:.82rem}
+.scope-actions{display:flex;gap:7px;flex-wrap:wrap}
+.scope-link{color:var(--muted);padding:5px 10px;border:1px solid var(--border);border-radius:8px;text-decoration:none}
+.scope-link.active{color:var(--gold);border-color:var(--gold);background:#363228}
+.mode-panel{margin:0 0 22px}
+.mode-panel .question-tools{margin:0 0 6px}
+.mode-panel h2{margin-bottom:17px}
+.path-answer{border:1px solid #71613f;background:#3c3326;border-radius:10px;padding:15px 17px;font-weight:700;overflow-wrap:anywhere}
+.path-explanation{border:1px solid var(--border);background:#282e34;border-radius:11px;padding:17px 20px;font-size:.9rem;line-height:1.6;overflow-wrap:anywhere}
+.path-explanation p{margin:0 0 14px}
+.path-explanation p strong{color:var(--gold)}
+.path-explanation .source-quote{margin-top:9px}
+.path-navigation,.path-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:20px}
+.path-navigation{justify-content:space-between}
+.path-navigation .secondary:disabled{opacity:.4;cursor:default}
+.flashcard-face{display:block;width:100%;min-height:155px;padding:25px 18px;border:1px solid #7c6943;border-radius:13px;background:#322f2b;color:var(--text);font-size:clamp(1rem,3.2vw,1.35rem);font-weight:650;line-height:1.45;text-align:center;cursor:pointer;overflow-wrap:anywhere}
+.flashcard-face:hover{border-color:var(--gold);background:#3d352a}
+.study-rating{font-size:.83rem;color:var(--gold);margin:13px 0 0}
+.write-label{display:block;font-size:.88rem;font-weight:700;margin:18px 0 8px}
+.write-input{width:100%;min-height:132px;border:1px solid var(--border);background:#171b20;color:var(--text);font:inherit;border-radius:10px;padding:12px 14px;resize:vertical}
+.write-input:focus-visible,.flashcard-face:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.write-input:disabled{color:var(--muted)}
+.bookmarked-links{display:flex;flex-wrap:wrap;gap:10px;padding:9px 0 17px;border-bottom:1px solid var(--border)}
+.path-link{display:inline-flex;align-items:center;text-decoration:none;min-height:42px}
+.bookmark-list{margin-top:19px;display:grid;gap:12px}
+.bookmark-item{padding:16px;border:1px solid var(--border);border-radius:11px;background:var(--card2)}
+.bookmark-item-header{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.bookmark-item-header strong{font-size:.93rem}
+.bookmark-item p{margin:9px 0 0}
+.mode-footer{padding:15px 0 40px}
+.mode-footer a{color:var(--gold)}
+@media(max-width:620px){.study-tabs a{flex:1;justify-content:center;min-width:110px}.mode-status-line{align-items:flex-start}.bookmark-item-header{flex-direction:column}.path-navigation button,.path-actions button{flex:1}.bookmarked-links .path-link{flex:1;justify-content:center}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Shared term/definition direction settings for Flashcards and Write. */
+.direction-settings{padding:7px 13px;min-height:39px;white-space:nowrap}
+.direction-fieldset{padding:15px;margin:19px 0;border:1px solid var(--border);border-radius:11px}
+.direction-fieldset legend{color:var(--text);font-size:.88rem;font-weight:750;padding:0 8px}
+.direction-option{display:flex;align-items:center;gap:12px;padding:12px 9px;cursor:pointer;border-radius:8px}
+.direction-option:hover{background:#33383d}
+.direction-option input{width:18px;height:18px;accent-color:var(--gold);flex:0 0 auto}
+.direction-option input:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:620px){.direction-settings{width:100%}}

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "5.2",
+  "source": "MLT_106_Master_Download.xlsx",
+  "textbook": "MLT 106 Blood Bank (22 Oct 2025), Unit 5",
+  "status": "USER_APPROVED_SIX_CORRECTIONS_NOT_PUBLISHED",
+  "corrections": [
+    {
+      "questionNumber": 3,
+      "sourcePage": 249,
+      "originalStem": "Which gene produces the precursor H substance?",
+      "approvedStem": "Which gene produces an enzyme that adds L-fucose to type 2 precursor chains?",
+      "correctOption": 2,
+      "correctText": "H",
+      "approvedOptionChanges": []
+    },
+    {
+      "questionNumber": 18,
+      "sourcePage": 264,
+      "originalStem": "Which antibody can cause severe hemolytic transfusion reactions?",
+      "approvedStem": "Which antibody is associated with cold agglutinin syndrome?",
+      "correctOption": 1,
+      "correctText": "Anti-I",
+      "approvedOptionChanges": []
+    },
+    {
+      "questionNumber": 30,
+      "sourcePage": 269,
+      "originalStem": "Which enzymes do NOT destroy Kell antigens?",
+      "approvedStem": "Which enzymes are specifically named as not denaturing Kell antigens?",
+      "correctOption": 1,
+      "correctText": "Ficin and papain",
+      "approvedOptionChanges": [
+        {
+          "option": 1,
+          "original": "Ficin, papain, bromelin",
+          "approved": "Ficin and papain"
+        }
+      ]
+    },
+    {
+      "questionNumber": 41,
+      "sourcePage": 271,
+      "originalStem": "A Fy(a-b-) patient is in a P. vivax-endemic region. What protection is expected?",
+      "approvedStem": "A patient has Fy(a-b-) red cells that also lack the Fy6 receptor and lives in a P. vivax-endemic region. What protection is expected?",
+      "correctOption": 4,
+      "correctText": "Resistance to RBC invasion",
+      "approvedOptionChanges": []
+    },
+    {
+      "questionNumber": 34,
+      "sourcePage": 270,
+      "originalStem": "Which cell type lacks detected Duffy antigens?",
+      "approvedStem": "Which cell types lack detected Duffy antigens? (Select all that apply.)",
+      "correctOptions": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "correctTexts": [
+        "Platelets",
+        "Monocytes",
+        "Lymphocytes",
+        "Granulocytes"
+      ],
+      "approvedOptionChanges": [],
+      "approvedTypeChange": {
+        "from": "single",
+        "to": "multi"
+      },
+      "approval": "User explicitly approved all four choices correct; preserve original four options."
+    },
+    {
+      "questionNumber": 49,
+      "sourcePage": 275,
+      "originalStem": "Which enzyme pair does NOT destroy Kidd antigens?",
+      "approvedStem": "Which enzyme pair does NOT denature Kidd antibodies according to the textbook?",
+      "correctOption": 2,
+      "correctText": "Papain and ficin",
+      "approvedOptionChanges": [],
+      "approval": "Explicit user approval in current conversation; retain all four options and answer position 2."
+    }
+  ]
+}

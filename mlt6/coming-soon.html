@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#14171b">
+  <title>Coming Soon | 68K Learning Hub</title>
+  <link rel="stylesheet" href="../hub.css">
+  <script src="tests.js?v=units-v10" defer></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("test");
+      const mode = params.get("mode");
+      const test = Object.prototype.hasOwnProperty.call(window.MLT6_TESTS || {}, id)
+        ? window.MLT6_TESTS[id] : null;
+      const modeName = ({ review: "Review", flashcards: "Flashcards", write: "Write", bookmarked: "Bookmarked Questions", exam: "Exam Mode" })[mode] || null;
+      if (!test || !modeName) {
+        document.getElementById("invalid-selection").hidden = false;
+        return;
+      }
+      document.title = modeName + " · " + (test.legacyLabel || test.title) + " | 68K Learning Hub";
+      document.getElementById("test-breadcrumb").textContent = test.label;
+      document.getElementById("mode-breadcrumb").textContent = modeName;
+      document.getElementById("mode-name").textContent = modeName;
+      document.getElementById("test-name").textContent = test.label;
+      document.getElementById("back-to-test").href = "study.html?unit=" + encodeURIComponent(id);
+      document.getElementById("placeholder-content").hidden = false;
+    });
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header wrap">
+    <a href="../index.html" class="brand-lockup" aria-label="68K Learning Hub home">
+      <span class="brand-mark" aria-hidden="true">68K</span>
+      <span class="brand-name">68K Learning Hub</span>
+    </a>
+    <span class="phase-tag">MLT 6</span>
+  </header>
+  <main id="content" class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">68K Learning Hub</a><span aria-hidden="true">/</span>
+      <a href="../index.html#mlt6">MLT 6</a><span aria-hidden="true">/</span>
+      <span id="test-breadcrumb">Test</span><span aria-hidden="true">/</span>
+      <span id="mode-breadcrumb">Study option</span>
+    </nav>
+    <section id="placeholder-content" class="page-heading" hidden>
+      <div class="surface-panel">
+        <p id="mode-name" class="eyebrow">Study option</p>
+        <h1>Coming Soon.</h1>
+        <p><strong id="test-name"></strong></p>
+        <p>This study pathway will be available once a verified question bank is added for this textbook lesson. Your original multiple-choice quiz remains accessible on the study-unit page.</p>
+        <div class="page-actions">
+          <a id="back-to-test" class="back-link" href="../index.html#mlt6">← Back to study unit</a>
+          <a class="back-link" href="../index.html#mlt6">Back to MLT 6</a>
+        </div>
+      </div>
+    </section>
+    <section id="invalid-selection" class="page-heading" hidden>
+      <h1>Study option not found</h1>
+      <p class="lead">Choose a study unit and then an individual textbook lesson.</p>
+      <div class="page-actions"><a class="back-link" href="../index.html#mlt6">← Back to MLT 6</a></div>
+    </section>
+    <noscript><p class="lead">Enable JavaScript to view this study-unit placeholder.</p></noscript>
+  </main>
+  <footer class="site-footer wrap">68K Learning Hub · MLT 6 foundation</footer>
+</body>
+</html>

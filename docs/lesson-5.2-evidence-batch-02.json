@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "5.2",
+  "status": "EVIDENCE_RECORDED_NOT_PUBLISHED",
+  "batch": "13-25",
+  "source": "MLT 106 Blood Bank (22 Oct 2025), Unit 5",
+  "sourcePageConvention": "printed page numbers",
+  "records": [
+    {
+      "questionNumber": 13,
+      "sourceOrder": 13,
+      "pageNumber": 258,
+      "directQuote": "Present in 79% of whites and 94% of blacks",
+      "explanation": "The course text lists the P1 phenotype in 79% of White individuals; P1 is the keyed answer.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 14,
+      "sourceOrder": 14,
+      "pageNumber": 258,
+      "directQuote": "Present in 21% of whites and 6% of blacks",
+      "explanation": "The P2 phenotype is listed in 21% of White individuals.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 15,
+      "sourceOrder": 15,
+      "pageNumber": 258,
+      "directQuote": "p- Considered the P null phenotype.",
+      "explanation": "The p phenotype lacks P, P1 and Pk antigens and is the P-null phenotype.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 16,
+      "sourceOrder": 16,
+      "pageNumber": 259,
+      "directQuote": "GLOB gene resides on chromosome 3.",
+      "explanation": "The GLOB gene is on chromosome 3.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 17,
+      "sourceOrder": 17,
+      "pageNumber": 265,
+      "directQuote": "Autoanti-i can be associated with infectious mononucleosis",
+      "explanation": "The association is with autoanti-i; the workbook's anti-i answer is supported with that qualification.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 18,
+      "sourceOrder": 18,
+      "pageNumber": 264,
+      "directQuote": "Anti-I is associated with cold agglutinin syndrome.",
+      "explanation": "The approved corrected stem asks about cold agglutinin syndrome rather than severe hemolytic transfusion reactions.",
+      "correctionApproved": true
+    },
+    {
+      "questionNumber": 19,
+      "sourceOrder": 19,
+      "pageNumber": 265,
+      "directQuote": "Patients with Mycoplasma pneumoniae often develop strong cold",
+      "explanation": "Mycoplasma pneumoniae infection is associated with anti-I specificity.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 20,
+      "sourceOrder": 20,
+      "pageNumber": 264,
+      "directQuote": "Usually weak and naturally occurring, saline reactive IgM agglutinin.",
+      "explanation": "Ii antibodies often react as cold agglutinins; the text describes anti-I as IgM and enhanced by cold testing.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 21,
+      "sourceOrder": 21,
+      "pageNumber": 264,
+      "directQuote": "Anti-I is associated with cold agglutinin syndrome.",
+      "explanation": "Anti-I is the antibody associated with cold agglutinin syndrome.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 22,
+      "sourceOrder": 22,
+      "pageNumber": 265,
+      "directQuote": "Autoanti-i can be associated with infectious mononucleosis",
+      "explanation": "The antibody associated with infectious mononucleosis is autoanti-i.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 23,
+      "sourceOrder": 23,
+      "pageNumber": 266,
+      "directQuote": "meaning these antigens are well developed at birth.",
+      "explanation": "Kell antigens are detectable in fetal red cells and well developed at birth.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 24,
+      "sourceOrder": 24,
+      "pageNumber": 266,
+      "directQuote": "produces no Kell antigens and is referred to as the",
+      "explanation": "Homozygous KoKo produces no Kell antigens.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 25,
+      "sourceOrder": 25,
+      "pageNumber": 266,
+      "directQuote": "This system is essential for the antigens of the Kell system to be expressed",
+      "explanation": "The Kx system is essential for normal expression of Kell antigens.",
+      "correctionApproved": false
+    }
+  ]
+}

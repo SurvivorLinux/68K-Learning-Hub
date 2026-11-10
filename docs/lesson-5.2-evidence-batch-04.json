@@ -1,0 +1,217 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "5.2",
+  "batch": "36-58",
+  "status": "EVIDENCE_DRAFT_NOT_PUBLISHED",
+  "source": "MLT 106 Blood Bank (22 Oct 2025), Unit 5",
+  "records": [
+    {
+      "questionNumber": 36,
+      "sourceOrder": 36,
+      "pageNumber": 271,
+      "directQuote": "Cells that are Fy(a-b-) and lack the Fy6 receptor are resistant to malaria invasion.",
+      "explanation": "The text qualifies malaria resistance with both Fy(a-b-) and absence of Fy6; do not assume Fy(a-b-) alone is sufficient.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 37,
+      "sourceOrder": 37,
+      "pageNumber": 271,
+      "directQuote": "Black individuals who express this phenotype also express the Fy4",
+      "explanation": "The textbook associates Fy4 with Black individuals who have Fy(a-b-), as a source-specific statement.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 38,
+      "sourceOrder": 38,
+      "pageNumber": 271,
+      "directQuote": "White individuals who express this phenotype also express the Fy3",
+      "explanation": "The textbook associates Fy3 with White individuals who have Fy(a-b-), as a source-specific statement.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 39,
+      "sourceOrder": 39,
+      "pageNumber": 271,
+      "directQuote": "Two most likely encountered Fy antibodies.",
+      "explanation": "Anti-Fya and anti-Fyb are the most frequently encountered Duffy antibodies.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 40,
+      "sourceOrder": 40,
+      "pageNumber": 271,
+      "directQuote": "acute and delayed hemolytic transfusion reactions and mild to severe HDFN.",
+      "explanation": "Anti-Fya and anti-Fyb are associated with acute and delayed hemolytic transfusion reactions.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 41,
+      "sourceOrder": 41,
+      "pageNumber": 271,
+      "directQuote": "Cells that are Fy(a-b-) and lack the Fy6 receptor are resistant to malaria invasion.",
+      "explanation": "The user-approved revised question includes the absent Fy6 receptor; resistance to red-cell invasion is the expected protection.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": true
+    },
+    {
+      "questionNumber": 42,
+      "sourceOrder": 42,
+      "pageNumber": 272,
+      "directQuote": "Duffy is not destroyed by neuraminidase or purified trypsin.",
+      "explanation": "These two treatments do not destroy Duffy antigens; common proteolytic enzymes do.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 43,
+      "sourceOrder": 43,
+      "pageNumber": 274,
+      "directQuote": "Both antibodies fade quickly from circulation, so within a few months the",
+      "explanation": "Anti-Jka and anti-Jkb can become virtually undetectable after a few months.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 44,
+      "sourceOrder": 44,
+      "pageNumber": 274,
+      "directQuote": "Anti-Jk3 is inseparable from",
+      "explanation": "Anti-Jk3 reacts with Jka-positive and Jkb-positive cells and cannot be separated from anti-Jka or anti-Jkb.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 45,
+      "sourceOrder": 45,
+      "pageNumber": 275,
+      "directQuote": "Kidd antibodies are normally made in response to pregnancy or transfusion.",
+      "explanation": "Pregnancy or transfusion commonly stimulates Kidd antibody formation.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 46,
+      "sourceOrder": 46,
+      "pageNumber": 274,
+      "directQuote": "Both antibodies fade quickly from circulation, so within a few months the",
+      "explanation": "Kidd antibodies can fall below detectable titers months after transfusion.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 47,
+      "sourceOrder": 47,
+      "pageNumber": 275,
+      "directQuote": "Kidd antibodies are normally made in response to pregnancy or transfusion.",
+      "explanation": "Pregnancy and transfusion are the common immunizing events for Kidd antibodies.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 48,
+      "sourceOrder": 48,
+      "pageNumber": 274,
+      "directQuote": "responsible for delayed hemolytic transfusion reactions.",
+      "explanation": "The waning Kidd antibody titer explains the association with delayed HTR.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 49,
+      "sourceOrder": 49,
+      "pageNumber": 275,
+      "directQuote": "Kidd antibodies are not denatured by papain or ficin.",
+      "explanation": "The course specifically states Kidd antibodies are not denatured by papain or ficin, although the workbook stem asks about Kidd antigens; this is a terminology mismatch requiring a check.",
+      "releaseStatus": "USER_APPROVED_STEM",
+      "correctionApproved": false,
+      "approvalNote": "User approved changing antigens to antibodies; correct option 2 remains papain and ficin."
+    },
+    {
+      "questionNumber": 50,
+      "sourceOrder": 50,
+      "pageNumber": 276,
+      "directQuote": "Most of these antigens are high prevalence",
+      "explanation": "Most Lutheran antigens are high-prevalence antigens.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 51,
+      "sourceOrder": 51,
+      "pageNumber": 276,
+      "directQuote": "Lua is a low frequency antigen",
+      "explanation": "Lua is low frequency.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 52,
+      "sourceOrder": 52,
+      "pageNumber": 276,
+      "directQuote": "Lub is a high frequency antigen.",
+      "explanation": "Lub is high frequency.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 53,
+      "sourceOrder": 53,
+      "pageNumber": 276,
+      "directQuote": "Detected on fetuses at 10-12 weeks gestation, poorly developed at birth.",
+      "explanation": "Lutheran antigens may be detected at 10–12 weeks of gestation.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 54,
+      "sourceOrder": 54,
+      "pageNumber": 277,
+      "directQuote": "In(Lu) (inhibitor of Lutheran) is located at a locus other than LU.",
+      "explanation": "Dominant In(Lu) suppresses Lutheran antigen expression.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 55,
+      "sourceOrder": 55,
+      "pageNumber": 277,
+      "directQuote": "Individuals can make an anti-Lu3",
+      "explanation": "Recessive Lu-null individuals can produce anti-Lu3.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 56,
+      "sourceOrder": 56,
+      "pageNumber": 277,
+      "directQuote": "located on the X-chromosome inhibits the",
+      "explanation": "A recessive X-linked suppressor can inhibit Lutheran antigen expression.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 57,
+      "sourceOrder": 57,
+      "pageNumber": 277,
+      "directQuote": "The result of inheriting two recessive LuLu (Null) genes.",
+      "explanation": "Recessive Lu-null inheritance fits an anti-Lu3-producing Lu(a-b-) patient.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 58,
+      "sourceOrder": 58,
+      "pageNumber": 278,
+      "directQuote": "Routine blood bank enzymes, like ficin, papain, and bromelin do not destroy",
+      "explanation": "Ficin, papain and bromelin do not destroy Lutheran antigens.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "correctionApproved": false
+    }
+  ]
+}

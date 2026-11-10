@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "5.2",
+  "status": "SOURCE_EVIDENCE_REVIEWED_NOT_PUBLISHED",
+  "source": "MLT 106 Blood Bank, 22 Oct 2025, Unit 5",
+  "workbook": "MLT_106_Master_Download.xlsx",
+  "batch": "1-12",
+  "records": [
+    {
+      "questionNumber": 1,
+      "sourceOrder": 1,
+      "pageNumber": 249,
+      "directQuote": "The Se gene is located on chromosome 19 (same as the H gene).",
+      "explanation": "The Se gene codes for the fucosyltransferase involved in type 1 precursor chains and soluble ABH secretions.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 2,
+      "sourceOrder": 2,
+      "pageNumber": 250,
+      "directQuote": "The two alleles at this locus are Le and le.",
+      "explanation": "Lewis antigen production depends on the Lewis (Le) gene; the Se gene affects secretor status.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 3,
+      "sourceOrder": 3,
+      "pageNumber": 249,
+      "directQuote": "except the H gene enzymes adds the sugar L-fucose to",
+      "explanation": "The H gene produces fucosyltransferase acting on type 2 chains; this question uses the user-approved corrected wording.",
+      "correctionApproved": true
+    },
+    {
+      "questionNumber": 4,
+      "sourceOrder": 4,
+      "pageNumber": 251,
+      "directQuote": "All are secretors of ABH soluble antigens.",
+      "explanation": "Le(a-b+) requires Le and Se genes and corresponds to ABH secretor status.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 5,
+      "sourceOrder": 5,
+      "pageNumber": 250,
+      "directQuote": "Lewis genes produce two antigens, Lea and Leb.",
+      "explanation": "Le is the inherited gene required for Lewis antigen production.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 6,
+      "sourceOrder": 6,
+      "pageNumber": 253,
+      "directQuote": "Most often reacts at room temperature, usually IgM",
+      "explanation": "Lewis antibodies, including anti-Leb, most often react at room temperature.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 7,
+      "sourceOrder": 7,
+      "pageNumber": 253,
+      "directQuote": "Vast majority of anti-Lea is IgM and is not clinically significant.",
+      "explanation": "Anti-Lea is predominantly IgM.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 8,
+      "sourceOrder": 8,
+      "pageNumber": 255,
+      "directQuote": "The M and N antigens are found on glycophorin A (GPA)",
+      "explanation": "Glycophorin A carries the M and N antigens.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 9,
+      "sourceOrder": 9,
+      "pageNumber": 255,
+      "directQuote": "The S, s, and U antigens are found on the smaller glycoprotein called",
+      "explanation": "Glycophorin B carries S and s (and U).",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 10,
+      "sourceOrder": 10,
+      "pageNumber": 255,
+      "directQuote": "The S, s, and U antigens are found on the smaller glycoprotein called",
+      "explanation": "The U antigen is carried by glycophorin B.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 11,
+      "sourceOrder": 11,
+      "pageNumber": 256,
+      "directQuote": "a saline agglutinin in antibody tests performed at room temperature.",
+      "explanation": "Anti-M commonly reacts at room temperature.",
+      "correctionApproved": false
+    },
+    {
+      "questionNumber": 12,
+      "sourceOrder": 12,
+      "pageNumber": 257,
+      "directQuote": "Usually, IgG in nature with optimal reactivity at 37oC, binds complement.",
+      "explanation": "Anti-U is usually IgG and reacts optimally at 37°C.",
+      "correctionApproved": false
+    }
+  ]
+}

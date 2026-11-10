@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0",
+  "lessonId": "5.2",
+  "batch": "26-35",
+  "status": "EVIDENCE_DRAFT_NOT_PUBLISHED",
+  "source": "MLT 106 Blood Bank (22 Oct 2025), Unit 5",
+  "criticalFinding": "Q34 has four correct choices under the textbook; original workbook key marks only option 1. Do not publish Q34 as single-answer.",
+  "records": [
+    {
+      "questionNumber": 26,
+      "sourceOrder": 26,
+      "pageNumber": 267,
+      "directQuote": "Kx- present on all RBCs except those of the rare McLeod Phenotype",
+      "explanation": "The McLeod phenotype lacks Kx antigen; the question is about its association with Kx.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "approvedCorrection": false
+    },
+    {
+      "questionNumber": 27,
+      "sourceOrder": 27,
+      "pageNumber": 268,
+      "directQuote": "After ABO and Rh antibodies, anti-K is the most clinically significant antibody",
+      "explanation": "Anti-K is the most clinically significant antibody of the Kell system.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "approvedCorrection": false
+    },
+    {
+      "questionNumber": 28,
+      "sourceOrder": 28,
+      "pageNumber": 268,
+      "directQuote": "Usually detected at 37oC and AHG phase of testing",
+      "explanation": "Anti-K is detected at the AHG phase (and often 37°C).",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "approvedCorrection": false
+    },
+    {
+      "questionNumber": 29,
+      "sourceOrder": 29,
+      "pageNumber": 268,
+      "directQuote": "Has been associated with severe hemolytic transfusion reactions and HDFN.",
+      "explanation": "Anti-K is associated with HDFN.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "approvedCorrection": false
+    },
+    {
+      "questionNumber": 30,
+      "sourceOrder": 30,
+      "pageNumber": 269,
+      "directQuote": "Kell antigens are not denatured by routine blood bank enzymes, papain and ficin.",
+      "explanation": "The approved stem and answer choice now specifically name ficin and papain, the two enzymes explicitly cited.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "approvedCorrection": true
+    },
+    {
+      "questionNumber": 31,
+      "sourceOrder": 31,
+      "pageNumber": 270,
+      "directQuote": "The Fy gene is responsible for the production of the transmembrane carrier",
+      "explanation": "The FY gene produces the Duffy carrier glycoprotein.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "approvedCorrection": false
+    },
+    {
+      "questionNumber": 32,
+      "sourceOrder": 32,
+      "pageNumber": 270,
+      "directQuote": "The Fy gene plays a role in susceptibility to red cell invasion by Plasmodium",
+      "explanation": "Plasmodium vivax is the parasite linked to Duffy-mediated red-cell invasion.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "approvedCorrection": false
+    },
+    {
+      "questionNumber": 33,
+      "sourceOrder": 33,
+      "pageNumber": 270,
+      "directQuote": "Can be identified on fetal RBCs as early as 6 weeks gestational age",
+      "explanation": "Fya and Fyb can be identified on fetal RBCs at six weeks.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "approvedCorrection": false
+    },
+    {
+      "questionNumber": 34,
+      "sourceOrder": 34,
+      "pageNumber": 270,
+      "directQuote": "The antigens have not been found on platelets, lymphocytes,",
+      "explanation": "The textbook says Duffy antigens are absent from platelets, lymphocytes, monocytes and granulocytes, which are ALL FOUR workbook options. The workbook single-answer key is invalid.",
+      "releaseStatus": "USER_APPROVED_MULTISELECT",
+      "approvedCorrection": false,
+      "approvalNote": "User approved all four options correct, change single to multi."
+    },
+    {
+      "questionNumber": 35,
+      "sourceOrder": 35,
+      "pageNumber": 270,
+      "directQuote": "Fy(a-b-), a very rare phenotype found in approximately 68% of African",
+      "explanation": "The course describes Fy(a-b-) as prevalent among African Black populations; the quoted sentence has a confusing 'very rare' qualifier and should be contextualized.",
+      "releaseStatus": "EVIDENCE_DRAFT",
+      "approvedCorrection": false
+    }
+  ]
+}

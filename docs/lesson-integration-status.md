@@ -1,0 +1,63 @@
+# MLT 106 workbook integration status — Strict Mode / workbook-authorized source
+
+## Source and publication rules
+The user explicitly authorized the existing Kahoot workbook `MLT_106_Master_Download.xlsx` as the question-selection source instead of marked page photographs. Strict Mode red/pink and black remains the selected mark mode but is not independently certified from photographs. The 22 Oct 2025 MLT 106 Unit 5 textbook is the independent factual reference for correct answers, rationales and verbatim quotations. Original workbook stems, answer options, answer keys and source order are preserved.
+
+## Published lesson: 5.3 — Identification of Antibodies
+- **6/6 workbook questions** published from workbook rows 60–65, source printed pages 282 and 286.
+- **5 C1 / 1 C2**, all single-select; no question stem or answer option edited.
+- Individual textbook quotes and page numbers are stored with every question in `mlt6/banks/approved-banks.js`.
+- Page 282 confirms additional antibody identification after positive screen, exclusion to narrow possible antibodies, and homozygous expression for rule-outs.
+- Page 286 confirms antigen-negative donor cell selection and the need to phenotype donor red cells for corresponding antigens; the anti-Fya question applies this general principle.
+- All six use `study.reversible: false` because reverse flashcards were not independently approved.
+- Lesson route: `mlt6/study.html?unit=24&lesson=5.3`. Unit Comprehensive and All Bookmarks derive this bank automatically.
+- The workbook has no separate textbook evidence or explanations, so these were added by checking the textbook. The original instructor mark colors are not independently verified.
+
+## Published lesson: 5.4 — Pretransfusion and Compatibility Testing
+- **22/22 workbook questions** registered from workbook rows 66–87, using source printed pages 290–300.
+- Original stems, choices, and keys retained; each record includes a rationale, source page, and textbook quotation.
+- Content covers purpose, patient identification, specimen freshness, donor selection, compatibility testing, plasma products and neonatal transfusion.
+- Source-specific caution: the course says neonatal blood should be no older than 7 days; this is a textbook-specific answer, not a universal contemporary transfusion standard.
+- All reverse-study flags are false pending independently approved reversible pairs.
+- Lesson route: `mlt6/study.html?unit=24&lesson=5.4`.
+
+## Remaining unpublished workbook content
+| Lesson | Questions | Status |
+| --- | ---: | --- |
+| 5.2 · Other Major Blood Groups | 58 | Pending individual textbook answer, quote, and rationale audit |
+| 5.3 · Identification of Antibodies | 6 | Published with per-question textbook evidence |
+| 5.4 · Pretransfusion and Compatibility Testing | 22 | Registered with per-question textbook evidence |
+| **Total** | **86** | **28 registered; 58 pending** |
+
+Do not change the 58 pending questions to approved merely to populate the interface. No new questions may be invented from the textbook. The existing OldTests and `main` branch are out of scope.
+
+## Release verification
+GitHub Pages success must be verified for the **exact final feature-branch SHA**, followed by direct testing of the lesson page and all six pathways. A pushed commit does not by itself establish successful deployment or browser verification. This report is not a substitute for the remaining full Runbook v2.2 independent audit and release evidence.
+
+## Lesson 5.2 correction approval checkpoint
+
+All 58 workbook questions have a first-pass answer-key comparison recorded in `docs/lesson-5.2-workbook-audit.md`. The user approved four narrowly scoped edits to Q3, Q18, Q30 and Q41; the exact changes are locked in `docs/lesson-5.2-approved-corrections.json`. All four original workbook stems, option positions and answers were rechecked against the source workbook. Only Q30 changes one option text; every answer position remains unchanged.
+
+**Not yet a release:** Lesson 5.2 still has no published bank. Per-question verbatim quotes and explanations, the independent manifest/hash audit, and six-mode runtime/browser verification remain pending. The existing 5.3/5.4 registration count remains 28, not 86. Do not confuse first-pass answer-key support with Runbook v2.2 approval.
+
+## Lesson 5.2 per-question evidence work
+
+The first **12 of 58** Lesson 5.2 records now have individually stored printed-page citations, source quotations, and explanations in `docs/lesson-5.2-evidence-batch-01.json`. These are **audit records**, not released quiz-bank questions. Q3 uses the explicitly approved H-gene correction. The workbook is still the source for all question stems, four answer options and correct-option positions. Lesson 5.2 stays unpublished until all 58 evidence records and full structural/independent QA are complete.
+
+### Evidence batch 2 checkpoint
+
+`docs/lesson-5.2-evidence-batch-02.json` now stores **13 individual records (Q13–Q25)** with printed textbook pages, exact contiguous source quotations and explanations. All 13 quoted excerpts were checked for exact occurrence in the extracted Unit 5 textbook text. Together with batch 1, this gives **25/58 individual evidence records**; Q18 uses the approved anti-I/cold agglutinin syndrome wording. **No Lesson 5.2 release yet.** The remaining Q26–Q58 need individual evidence, then original workbook option/key reconciliation, manifest/hash verification, runtime and six-mode QA.
+
+### Evidence batch 4 and Q34 correction checkpoint
+
+All **58/58 Lesson 5.2 questions** now have *draft* individual textbook-evidence records in four JSON files (`docs/lesson-5.2-evidence-batch-01.json` through `04.json`). The user approved changing Q34 to a multi-select with all four original answers correct; the exact workbook stem and approved grammatical change are captured in the correction manifest. **Q49 is a new blocker:** printed p.275 says “Kidd antibodies” are not denatured by papain/ficin, whereas workbook Q49 says “Kidd antigens.” The source-faithful stem change is proposed in the audit and requires explicit approval. No Lesson 5.2 bank is registered, and release QA remains pending. Registered count remains 28/86, not 86/86.
+
+## Latest milestone — Lesson 5.2 registered on feature branch
+
+**Branch:** `feature/mlt6-foundation`. **Commit:** `2f8f2554c399b6f5f355b5ceda5ff65a008f99d8`.
+
+The complete **58-question Lesson 5.2** bank is now embedded in `mlt6/banks/approved-banks.js` with `releaseStatus: APPROVED`, `verified: true`. The earlier isolated `lesson-5.2-draft.json` remains an archival draft, not the loader's source. Lessons 5.3 (6) and 5.4 (22) remain registered: **86 total questions registered** across these three lessons on this branch. All six user-approved changes are present. Q34 is multi-select with four correct answers.
+
+**Connector-side bank structural verification:** JSON parse successful; 58/58 sequential source orders; IDs and canonical IDs unique; four distinct choices and valid correct keys per question; one multi-select (Q34); C2 metadata Q41/Q46/Q57; original 5.3 and 5.4 sections still present. These checks all passed. The workbook questions, options and answer positions were compared to the original workbook in the working session, accounting for the six approved corrections.
+
+**Important limitation:** The GitHub commit combined-status endpoint returned **no status checks** for this commit. No GitHub Actions run, local Node test execution against the full repository, browser six-mode testing or deployed Pages check has been verified. Therefore the bank is registered on the feature branch, but **not release-certified** and **not merged into main**. The next step is to run `node --test tests/mlt6.test.cjs` against a checkout of this branch and test all six modes in the browser, then verify GitHub Pages as applicable.

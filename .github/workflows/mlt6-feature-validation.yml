@@ -1,0 +1,58 @@
+name: MLT6 feature validation
+
+on:
+  push:
+    branches:
+      - feature/mlt6-foundation
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  node-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out feature branch
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run MLT6 regression suite
+        run: node --test tests/mlt6.test.cjs tests/mlt6-registered-banks.test.cjs
+      - name: Validate registered lesson 5.2 bank
+        run: |
+          node - <<'NODE'
+          const assert = require('node:assert/strict');
+          const fs = require('node:fs');
+          const vm = require('node:vm');
+          const window = {};
+          vm.runInNewContext(fs.readFileSync('mlt6/banks/approved-banks.js', 'utf8'), {window});
+          const registry = window.MLT6_APPROVED_BANKS;
+          assert.deepEqual(Object.keys(registry).sort(), ['5.2','5.3','5.4']);
+          assert.equal(registry['5.2'].questions.length, 58);
+          assert.equal(registry['5.3'].questions.length, 6);
+          assert.equal(registry['5.4'].questions.length, 22);
+          for (const [id, bank] of Object.entries(registry)) {
+            assert.equal(bank.verified, true);
+            assert.equal(bank.releaseStatus, 'APPROVED');
+            const ids = bank.questions.map(q => q.id);
+            assert.equal(new Set(ids).size, ids.length);
+            for (const q of bank.questions) {
+              assert.equal(q.choices.length, 4);
+              assert.ok(q.correct.length >= 1);
+              assert.ok(q.correct.every(x => q.choices.some(c => c.id === x)));
+              assert.ok(q.explanation?.directQuote);
+              assert.ok(q.explanation?.summary);
+              assert.ok(q.explanation?.pageNumber);
+            }
+          }
+          const q34 = registry['5.2'].questions[33];
+          assert.equal(q34.type, 'multi');
+          assert.deepEqual(Array.from(q34.correct), ['a','b','c','d']);
+          const q49 = registry['5.2'].questions[48];
+          assert.match(q49.question, /Kidd antibodies/);
+          assert.deepEqual(Array.from(q49.correct), ['b']);
+          console.log('Registered bank structural validation passed (86 questions).');
+          NODE

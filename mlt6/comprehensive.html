@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14171b">
+  <title>Unit Comprehensive | 68K Learning Hub</title>
+  <link rel="stylesheet" href="../hub.css?v=progressive-v11">
+  <script src="tests.js?v=progressive-v11" defer></script>
+  <script src="banks/approved-banks.js?v=lesson-release-v1" defer></script>
+  <script src="banks/bookmarks.js?v=progressive-v11" defer></script>
+  <script src="banks/scope-loader.js?v=lesson-release-v1" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      const unitId = new URLSearchParams(location.search).get('unit');
+      const units = window.MLT6_UNITS || {};
+      const unit = units[unitId];
+      const root = document.getElementById('content-panel');
+      const crumb = document.getElementById('unit-breadcrumb');
+      function el(tag, css, text) {
+        const e = document.createElement(tag);
+        if (css) e.className = css;
+        if (text !== undefined) e.textContent = text;
+        return e;
+      }
+      function link(label, href, css) {
+        const a = el('a', css, label); a.href = href; return a;
+      }
+      if (!unit || !window.MLT6Library) {
+        root.append(el('h1', '', 'Choose a study unit'));
+        root.append(el('p', 'lead',
+          'Comprehensive questions are organized within each study unit, not across unrelated units.'));
+        const grid = el('div', 'unit-selector-grid');
+        for (const id of window.MLT6_UNIT_ORDER || []) {
+          grid.append(link(units[id].title + ' →', 'study.html?unit=' + encodeURIComponent(id), 'back-link'));
+        }
+        root.append(grid);
+        return;
+      }
+      crumb.textContent = unit.title;
+      crumb.href = 'study.html?unit=' + encodeURIComponent(unitId);
+      document.title = unit.title + ' Comprehensive | 68K Learning Hub';
+      const data = window.MLT6Library.aggregate(unitId);
+      root.append(el('p', 'eyebrow', 'MLT 106 · Unit comprehensive'));
+      root.append(el('h1', '', unit.title + ' Comprehensive'));
+      root.append(el('p', 'lead',
+        'Comprehensive is always available. It includes currently approved questions from this unit’s lessons in original source order, with no duplicates, and grows as new lessons are added. Shuffle remains optional.'));
+      const status = el('section', 'surface-panel comprehensive-status');
+      status.append(el('h2', '', 'Lesson readiness'));
+      const msg = el('p', 'readiness-text',
+        data.questionCount + ' unique approved questions currently available from ' +
+        data.valid.length + ' of ' + unit.lessons.length + ' textbook lessons. ' +
+        (data.questionCount ?
+          'You can study these now; new lesson questions join automatically.' :
+          'Comprehensive is open now. Questions will appear when the first lesson bank is approved.'));
+      msg.setAttribute('role', 'status');status.append(msg);
+      const list = el('ul', 'chapter-readiness');
+      for (const lesson of unit.lessons) {
+        const ready = data.valid.includes(lesson.id);
+        list.append(el('li', ready ? 'chapter-ready' : 'chapter-pending',
+          'Lesson ' + lesson.id + ': ' + lesson.title + ' — ' +
+          (ready ? 'Verified' : data.invalid.includes(lesson.id) ? 'Needs correction' : 'Awaiting questions')));
+      }
+      status.append(list);
+      root.append(status);
+      root.append(el('h2', 'section-title', 'Study pathways'));
+      const grid = el('div', 'mode-grid');
+      const qs = '&unit=' + encodeURIComponent(unitId) + '&bank=unit&v=progressive-v11';
+      const links = [
+        ['Multiple Choice', 'Instant answers and required reviews.', 'demo/index.html?v=progressive-v11&unit=' + encodeURIComponent(unitId) + '&bank=unit'],
+        ['Exam Mode', 'No answers until submission.', 'demo/exam.html?v=progressive-v11&unit=' + encodeURIComponent(unitId) + '&bank=unit'],
+        ['Review', 'Read answers and source explanations.', 'demo/modes.html?mode=review' + qs],
+        ['Flashcards', 'Flip cards from every lesson.', 'demo/modes.html?mode=flashcards' + qs],
+        ['Write', 'Practice recall and self-assessment.', 'demo/modes.html?mode=write' + qs],
+        ['Bookmarked Questions', 'Review bookmarked questions within the comprehensive.', 'demo/modes.html?mode=bookmarked' + qs]
+      ];
+      links.forEach(([title,description,url],i) => {
+        const card = link('', url, 'mode-card');
+        const copy = el('span');
+        copy.append(el('span','mode-title',title),el('span','mode-desc',description));
+        card.append(el('span','mode-icon',String(i+1).padStart(2,'0')),copy,
+          el('span','mode-action',data.questionCount ?
+            'Open pathway →' : 'Open pathway · No questions yet →'));
+        grid.append(card);
+      });
+      root.append(grid);
+      const actions = el('div','page-actions');
+      actions.append(link('← Back to ' + unit.title + ' lessons', 'study.html?unit=' + encodeURIComponent(unitId), 'back-link'));
+      actions.append(link('All Bookmarks (' + data.bookmarkedCount + ') →',
+        'demo/modes.html?mode=bookmarked&unit=' + encodeURIComponent(unitId) + '&bank=bookmarks&v=progressive-v11',
+        'back-link'));
+      root.append(actions);
+    });
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header wrap">
+    <a href="../index.html" class="brand-lockup" aria-label="68K Learning Hub home">
+      <span class="brand-mark" aria-hidden="true">68K</span>
+      <span class="brand-name">68K Learning Hub</span>
+    </a>
+    <span class="phase-tag">MLT 6</span>
+  </header>
+  <main id="content" class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">68K Learning Hub</a><span aria-hidden="true">/</span>
+      <a href="../index.html#mlt6">MLT 6</a><span aria-hidden="true">/</span>
+      <a id="unit-breadcrumb" href="../index.html#mlt6">Study unit</a><span aria-hidden="true">/</span>
+      <span>Comprehensive</span>
+    </nav>
+    <section id="content-panel" class="page-heading comprehensive-page"></section>
+    <noscript><p class="lead">JavaScript is needed to check comprehensive lesson readiness.</p></noscript>
+  </main>
+  <footer class="site-footer wrap">68K Learning Hub · Per-unit comprehensive</footer>
+</body>
+</html>
