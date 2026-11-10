@@ -1,5 +1,2399 @@
 /* MLT 106 approved workbook lesson banks; original questions/keys preserved, source evidence checked against Unit 5. Pending lessons are not registered. */
 window.MLT6_APPROVED_BANKS = Object.freeze({
+  "5.2": {
+    "schemaVersion": "1.0",
+    "lessonId": "5.2",
+    "parentUnit": "5",
+    "releaseStatus": "APPROVED",
+    "verified": true,
+    "bankId": "mlt106-lesson-5.2",
+    "version": "workbook-textbook-audit-v2",
+    "title": "Lesson 5.2: Other Major Blood Groups",
+    "description": "Other major blood group systems and antibodies; workbook-based questions with individually cited textbook evidence.",
+    "questions": [
+      {
+        "id": "mlt106-5.2-q001",
+        "canonicalId": "mlt106-5.2-workbook-row-2",
+        "lessonId": "5.2",
+        "sourceOrder": 1,
+        "type": "single",
+        "question": "Which gene controls ABH secretions in the Lewis system?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le"
+          },
+          {
+            "id": "b",
+            "text": "H"
+          },
+          {
+            "id": "c",
+            "text": "FY"
+          },
+          {
+            "id": "d",
+            "text": "Se"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lewis secretor gene",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The Se gene codes for the fucosyltransferase involved in type 1 precursor chains and soluble ABH secretions.",
+          "pageNumber": 249,
+          "directQuote": "The Se gene is located on chromosome 19 (same as the H gene).",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q002",
+        "canonicalId": "mlt106-5.2-workbook-row-3",
+        "lessonId": "5.2",
+        "sourceOrder": 2,
+        "type": "single",
+        "question": "Which gene determines Lewis antigen production?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le"
+          },
+          {
+            "id": "b",
+            "text": "Se"
+          },
+          {
+            "id": "c",
+            "text": "H"
+          },
+          {
+            "id": "d",
+            "text": "LU"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lewis secretor gene",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Lewis antigen production depends on the Lewis (Le) gene; the Se gene affects secretor status.",
+          "pageNumber": 250,
+          "directQuote": "The two alleles at this locus are Le and le.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q003",
+        "canonicalId": "mlt106-5.2-workbook-row-4",
+        "lessonId": "5.2",
+        "sourceOrder": 3,
+        "type": "single",
+        "question": "Which gene produces an enzyme that adds L-fucose to type 2 precursor chains?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "LU"
+          },
+          {
+            "id": "b",
+            "text": "H"
+          },
+          {
+            "id": "c",
+            "text": "Le"
+          },
+          {
+            "id": "d",
+            "text": "Se"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lewis secretor gene",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The H gene produces fucosyltransferase acting on type 2 chains; this question uses the user-approved corrected wording.",
+          "pageNumber": 249,
+          "directQuote": "except the H gene enzymes adds the sugar L-fucose to",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q004",
+        "canonicalId": "mlt106-5.2-workbook-row-5",
+        "lessonId": "5.2",
+        "sourceOrder": 4,
+        "type": "single",
+        "question": "Which Lewis phenotype is associated with secretor status?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le(a-b-)"
+          },
+          {
+            "id": "b",
+            "text": "Le(a+b+)"
+          },
+          {
+            "id": "c",
+            "text": "Le(a-b+)"
+          },
+          {
+            "id": "d",
+            "text": "Le(a+b-)"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lewis secretor gene",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Le(a-b+) requires Le and Se genes and corresponds to ABH secretor status.",
+          "pageNumber": 251,
+          "directQuote": "All are secretors of ABH soluble antigens.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q005",
+        "canonicalId": "mlt106-5.2-workbook-row-6",
+        "lessonId": "5.2",
+        "sourceOrder": 5,
+        "type": "single",
+        "question": "Which gene is inherited to produce Lewis antigens?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Se"
+          },
+          {
+            "id": "b",
+            "text": "FY"
+          },
+          {
+            "id": "c",
+            "text": "LU"
+          },
+          {
+            "id": "d",
+            "text": "Le"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lewis antigens",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Le is the inherited gene required for Lewis antigen production.",
+          "pageNumber": 250,
+          "directQuote": "Lewis genes produce two antigens, Lea and Leb.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q006",
+        "canonicalId": "mlt106-5.2-workbook-row-7",
+        "lessonId": "5.2",
+        "sourceOrder": 6,
+        "type": "single",
+        "question": "At which phase do Lewis antibodies react most often?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Room temperature"
+          },
+          {
+            "id": "b",
+            "text": "37 C"
+          },
+          {
+            "id": "c",
+            "text": "AHG"
+          },
+          {
+            "id": "d",
+            "text": "Enzyme phase"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lewis antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Lewis antibodies, including anti-Leb, most often react at room temperature.",
+          "pageNumber": 253,
+          "directQuote": "Most often reacts at room temperature, usually IgM",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q007",
+        "canonicalId": "mlt106-5.2-workbook-row-8",
+        "lessonId": "5.2",
+        "sourceOrder": 7,
+        "type": "single",
+        "question": "Which Lewis antibody is usually an IgM antibody?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-Jka"
+          },
+          {
+            "id": "b",
+            "text": "Anti-Lea"
+          },
+          {
+            "id": "c",
+            "text": "Anti-K"
+          },
+          {
+            "id": "d",
+            "text": "Anti-Fya"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lewis antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Anti-Lea is predominantly IgM.",
+          "pageNumber": 253,
+          "directQuote": "Vast majority of anti-Lea is IgM and is not clinically significant.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q008",
+        "canonicalId": "mlt106-5.2-workbook-row-9",
+        "lessonId": "5.2",
+        "sourceOrder": 8,
+        "type": "single",
+        "question": "Which two antigens are carried on glycophorin A?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "P1 and Pk"
+          },
+          {
+            "id": "b",
+            "text": "K and k"
+          },
+          {
+            "id": "c",
+            "text": "M and N"
+          },
+          {
+            "id": "d",
+            "text": "S and s"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "MNS system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Glycophorin A carries the M and N antigens.",
+          "pageNumber": 255,
+          "directQuote": "The M and N antigens are found on glycophorin A (GPA)",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q009",
+        "canonicalId": "mlt106-5.2-workbook-row-10",
+        "lessonId": "5.2",
+        "sourceOrder": 9,
+        "type": "single",
+        "question": "Which two antigens are carried on glycophorin B?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "M and N"
+          },
+          {
+            "id": "b",
+            "text": "K and k"
+          },
+          {
+            "id": "c",
+            "text": "Lua and Lub"
+          },
+          {
+            "id": "d",
+            "text": "S and s"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "MNS system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Glycophorin B carries S and s (and U).",
+          "pageNumber": 255,
+          "directQuote": "The S, s, and U antigens are found on the smaller glycoprotein called",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q010",
+        "canonicalId": "mlt106-5.2-workbook-row-11",
+        "lessonId": "5.2",
+        "sourceOrder": 10,
+        "type": "single",
+        "question": "Which glycophorin carries the U antigen?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Glycophorin B"
+          },
+          {
+            "id": "b",
+            "text": "Glycophorin A"
+          },
+          {
+            "id": "c",
+            "text": "Duffy glycoprotein"
+          },
+          {
+            "id": "d",
+            "text": "Kell glycoprotein"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "MNS system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The U antigen is carried by glycophorin B.",
+          "pageNumber": 255,
+          "directQuote": "The S, s, and U antigens are found on the smaller glycoprotein called",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q011",
+        "canonicalId": "mlt106-5.2-workbook-row-12",
+        "lessonId": "5.2",
+        "sourceOrder": 11,
+        "type": "single",
+        "question": "Which MNS antibody often reacts best at room temperature?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-U"
+          },
+          {
+            "id": "b",
+            "text": "Anti-M"
+          },
+          {
+            "id": "c",
+            "text": "Anti-S"
+          },
+          {
+            "id": "d",
+            "text": "Anti-s"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "MNS antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Anti-M commonly reacts at room temperature.",
+          "pageNumber": 256,
+          "directQuote": "a saline agglutinin in antibody tests performed at room temperature.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q012",
+        "canonicalId": "mlt106-5.2-workbook-row-13",
+        "lessonId": "5.2",
+        "sourceOrder": 12,
+        "type": "single",
+        "question": "Which antibody is usually IgG and reacts optimally at 37 C?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-P1"
+          },
+          {
+            "id": "b",
+            "text": "Anti-Lea"
+          },
+          {
+            "id": "c",
+            "text": "Anti-U"
+          },
+          {
+            "id": "d",
+            "text": "Anti-M"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "MNS antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Anti-U is usually IgG and reacts optimally at 37°C.",
+          "pageNumber": 257,
+          "directQuote": "Usually, IgG in nature with optimal reactivity at 37oC, binds complement.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q013",
+        "canonicalId": "mlt106-5.2-workbook-row-14",
+        "lessonId": "5.2",
+        "sourceOrder": 13,
+        "type": "single",
+        "question": "Which antigen is present in 79% of White individuals?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "P2"
+          },
+          {
+            "id": "b",
+            "text": "Pk"
+          },
+          {
+            "id": "c",
+            "text": "P"
+          },
+          {
+            "id": "d",
+            "text": "P1"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "P system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The course text lists the P1 phenotype in 79% of White individuals; P1 is the keyed answer.",
+          "pageNumber": 258,
+          "directQuote": "Present in 79% of whites and 94% of blacks",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q014",
+        "canonicalId": "mlt106-5.2-workbook-row-15",
+        "lessonId": "5.2",
+        "sourceOrder": 14,
+        "type": "single",
+        "question": "Which P-system phenotype is present in 21% of Whites?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "P2"
+          },
+          {
+            "id": "b",
+            "text": "P1"
+          },
+          {
+            "id": "c",
+            "text": "P1k"
+          },
+          {
+            "id": "d",
+            "text": "P2k"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "P system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The P2 phenotype is listed in 21% of White individuals.",
+          "pageNumber": 258,
+          "directQuote": "Present in 21% of whites and 6% of blacks",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q015",
+        "canonicalId": "mlt106-5.2-workbook-row-16",
+        "lessonId": "5.2",
+        "sourceOrder": 15,
+        "type": "single",
+        "question": "Which P-system phenotype is the null phenotype?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "P1k"
+          },
+          {
+            "id": "b",
+            "text": "p"
+          },
+          {
+            "id": "c",
+            "text": "P1"
+          },
+          {
+            "id": "d",
+            "text": "P2"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "P system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The p phenotype lacks P, P1 and Pk antigens and is the P-null phenotype.",
+          "pageNumber": 258,
+          "directQuote": "p- Considered the P null phenotype.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q016",
+        "canonicalId": "mlt106-5.2-workbook-row-17",
+        "lessonId": "5.2",
+        "sourceOrder": 16,
+        "type": "single",
+        "question": "Which chromosome contains the GLOB gene?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "X chromosome"
+          },
+          {
+            "id": "b",
+            "text": "Chromosome 1"
+          },
+          {
+            "id": "c",
+            "text": "Chromosome 3"
+          },
+          {
+            "id": "d",
+            "text": "Chromosome 22"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "P system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The GLOB gene is on chromosome 3.",
+          "pageNumber": 259,
+          "directQuote": "GLOB gene resides on chromosome 3.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q017",
+        "canonicalId": "mlt106-5.2-workbook-row-18",
+        "lessonId": "5.2",
+        "sourceOrder": 17,
+        "type": "single",
+        "question": "Which antibody is associated with infectious mononucleosis?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-I"
+          },
+          {
+            "id": "b",
+            "text": "Anti-P1"
+          },
+          {
+            "id": "c",
+            "text": "Anti-M"
+          },
+          {
+            "id": "d",
+            "text": "Anti-i"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "I system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The association is with autoanti-i; the workbook's anti-i answer is supported with that qualification.",
+          "pageNumber": 265,
+          "directQuote": "Autoanti-i can be associated with infectious mononucleosis",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q018",
+        "canonicalId": "mlt106-5.2-workbook-row-19",
+        "lessonId": "5.2",
+        "sourceOrder": 18,
+        "type": "single",
+        "question": "Which antibody is associated with cold agglutinin syndrome?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-I"
+          },
+          {
+            "id": "b",
+            "text": "Anti-i"
+          },
+          {
+            "id": "c",
+            "text": "Anti-Lea"
+          },
+          {
+            "id": "d",
+            "text": "Anti-Lua"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "I system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The approved corrected stem asks about cold agglutinin syndrome rather than severe hemolytic transfusion reactions.",
+          "pageNumber": 264,
+          "directQuote": "Anti-I is associated with cold agglutinin syndrome.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q019",
+        "canonicalId": "mlt106-5.2-workbook-row-20",
+        "lessonId": "5.2",
+        "sourceOrder": 19,
+        "type": "single",
+        "question": "Which condition is associated with anti-I?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Hodgkin lymphoma"
+          },
+          {
+            "id": "b",
+            "text": "Mycoplasma pneumoniae infection"
+          },
+          {
+            "id": "c",
+            "text": "Infectious mononucleosis"
+          },
+          {
+            "id": "d",
+            "text": "Malaria"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "I system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Mycoplasma pneumoniae infection is associated with anti-I specificity.",
+          "pageNumber": 265,
+          "directQuote": "Patients with Mycoplasma pneumoniae often develop strong cold",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q020",
+        "canonicalId": "mlt106-5.2-workbook-row-21",
+        "lessonId": "5.2",
+        "sourceOrder": 20,
+        "type": "single",
+        "question": "What type of reaction do Ii antibodies commonly cause?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "HDFN"
+          },
+          {
+            "id": "b",
+            "text": "Delayed HTR"
+          },
+          {
+            "id": "c",
+            "text": "Cold agglutination"
+          },
+          {
+            "id": "d",
+            "text": "Warm agglutination"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Ii system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Ii antibodies often react as cold agglutinins; the text describes anti-I as IgM and enhanced by cold testing.",
+          "pageNumber": 264,
+          "directQuote": "Usually weak and naturally occurring, saline reactive IgM agglutinin.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q021",
+        "canonicalId": "mlt106-5.2-workbook-row-22",
+        "lessonId": "5.2",
+        "sourceOrder": 21,
+        "type": "single",
+        "question": "Which antibody is associated with cold agglutinin syndrome?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-i"
+          },
+          {
+            "id": "b",
+            "text": "Anti-P1"
+          },
+          {
+            "id": "c",
+            "text": "Anti-Lea"
+          },
+          {
+            "id": "d",
+            "text": "Anti-I"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Ii system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Anti-I is the antibody associated with cold agglutinin syndrome.",
+          "pageNumber": 264,
+          "directQuote": "Anti-I is associated with cold agglutinin syndrome.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q022",
+        "canonicalId": "mlt106-5.2-workbook-row-23",
+        "lessonId": "5.2",
+        "sourceOrder": 22,
+        "type": "single",
+        "question": "Which antibody is associated with infectious mononucleosis?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-i"
+          },
+          {
+            "id": "b",
+            "text": "Anti-I"
+          },
+          {
+            "id": "c",
+            "text": "Anti-M"
+          },
+          {
+            "id": "d",
+            "text": "Anti-U"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Ii system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The antibody associated with infectious mononucleosis is autoanti-i.",
+          "pageNumber": 265,
+          "directQuote": "Autoanti-i can be associated with infectious mononucleosis",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q023",
+        "canonicalId": "mlt106-5.2-workbook-row-24",
+        "lessonId": "5.2",
+        "sourceOrder": 23,
+        "type": "single",
+        "question": "When are Kell antigens well developed?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "At 4 months"
+          },
+          {
+            "id": "b",
+            "text": "At birth"
+          },
+          {
+            "id": "c",
+            "text": "At 6 weeks gestation"
+          },
+          {
+            "id": "d",
+            "text": "At 10-12 weeks gestation"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kell system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Kell antigens are detectable in fetal red cells and well developed at birth.",
+          "pageNumber": 266,
+          "directQuote": "meaning these antigens are well developed at birth.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q024",
+        "canonicalId": "mlt106-5.2-workbook-row-25",
+        "lessonId": "5.2",
+        "sourceOrder": 24,
+        "type": "single",
+        "question": "Which Kell antigen is produced by a homozygous KoKo individual?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "k antigen"
+          },
+          {
+            "id": "b",
+            "text": "Kpa antigen"
+          },
+          {
+            "id": "c",
+            "text": "No Kell antigens"
+          },
+          {
+            "id": "d",
+            "text": "K antigen"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kell system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Homozygous KoKo produces no Kell antigens.",
+          "pageNumber": 266,
+          "directQuote": "produces no Kell antigens and is referred to as the",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q025",
+        "canonicalId": "mlt106-5.2-workbook-row-26",
+        "lessonId": "5.2",
+        "sourceOrder": 25,
+        "type": "single",
+        "question": "Which antigen is essential for normal Kell antigen expression?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "K"
+          },
+          {
+            "id": "b",
+            "text": "k"
+          },
+          {
+            "id": "c",
+            "text": "Kpa"
+          },
+          {
+            "id": "d",
+            "text": "Kx"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kell system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The Kx system is essential for normal expression of Kell antigens.",
+          "pageNumber": 266,
+          "directQuote": "This system is essential for the antigens of the Kell system to be expressed",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q026",
+        "canonicalId": "mlt106-5.2-workbook-row-27",
+        "lessonId": "5.2",
+        "sourceOrder": 26,
+        "type": "single",
+        "question": "Which antigen is associated with the McLeod phenotype?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Kx"
+          },
+          {
+            "id": "b",
+            "text": "K"
+          },
+          {
+            "id": "c",
+            "text": "k"
+          },
+          {
+            "id": "d",
+            "text": "Jsa"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kell system",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The McLeod phenotype lacks Kx antigen; the question is about its association with Kx.",
+          "pageNumber": 267,
+          "directQuote": "Kx- present on all RBCs except those of the rare McLeod Phenotype",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q027",
+        "canonicalId": "mlt106-5.2-workbook-row-28",
+        "lessonId": "5.2",
+        "sourceOrder": 27,
+        "type": "single",
+        "question": "Which antibody is the most clinically significant in the Kell system?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-Jsa"
+          },
+          {
+            "id": "b",
+            "text": "Anti-K"
+          },
+          {
+            "id": "c",
+            "text": "Anti-k"
+          },
+          {
+            "id": "d",
+            "text": "Anti-Kpa"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kell antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Anti-K is the most clinically significant antibody of the Kell system.",
+          "pageNumber": 268,
+          "directQuote": "After ABO and Rh antibodies, anti-K is the most clinically significant antibody",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q028",
+        "canonicalId": "mlt106-5.2-workbook-row-29",
+        "lessonId": "5.2",
+        "sourceOrder": 28,
+        "type": "single",
+        "question": "At which phase is anti-K usually detected?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Room temperature"
+          },
+          {
+            "id": "b",
+            "text": "Saline phase"
+          },
+          {
+            "id": "c",
+            "text": "AHG"
+          },
+          {
+            "id": "d",
+            "text": "Immediate spin"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kell antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Anti-K is detected at the AHG phase (and often 37°C).",
+          "pageNumber": 268,
+          "directQuote": "Usually detected at 37oC and AHG phase of testing",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q029",
+        "canonicalId": "mlt106-5.2-workbook-row-30",
+        "lessonId": "5.2",
+        "sourceOrder": 29,
+        "type": "single",
+        "question": "Which Kell antibody can cause HDFN?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-Lea"
+          },
+          {
+            "id": "b",
+            "text": "Anti-P1"
+          },
+          {
+            "id": "c",
+            "text": "Anti-Lua"
+          },
+          {
+            "id": "d",
+            "text": "Anti-K"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kell antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Anti-K is associated with HDFN.",
+          "pageNumber": 268,
+          "directQuote": "Has been associated with severe hemolytic transfusion reactions and HDFN.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q030",
+        "canonicalId": "mlt106-5.2-workbook-row-31",
+        "lessonId": "5.2",
+        "sourceOrder": 30,
+        "type": "single",
+        "question": "Which enzymes are specifically named as not denaturing Kell antigens?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Ficin and papain"
+          },
+          {
+            "id": "b",
+            "text": "Ficin, papain, trypsin"
+          },
+          {
+            "id": "c",
+            "text": "Bromelin, chymotrypsin, ficin"
+          },
+          {
+            "id": "d",
+            "text": "Trypsin, EDTA, ficin"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kell antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The approved stem and answer choice now specifically name ficin and papain, the two enzymes explicitly cited.",
+          "pageNumber": 269,
+          "directQuote": "Kell antigens are not denatured by routine blood bank enzymes, papain and ficin.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q031",
+        "canonicalId": "mlt106-5.2-workbook-row-32",
+        "lessonId": "5.2",
+        "sourceOrder": 31,
+        "type": "single",
+        "question": "Which gene produces the Duffy transmembrane carrier glycoprotein?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "GLOB"
+          },
+          {
+            "id": "b",
+            "text": "FY"
+          },
+          {
+            "id": "c",
+            "text": "LU"
+          },
+          {
+            "id": "d",
+            "text": "JK"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Duffy antigens",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The FY gene produces the Duffy carrier glycoprotein.",
+          "pageNumber": 270,
+          "directQuote": "The Fy gene is responsible for the production of the transmembrane carrier",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q032",
+        "canonicalId": "mlt106-5.2-workbook-row-33",
+        "lessonId": "5.2",
+        "sourceOrder": 32,
+        "type": "single",
+        "question": "Which parasite uses Duffy antigens for RBC invasion?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Mycoplasma pneumoniae"
+          },
+          {
+            "id": "b",
+            "text": "Helicobacter pylori"
+          },
+          {
+            "id": "c",
+            "text": "Plasmodium vivax"
+          },
+          {
+            "id": "d",
+            "text": "Yersinia enterocolitica"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Duffy antigens",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Plasmodium vivax is the parasite linked to Duffy-mediated red-cell invasion.",
+          "pageNumber": 270,
+          "directQuote": "The Fy gene plays a role in susceptibility to red cell invasion by Plasmodium",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q033",
+        "canonicalId": "mlt106-5.2-workbook-row-34",
+        "lessonId": "5.2",
+        "sourceOrder": 33,
+        "type": "single",
+        "question": "Which Duffy antigen pair is present by 6 weeks of gestation?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Lua and Lub"
+          },
+          {
+            "id": "b",
+            "text": "Jka and Jkb"
+          },
+          {
+            "id": "c",
+            "text": "M and N"
+          },
+          {
+            "id": "d",
+            "text": "Fya and Fyb"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Duffy antigens",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Fya and Fyb can be identified on fetal RBCs at six weeks.",
+          "pageNumber": 270,
+          "directQuote": "Can be identified on fetal RBCs as early as 6 weeks gestational age",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q034",
+        "canonicalId": "mlt106-5.2-workbook-row-35",
+        "lessonId": "5.2",
+        "sourceOrder": 34,
+        "type": "multi",
+        "question": "Which cell types lack detected Duffy antigens? (Select all that apply.)",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Platelets"
+          },
+          {
+            "id": "b",
+            "text": "Monocytes"
+          },
+          {
+            "id": "c",
+            "text": "Lymphocytes"
+          },
+          {
+            "id": "d",
+            "text": "Granulocytes"
+          }
+        ],
+        "correct": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Duffy antigens",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The textbook says Duffy antigens are absent from platelets, lymphocytes, monocytes and granulocytes, which are ALL FOUR workbook options. The workbook single-answer key is invalid.",
+          "pageNumber": 270,
+          "directQuote": "The antigens have not been found on platelets, lymphocytes,",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q035",
+        "canonicalId": "mlt106-5.2-workbook-row-36",
+        "lessonId": "5.2",
+        "sourceOrder": 35,
+        "type": "single",
+        "question": "Which Duffy phenotype is common among African Black populations?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Fy(a+b+)"
+          },
+          {
+            "id": "b",
+            "text": "Fy(a-b-)"
+          },
+          {
+            "id": "c",
+            "text": "Fy(a+b-)"
+          },
+          {
+            "id": "d",
+            "text": "Fy(a-b+)"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Duffy phenotypes",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The course describes Fy(a-b-) as prevalent among African Black populations; the quoted sentence has a confusing 'very rare' qualifier and should be contextualized.",
+          "pageNumber": 270,
+          "directQuote": "Fy(a-b-), a very rare phenotype found in approximately 68% of African",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q036",
+        "canonicalId": "mlt106-5.2-workbook-row-37",
+        "lessonId": "5.2",
+        "sourceOrder": 36,
+        "type": "single",
+        "question": "Which Duffy phenotype is associated with resistance to malaria?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Fy(a-b+)"
+          },
+          {
+            "id": "b",
+            "text": "Fy(a+b+)"
+          },
+          {
+            "id": "c",
+            "text": "Fy(a-b-)"
+          },
+          {
+            "id": "d",
+            "text": "Fy(a+b-)"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Duffy phenotypes",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The text qualifies malaria resistance with both Fy(a-b-) and absence of Fy6; do not assume Fy(a-b-) alone is sufficient.",
+          "pageNumber": 271,
+          "directQuote": "Cells that are Fy(a-b-) and lack the Fy6 receptor are resistant to malaria invasion.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q037",
+        "canonicalId": "mlt106-5.2-workbook-row-38",
+        "lessonId": "5.2",
+        "sourceOrder": 37,
+        "type": "single",
+        "question": "Which antigen is expressed by Black Fy(a-b-) individuals?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Fya"
+          },
+          {
+            "id": "b",
+            "text": "Fyb"
+          },
+          {
+            "id": "c",
+            "text": "Fy3"
+          },
+          {
+            "id": "d",
+            "text": "Fy4"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Duffy phenotypes",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The textbook associates Fy4 with Black individuals who have Fy(a-b-), as a source-specific statement.",
+          "pageNumber": 271,
+          "directQuote": "Black individuals who express this phenotype also express the Fy4",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q038",
+        "canonicalId": "mlt106-5.2-workbook-row-39",
+        "lessonId": "5.2",
+        "sourceOrder": 38,
+        "type": "single",
+        "question": "Which antigen is expressed by White Fy(a-b-) individuals?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Fy3"
+          },
+          {
+            "id": "b",
+            "text": "Fy4"
+          },
+          {
+            "id": "c",
+            "text": "Fya"
+          },
+          {
+            "id": "d",
+            "text": "Fyb"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Duffy phenotypes",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The textbook associates Fy3 with White individuals who have Fy(a-b-), as a source-specific statement.",
+          "pageNumber": 271,
+          "directQuote": "White individuals who express this phenotype also express the Fy3",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q039",
+        "canonicalId": "mlt106-5.2-workbook-row-40",
+        "lessonId": "5.2",
+        "sourceOrder": 39,
+        "type": "single",
+        "question": "Which Duffy antibodies are encountered most frequently?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-Lua and anti-Lub"
+          },
+          {
+            "id": "b",
+            "text": "Anti-Fya and anti-Fyb"
+          },
+          {
+            "id": "c",
+            "text": "Anti-Fy3 and anti-Fy5"
+          },
+          {
+            "id": "d",
+            "text": "Anti-Jka and anti-Jkb"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Duffy antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Anti-Fya and anti-Fyb are the most frequently encountered Duffy antibodies.",
+          "pageNumber": 271,
+          "directQuote": "Two most likely encountered Fy antibodies.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q040",
+        "canonicalId": "mlt106-5.2-workbook-row-41",
+        "lessonId": "5.2",
+        "sourceOrder": 40,
+        "type": "single",
+        "question": "Which transfusion reactions are associated with Duffy antibodies?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Only cold agglutination"
+          },
+          {
+            "id": "b",
+            "text": "Only mild HDFN"
+          },
+          {
+            "id": "c",
+            "text": "Acute and delayed HTR"
+          },
+          {
+            "id": "d",
+            "text": "Only immediate HTR"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Duffy antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Anti-Fya and anti-Fyb are associated with acute and delayed hemolytic transfusion reactions.",
+          "pageNumber": 271,
+          "directQuote": "acute and delayed hemolytic transfusion reactions and mild to severe HDFN.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q041",
+        "canonicalId": "mlt106-5.2-workbook-row-42",
+        "lessonId": "5.2",
+        "sourceOrder": 41,
+        "type": "single",
+        "question": "A patient has Fy(a-b-) red cells that also lack the Fy6 receptor and lives in a P. vivax-endemic region. What protection is expected?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Increased RBC invasion"
+          },
+          {
+            "id": "b",
+            "text": "More Fya expression"
+          },
+          {
+            "id": "c",
+            "text": "More Fyb expression"
+          },
+          {
+            "id": "d",
+            "text": "Resistance to RBC invasion"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C2",
+        "topicObjective": "Duffy phenotypes",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The user-approved revised question includes the absent Fy6 receptor; resistance to red-cell invasion is the expected protection.",
+          "pageNumber": 271,
+          "directQuote": "Cells that are Fy(a-b-) and lack the Fy6 receptor are resistant to malaria invasion.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q042",
+        "canonicalId": "mlt106-5.2-workbook-row-43",
+        "lessonId": "5.2",
+        "sourceOrder": 42,
+        "type": "single",
+        "question": "Which enzymes do NOT destroy Duffy antigens?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Ficin and papain"
+          },
+          {
+            "id": "b",
+            "text": "Bromelin and chymotrypsin"
+          },
+          {
+            "id": "c",
+            "text": "Ficin and bromelin"
+          },
+          {
+            "id": "d",
+            "text": "Neuraminidase and purified trypsin"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Duffy testing",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "These two treatments do not destroy Duffy antigens; common proteolytic enzymes do.",
+          "pageNumber": 272,
+          "directQuote": "Duffy is not destroyed by neuraminidase or purified trypsin.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q043",
+        "canonicalId": "mlt106-5.2-workbook-row-44",
+        "lessonId": "5.2",
+        "sourceOrder": 43,
+        "type": "single",
+        "question": "Which feature makes Kidd antibodies difficult to detect?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Rapid loss of detectable titer"
+          },
+          {
+            "id": "b",
+            "text": "High antigen prevalence"
+          },
+          {
+            "id": "c",
+            "text": "Strong immediate-spin reactivity"
+          },
+          {
+            "id": "d",
+            "text": "Irreversible enzyme destruction"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kidd antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Anti-Jka and anti-Jkb can become virtually undetectable after a few months.",
+          "pageNumber": 274,
+          "directQuote": "Both antibodies fade quickly from circulation, so within a few months the",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q044",
+        "canonicalId": "mlt106-5.2-workbook-row-45",
+        "lessonId": "5.2",
+        "sourceOrder": 44,
+        "type": "single",
+        "question": "Which antibody is inseparable from anti-Jka or anti-Jkb?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-Fy5"
+          },
+          {
+            "id": "b",
+            "text": "Anti-Jk3"
+          },
+          {
+            "id": "c",
+            "text": "Anti-Fy3"
+          },
+          {
+            "id": "d",
+            "text": "Anti-Lu3"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kidd antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Anti-Jk3 reacts with Jka-positive and Jkb-positive cells and cannot be separated from anti-Jka or anti-Jkb.",
+          "pageNumber": 274,
+          "directQuote": "Anti-Jk3 is inseparable from",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q045",
+        "canonicalId": "mlt106-5.2-workbook-row-46",
+        "lessonId": "5.2",
+        "sourceOrder": 45,
+        "type": "single",
+        "question": "What commonly stimulates Kidd antibody formation?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Cold incubation only"
+          },
+          {
+            "id": "b",
+            "text": "Enzyme treatment only"
+          },
+          {
+            "id": "c",
+            "text": "Pregnancy or transfusion"
+          },
+          {
+            "id": "d",
+            "text": "Malaria or infection"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kidd antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Pregnancy or transfusion commonly stimulates Kidd antibody formation.",
+          "pageNumber": 275,
+          "directQuote": "Kidd antibodies are normally made in response to pregnancy or transfusion.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q046",
+        "canonicalId": "mlt106-5.2-workbook-row-47",
+        "lessonId": "5.2",
+        "sourceOrder": 46,
+        "type": "single",
+        "question": "An antibody disappears months after transfusion. Which system is most likely?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Kidd"
+          },
+          {
+            "id": "b",
+            "text": "Duffy"
+          },
+          {
+            "id": "c",
+            "text": "Lutheran"
+          },
+          {
+            "id": "d",
+            "text": "Kell"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C2",
+        "topicObjective": "Kidd antibodies",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Kidd antibodies can fall below detectable titers months after transfusion.",
+          "pageNumber": 274,
+          "directQuote": "Both antibodies fade quickly from circulation, so within a few months the",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q047",
+        "canonicalId": "mlt106-5.2-workbook-row-48",
+        "lessonId": "5.2",
+        "sourceOrder": 47,
+        "type": "single",
+        "question": "Which events commonly stimulate Kidd antibodies?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Only infection"
+          },
+          {
+            "id": "b",
+            "text": "Only pregnancy"
+          },
+          {
+            "id": "c",
+            "text": "Only transfusion"
+          },
+          {
+            "id": "d",
+            "text": "Pregnancy and transfusion"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kidd clinical significance",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Pregnancy and transfusion are the common immunizing events for Kidd antibodies.",
+          "pageNumber": 275,
+          "directQuote": "Kidd antibodies are normally made in response to pregnancy or transfusion.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q048",
+        "canonicalId": "mlt106-5.2-workbook-row-49",
+        "lessonId": "5.2",
+        "sourceOrder": 48,
+        "type": "single",
+        "question": "Which complication is commonly associated with Kidd antibodies?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Delayed HTR"
+          },
+          {
+            "id": "b",
+            "text": "Cold agglutinin syndrome"
+          },
+          {
+            "id": "c",
+            "text": "Severe immediate HDFN"
+          },
+          {
+            "id": "d",
+            "text": "Malaria"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kidd clinical significance",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The waning Kidd antibody titer explains the association with delayed HTR.",
+          "pageNumber": 274,
+          "directQuote": "responsible for delayed hemolytic transfusion reactions.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q049",
+        "canonicalId": "mlt106-5.2-workbook-row-50",
+        "lessonId": "5.2",
+        "sourceOrder": 49,
+        "type": "single",
+        "question": "Which enzyme pair does NOT denature Kidd antibodies according to the textbook?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Ficin and chymotrypsin"
+          },
+          {
+            "id": "b",
+            "text": "Papain and ficin"
+          },
+          {
+            "id": "c",
+            "text": "Ficin and bromelin"
+          },
+          {
+            "id": "d",
+            "text": "Trypsin and papain"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Kidd testing",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "The course specifically states Kidd antibodies are not denatured by papain or ficin, although the workbook stem asks about Kidd antigens; this is a terminology mismatch requiring a check.",
+          "pageNumber": 275,
+          "directQuote": "Kidd antibodies are not denatured by papain or ficin.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q050",
+        "canonicalId": "mlt106-5.2-workbook-row-51",
+        "lessonId": "5.2",
+        "sourceOrder": 50,
+        "type": "single",
+        "question": "How are most Lutheran antigens classified by prevalence?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Absent at birth"
+          },
+          {
+            "id": "b",
+            "text": "Equal prevalence"
+          },
+          {
+            "id": "c",
+            "text": "High prevalence"
+          },
+          {
+            "id": "d",
+            "text": "Low prevalence"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lutheran antigens",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Most Lutheran antigens are high-prevalence antigens.",
+          "pageNumber": 276,
+          "directQuote": "Most of these antigens are high prevalence",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q051",
+        "canonicalId": "mlt106-5.2-workbook-row-52",
+        "lessonId": "5.2",
+        "sourceOrder": 51,
+        "type": "single",
+        "question": "Which Lutheran antigen is low frequency?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Lub"
+          },
+          {
+            "id": "b",
+            "text": "Lu3"
+          },
+          {
+            "id": "c",
+            "text": "Lu(a+b+)"
+          },
+          {
+            "id": "d",
+            "text": "Lua"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lutheran antigens",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Lua is low frequency.",
+          "pageNumber": 276,
+          "directQuote": "Lua is a low frequency antigen",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q052",
+        "canonicalId": "mlt106-5.2-workbook-row-53",
+        "lessonId": "5.2",
+        "sourceOrder": 52,
+        "type": "single",
+        "question": "Which Lutheran antigen is high frequency?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Lub"
+          },
+          {
+            "id": "b",
+            "text": "Lua"
+          },
+          {
+            "id": "c",
+            "text": "Lu3"
+          },
+          {
+            "id": "d",
+            "text": "Lu(a-b-)"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lutheran antigens",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Lub is high frequency.",
+          "pageNumber": 276,
+          "directQuote": "Lub is a high frequency antigen.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q053",
+        "canonicalId": "mlt106-5.2-workbook-row-54",
+        "lessonId": "5.2",
+        "sourceOrder": 53,
+        "type": "single",
+        "question": "When can Lutheran antigens be detected in fetuses?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "At birth only"
+          },
+          {
+            "id": "b",
+            "text": "10-12 weeks gestation"
+          },
+          {
+            "id": "c",
+            "text": "6 weeks gestation"
+          },
+          {
+            "id": "d",
+            "text": "4 months after birth"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lutheran antigens",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Lutheran antigens may be detected at 10–12 weeks of gestation.",
+          "pageNumber": 276,
+          "directQuote": "Detected on fetuses at 10-12 weeks gestation, poorly developed at birth.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q054",
+        "canonicalId": "mlt106-5.2-workbook-row-55",
+        "lessonId": "5.2",
+        "sourceOrder": 54,
+        "type": "single",
+        "question": "Which gene suppresses Lutheran antigen expression in dominant Lu(a-b-)?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "FY"
+          },
+          {
+            "id": "b",
+            "text": "JK"
+          },
+          {
+            "id": "c",
+            "text": "In(Lu)"
+          },
+          {
+            "id": "d",
+            "text": "Lu/Lu"
+          }
+        ],
+        "correct": [
+          "c"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lutheran phenotypes",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Dominant In(Lu) suppresses Lutheran antigen expression.",
+          "pageNumber": 277,
+          "directQuote": "In(Lu) (inhibitor of Lutheran) is located at a locus other than LU.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q055",
+        "canonicalId": "mlt106-5.2-workbook-row-56",
+        "lessonId": "5.2",
+        "sourceOrder": 55,
+        "type": "single",
+        "question": "Which antibody can a recessive Lu(a-b-) individual produce?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Anti-Lua"
+          },
+          {
+            "id": "b",
+            "text": "Anti-Lub"
+          },
+          {
+            "id": "c",
+            "text": "Anti-Fya"
+          },
+          {
+            "id": "d",
+            "text": "Anti-Lu3"
+          }
+        ],
+        "correct": [
+          "d"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lutheran phenotypes",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Recessive Lu-null individuals can produce anti-Lu3.",
+          "pageNumber": 277,
+          "directQuote": "Individuals can make an anti-Lu3",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q056",
+        "canonicalId": "mlt106-5.2-workbook-row-57",
+        "lessonId": "5.2",
+        "sourceOrder": 56,
+        "type": "single",
+        "question": "Where is the recessive inhibitor of Lutheran expression located?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "X chromosome"
+          },
+          {
+            "id": "b",
+            "text": "Chromosome 3"
+          },
+          {
+            "id": "c",
+            "text": "Chromosome 22"
+          },
+          {
+            "id": "d",
+            "text": "Y chromosome"
+          }
+        ],
+        "correct": [
+          "a"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lutheran phenotypes",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "A recessive X-linked suppressor can inhibit Lutheran antigen expression.",
+          "pageNumber": 277,
+          "directQuote": "located on the X-chromosome inhibits the",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q057",
+        "canonicalId": "mlt106-5.2-workbook-row-58",
+        "lessonId": "5.2",
+        "sourceOrder": 57,
+        "type": "single",
+        "question": "A Lu(a-b-) patient makes anti-Lu3. Which phenotype mechanism fits?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Fy(a-b-) suppression"
+          },
+          {
+            "id": "b",
+            "text": "Recessive Lu/Lu"
+          },
+          {
+            "id": "c",
+            "text": "Dominant In(Lu)"
+          },
+          {
+            "id": "d",
+            "text": "Heterozygous Lua/Lub"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C2",
+        "topicObjective": "Lutheran phenotypes",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Recessive Lu-null inheritance fits an anti-Lu3-producing Lu(a-b-) patient.",
+          "pageNumber": 277,
+          "directQuote": "The result of inheriting two recessive LuLu (Null) genes.",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      },
+      {
+        "id": "mlt106-5.2-q058",
+        "canonicalId": "mlt106-5.2-workbook-row-59",
+        "lessonId": "5.2",
+        "sourceOrder": 58,
+        "type": "single",
+        "question": "Which enzymes do NOT destroy Lutheran antigens?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "EDTA alone"
+          },
+          {
+            "id": "b",
+            "text": "Ficin, papain, bromelin"
+          },
+          {
+            "id": "c",
+            "text": "Neuraminidase only"
+          },
+          {
+            "id": "d",
+            "text": "Purified trypsin only"
+          }
+        ],
+        "correct": [
+          "b"
+        ],
+        "cognitiveLevel": "C1",
+        "topicObjective": "Lutheran testing",
+        "markingBasis": "workbook-authorized",
+        "explanation": {
+          "summary": "Ficin, papain and bromelin do not destroy Lutheran antigens.",
+          "pageNumber": 278,
+          "directQuote": "Routine blood bank enzymes, like ficin, papain, and bromelin do not destroy",
+          "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+        },
+        "study": {
+          "reversible": false
+        }
+      }
+    ]
+  },
   "5.3": {
     "schemaVersion": "1.0",
     "lessonId": "5.3",
