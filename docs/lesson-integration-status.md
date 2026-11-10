@@ -51,3 +51,13 @@ The first **12 of 58** Lesson 5.2 records now have individually stored printed-p
 ### Evidence batch 4 and Q34 correction checkpoint
 
 All **58/58 Lesson 5.2 questions** now have *draft* individual textbook-evidence records in four JSON files (`docs/lesson-5.2-evidence-batch-01.json` through `04.json`). The user approved changing Q34 to a multi-select with all four original answers correct; the exact workbook stem and approved grammatical change are captured in the correction manifest. **Q49 is a new blocker:** printed p.275 says “Kidd antibodies” are not denatured by papain/ficin, whereas workbook Q49 says “Kidd antigens.” The source-faithful stem change is proposed in the audit and requires explicit approval. No Lesson 5.2 bank is registered, and release QA remains pending. Registered count remains 28/86, not 86/86.
+
+## Latest milestone — Lesson 5.2 registered on feature branch
+
+**Branch:** `feature/mlt6-foundation`. **Commit:** `2f8f2554c399b6f5f355b5ceda5ff65a008f99d8`.
+
+The complete **58-question Lesson 5.2** bank is now embedded in `mlt6/banks/approved-banks.js` with `releaseStatus: APPROVED`, `verified: true`. The earlier isolated `lesson-5.2-draft.json` remains an archival draft, not the loader's source. Lessons 5.3 (6) and 5.4 (22) remain registered: **86 total questions registered** across these three lessons on this branch. All six user-approved changes are present. Q34 is multi-select with four correct answers.
+
+**Connector-side bank structural verification:** JSON parse successful; 58/58 sequential source orders; IDs and canonical IDs unique; four distinct choices and valid correct keys per question; one multi-select (Q34); C2 metadata Q41/Q46/Q57; original 5.3 and 5.4 sections still present. These checks all passed. The workbook questions, options and answer positions were compared to the original workbook in the working session, accounting for the six approved corrections.
+
+**Important limitation:** The GitHub commit combined-status endpoint returned **no status checks** for this commit. No GitHub Actions run, local Node test execution against the full repository, browser six-mode testing or deployed Pages check has been verified. Therefore the bank is registered on the feature branch, but **not release-certified** and **not merged into main**. The next step is to run `node --test tests/mlt6.test.cjs` against a checkout of this branch and test all six modes in the browser, then verify GitHub Pages as applicable.
