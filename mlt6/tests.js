@@ -6,7 +6,7 @@
  * Other book lessons not represented by the original six headings are not invented here. */
 (function () {
   'use strict';
-  const lesson = (id, title, page) => Object.freeze({ id, title, page });
+  const lesson = (id, title, page, description = '') => Object.freeze({ id, title, page, description });
   const units = {
     '21': {
       title: 'Immun', legacyLabel: 'Test21: Immun', quiz: '../OldTests/test21.html',
@@ -31,9 +31,9 @@
       title: 'Other Blood Groups', legacyLabel: 'Test24: Other Blood Groups', quiz: '../OldTests/test24.html',
       lessons: [
         lesson('5.1', 'Miscellaneous Blood Bank Testing', 233),
-        lesson('5.2', 'Other Major Blood Groups', 247),
-        lesson('5.3', 'Identification of Antibodies', 281),
-        lesson('5.4', 'Pretransfusion and Compatibility Testing', 289)
+        lesson('5.2', 'Other Major Blood Groups', 247, 'Lewis and secretor genetics; MNS, P/Globoside and Ii systems; Kell/Kx, Duffy, Kidd and Lutheran antigens and antibodies, including their clinical significance.'),
+        lesson('5.3', 'Identification of Antibodies', 281, 'Interpret positive antibody screens, apply antibody exclusion and identify compatible antigen-negative donor red blood cells.'),
+        lesson('5.4', 'Pretransfusion and Compatibility Testing', 289, 'Recipient identification and specimen requirements, donor unit selection, crossmatching and compatibility testing for safe transfusion.')
       ]
     },
     '25': {
