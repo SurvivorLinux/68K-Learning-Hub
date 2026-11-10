@@ -47,3 +47,7 @@ The first **12 of 58** Lesson 5.2 records now have individually stored printed-p
 ### Evidence batch 2 checkpoint
 
 `docs/lesson-5.2-evidence-batch-02.json` now stores **13 individual records (Q13–Q25)** with printed textbook pages, exact contiguous source quotations and explanations. All 13 quoted excerpts were checked for exact occurrence in the extracted Unit 5 textbook text. Together with batch 1, this gives **25/58 individual evidence records**; Q18 uses the approved anti-I/cold agglutinin syndrome wording. **No Lesson 5.2 release yet.** The remaining Q26–Q58 need individual evidence, then original workbook option/key reconciliation, manifest/hash verification, runtime and six-mode QA.
+
+### Evidence batch 4 and Q34 correction checkpoint
+
+All **58/58 Lesson 5.2 questions** now have *draft* individual textbook-evidence records in four JSON files (`docs/lesson-5.2-evidence-batch-01.json` through `04.json`). The user approved changing Q34 to a multi-select with all four original answers correct; the exact workbook stem and approved grammatical change are captured in the correction manifest. **Q49 is a new blocker:** printed p.275 says “Kidd antibodies” are not denatured by papain/ficin, whereas workbook Q49 says “Kidd antigens.” The source-faithful stem change is proposed in the audit and requires explicit approval. No Lesson 5.2 bank is registered, and release QA remains pending. Registered count remains 28/86, not 86/86.
