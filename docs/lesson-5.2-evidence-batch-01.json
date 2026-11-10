@@ -26,7 +26,7 @@
       "questionNumber": 3,
       "sourceOrder": 3,
       "pageNumber": 249,
-      "directQuote": "the H gene enzymes adds the sugar L-fucose to Type 2 precursor chains",
+      "directQuote": "except the H gene enzymes adds the sugar L-fucose to",
       "explanation": "The H gene produces fucosyltransferase acting on type 2 chains; this question uses the user-approved corrected wording.",
       "correctionApproved": true
     },
@@ -74,7 +74,7 @@
       "questionNumber": 9,
       "sourceOrder": 9,
       "pageNumber": 255,
-      "directQuote": "The S, s, and U antigens are found on the smaller glycoprotein called glycophorin B (GPB)",
+      "directQuote": "The S, s, and U antigens are found on the smaller glycoprotein called",
       "explanation": "Glycophorin B carries S and s (and U).",
       "correctionApproved": false
     },
@@ -82,7 +82,7 @@
       "questionNumber": 10,
       "sourceOrder": 10,
       "pageNumber": 255,
-      "directQuote": "The S, s, and U antigens are found on the smaller glycoprotein called glycophorin B (GPB)",
+      "directQuote": "The S, s, and U antigens are found on the smaller glycoprotein called",
       "explanation": "The U antigen is carried by glycophorin B.",
       "correctionApproved": false
     },
@@ -90,7 +90,7 @@
       "questionNumber": 11,
       "sourceOrder": 11,
       "pageNumber": 256,
-      "directQuote": "usually occurring as a saline agglutinin in antibody tests performed at room temperature.",
+      "directQuote": "a saline agglutinin in antibody tests performed at room temperature.",
       "explanation": "Anti-M commonly reacts at room temperature.",
       "correctionApproved": false
     },
