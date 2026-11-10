@@ -303,7 +303,7 @@ window.MLT6_APPROVED_BANKS = Object.freeze({
         "explanation": {
           "summary": "Pretransfusion testing aims to prevent immune-mediated hemolytic transfusion reactions.",
           "pageNumber": 290,
-          "directQuote": "pretransfusion testing encompasses serologic and non-serologic protocols and testing procedures with the primary purpose of preventing immune mediated hemolytic transfusion reactions while providing RBCs with an acceptable survival rate.",
+          "directQuote": "Pretransfusion testing encompasses serologic and non-serologic protocols and testing procedures with the primary purpose of preventing immune mediated hemolytic transfusion reactions while providing RBCs with an acceptable survival rate.",
           "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
         },
         "study": {
