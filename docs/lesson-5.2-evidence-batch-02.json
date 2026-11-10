@@ -58,7 +58,7 @@
       "questionNumber": 19,
       "sourceOrder": 19,
       "pageNumber": 265,
-      "directQuote": "Patients with Mycoplasma pneumoniae often develop strong cold agglutinins with I specificity",
+      "directQuote": "strong cold agglutinins with I specificity",
       "explanation": "Mycoplasma pneumoniae infection is associated with anti-I specificity.",
       "correctionApproved": false
     },
@@ -98,7 +98,7 @@
       "questionNumber": 24,
       "sourceOrder": 24,
       "pageNumber": 266,
-      "directQuote": "produces no Kell antigens and is referred to as the Kell-null phenotype.",
+      "directQuote": "produces no Kell antigens and is referred to as the",
       "explanation": "Homozygous KoKo produces no Kell antigens.",
       "correctionApproved": false
     },
@@ -106,7 +106,7 @@
       "questionNumber": 25,
       "sourceOrder": 25,
       "pageNumber": 266,
-      "directQuote": "This system is essential for the antigens of the Kell system to be expressed normally on red blood cells.",
+      "directQuote": "This system is essential for the antigens of the Kell system to be expressed",
       "explanation": "The Kx system is essential for normal expression of Kell antigens.",
       "correctionApproved": false
     }
