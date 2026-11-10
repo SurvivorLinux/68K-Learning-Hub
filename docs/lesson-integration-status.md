@@ -39,3 +39,7 @@ GitHub Pages success must be verified for the **exact final feature-branch SHA**
 All 58 workbook questions have a first-pass answer-key comparison recorded in `docs/lesson-5.2-workbook-audit.md`. The user approved four narrowly scoped edits to Q3, Q18, Q30 and Q41; the exact changes are locked in `docs/lesson-5.2-approved-corrections.json`. All four original workbook stems, option positions and answers were rechecked against the source workbook. Only Q30 changes one option text; every answer position remains unchanged.
 
 **Not yet a release:** Lesson 5.2 still has no published bank. Per-question verbatim quotes and explanations, the independent manifest/hash audit, and six-mode runtime/browser verification remain pending. The existing 5.3/5.4 registration count remains 28, not 86. Do not confuse first-pass answer-key support with Runbook v2.2 approval.
+
+## Lesson 5.2 per-question evidence work
+
+The first **12 of 58** Lesson 5.2 records now have individually stored printed-page citations, source quotations, and explanations in `docs/lesson-5.2-evidence-batch-01.json`. These are **audit records**, not released quiz-bank questions. Q3 uses the explicitly approved H-gene correction. The workbook is still the source for all question stems, four answer options and correct-option positions. Lesson 5.2 stays unpublished until all 58 evidence records and full structural/independent QA are complete.
