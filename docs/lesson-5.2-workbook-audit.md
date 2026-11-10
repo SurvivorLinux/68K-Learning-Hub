@@ -50,7 +50,7 @@
 | 15 | p | p.258: “p- Considered the P null phenotype.” | Supported |
 | 16 | Chromosome 3 | p.259: “GLOB gene resides on chromosome 3.” | Supported |
 | 17 | Anti-i | p.265: “Anti-i is associated with infectious mononucleosis.” | Supported; workbook page 260 is wrong |
-| 18 | Anti-I | p.264: “Anti-I is associated with cold agglutinin syndrome.” p.265 describes severe hemolytic transfusion reactions in cold agglutinin syndrome | Supported; citation pp.264–265 |
+| 18 | Anti-I | p.264 links anti-I to cold agglutinin syndrome; p.265 describes transient abrupt hemolysis with Mycoplasma pneumoniae, **not** a severe hemolytic transfusion reaction | **Requires stronger evidence or exclusion; do not approve from this passage** |
 | 19 | Mycoplasma pneumoniae infection | p.265: anti-I associated with Mycoplasma pneumoniae infection | Supported; workbook page 261 is wrong |
 | 20 | Cold agglutination | pp.264–265: anti-I and anti-i are cold-reactive agglutinins | Supported |
 | 21 | Anti-I | p.264: “Anti-I is associated with cold agglutinin syndrome.” | Supported |
@@ -59,4 +59,4 @@
 | 24 | No Kell antigens | p.266: homozygous KoKo is Kell-null, produces no Kell antigens | Supported |
 | 25 | Kx | p.266: Kx is essential for normal expression of Kell antigens | Supported |
 
-**Batch 2:** 13 supported answer keys, subject to final quote-level and page metadata review. The source-page label for Q17 and Q19 is clearly offset. The textbook's 79% and 21% figures are historical course-specific statistics; preserve their course framing rather than asserting current population estimates.
+**Batch 2:** 12 supported answer keys and 1 unresolved (Q18), subject to final quote-level and page metadata review. The source-page label for Q17 and Q19 is clearly offset. The textbook's 79% and 21% figures are historical course-specific statistics; preserve their course framing rather than asserting current population estimates.
