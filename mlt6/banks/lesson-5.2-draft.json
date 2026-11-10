@@ -418,6 +418,826 @@
       "study": {
         "reversible": false
       }
+    },
+    {
+      "id": "mlt106-5.2-q011",
+      "canonicalId": "mlt106-5.2-workbook-row-12",
+      "lessonId": "5.2",
+      "sourceOrder": 11,
+      "type": "single",
+      "question": "Which MNS antibody often reacts best at room temperature?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Anti-U"
+        },
+        {
+          "id": "b",
+          "text": "Anti-M"
+        },
+        {
+          "id": "c",
+          "text": "Anti-S"
+        },
+        {
+          "id": "d",
+          "text": "Anti-s"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Anti-M commonly reacts at room temperature.",
+        "pageNumber": 256,
+        "directQuote": "a saline agglutinin in antibody tests performed at room temperature.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q012",
+      "canonicalId": "mlt106-5.2-workbook-row-13",
+      "lessonId": "5.2",
+      "sourceOrder": 12,
+      "type": "single",
+      "question": "Which antibody is usually IgG and reacts optimally at 37 C?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Anti-P1"
+        },
+        {
+          "id": "b",
+          "text": "Anti-Lea"
+        },
+        {
+          "id": "c",
+          "text": "Anti-U"
+        },
+        {
+          "id": "d",
+          "text": "Anti-M"
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Anti-U is usually IgG and reacts optimally at 37°C.",
+        "pageNumber": 257,
+        "directQuote": "Usually, IgG in nature with optimal reactivity at 37oC, binds complement.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q013",
+      "canonicalId": "mlt106-5.2-workbook-row-14",
+      "lessonId": "5.2",
+      "sourceOrder": 13,
+      "type": "single",
+      "question": "Which antigen is present in 79% of White individuals?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "P2"
+        },
+        {
+          "id": "b",
+          "text": "Pk"
+        },
+        {
+          "id": "c",
+          "text": "P"
+        },
+        {
+          "id": "d",
+          "text": "P1"
+        }
+      ],
+      "correct": [
+        "d"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The course text lists the P1 phenotype in 79% of White individuals; P1 is the keyed answer.",
+        "pageNumber": 258,
+        "directQuote": "Present in 79% of whites and 94% of blacks",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q014",
+      "canonicalId": "mlt106-5.2-workbook-row-15",
+      "lessonId": "5.2",
+      "sourceOrder": 14,
+      "type": "single",
+      "question": "Which P-system phenotype is present in 21% of Whites?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "P2"
+        },
+        {
+          "id": "b",
+          "text": "P1"
+        },
+        {
+          "id": "c",
+          "text": "P1k"
+        },
+        {
+          "id": "d",
+          "text": "P2k"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The P2 phenotype is listed in 21% of White individuals.",
+        "pageNumber": 258,
+        "directQuote": "Present in 21% of whites and 6% of blacks",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q015",
+      "canonicalId": "mlt106-5.2-workbook-row-16",
+      "lessonId": "5.2",
+      "sourceOrder": 15,
+      "type": "single",
+      "question": "Which P-system phenotype is the null phenotype?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "P1k"
+        },
+        {
+          "id": "b",
+          "text": "p"
+        },
+        {
+          "id": "c",
+          "text": "P1"
+        },
+        {
+          "id": "d",
+          "text": "P2"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The p phenotype lacks P, P1 and Pk antigens and is the P-null phenotype.",
+        "pageNumber": 258,
+        "directQuote": "p- Considered the P null phenotype.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q016",
+      "canonicalId": "mlt106-5.2-workbook-row-17",
+      "lessonId": "5.2",
+      "sourceOrder": 16,
+      "type": "single",
+      "question": "Which chromosome contains the GLOB gene?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "X chromosome"
+        },
+        {
+          "id": "b",
+          "text": "Chromosome 1"
+        },
+        {
+          "id": "c",
+          "text": "Chromosome 3"
+        },
+        {
+          "id": "d",
+          "text": "Chromosome 22"
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The GLOB gene is on chromosome 3.",
+        "pageNumber": 259,
+        "directQuote": "GLOB gene resides on chromosome 3.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q017",
+      "canonicalId": "mlt106-5.2-workbook-row-18",
+      "lessonId": "5.2",
+      "sourceOrder": 17,
+      "type": "single",
+      "question": "Which antibody is associated with infectious mononucleosis?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Anti-I"
+        },
+        {
+          "id": "b",
+          "text": "Anti-P1"
+        },
+        {
+          "id": "c",
+          "text": "Anti-M"
+        },
+        {
+          "id": "d",
+          "text": "Anti-i"
+        }
+      ],
+      "correct": [
+        "d"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The association is with autoanti-i; the workbook's anti-i answer is supported with that qualification.",
+        "pageNumber": 265,
+        "directQuote": "Autoanti-i can be associated with infectious mononucleosis",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q018",
+      "canonicalId": "mlt106-5.2-workbook-row-19",
+      "lessonId": "5.2",
+      "sourceOrder": 18,
+      "type": "single",
+      "question": "Which antibody is associated with cold agglutinin syndrome?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Anti-I"
+        },
+        {
+          "id": "b",
+          "text": "Anti-i"
+        },
+        {
+          "id": "c",
+          "text": "Anti-Lea"
+        },
+        {
+          "id": "d",
+          "text": "Anti-Lua"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The approved corrected stem asks about cold agglutinin syndrome rather than severe hemolytic transfusion reactions.",
+        "pageNumber": 264,
+        "directQuote": "Anti-I is associated with cold agglutinin syndrome.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q019",
+      "canonicalId": "mlt106-5.2-workbook-row-20",
+      "lessonId": "5.2",
+      "sourceOrder": 19,
+      "type": "single",
+      "question": "Which condition is associated with anti-I?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Hodgkin lymphoma"
+        },
+        {
+          "id": "b",
+          "text": "Mycoplasma pneumoniae infection"
+        },
+        {
+          "id": "c",
+          "text": "Infectious mononucleosis"
+        },
+        {
+          "id": "d",
+          "text": "Malaria"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Mycoplasma pneumoniae infection is associated with anti-I specificity.",
+        "pageNumber": 265,
+        "directQuote": "Patients with Mycoplasma pneumoniae often develop strong cold",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q020",
+      "canonicalId": "mlt106-5.2-workbook-row-21",
+      "lessonId": "5.2",
+      "sourceOrder": 20,
+      "type": "single",
+      "question": "What type of reaction do Ii antibodies commonly cause?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "HDFN"
+        },
+        {
+          "id": "b",
+          "text": "Delayed HTR"
+        },
+        {
+          "id": "c",
+          "text": "Cold agglutination"
+        },
+        {
+          "id": "d",
+          "text": "Warm agglutination"
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Ii antibodies often react as cold agglutinins; the text describes anti-I as IgM and enhanced by cold testing.",
+        "pageNumber": 264,
+        "directQuote": "Usually weak and naturally occurring, saline reactive IgM agglutinin.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q021",
+      "canonicalId": "mlt106-5.2-workbook-row-22",
+      "lessonId": "5.2",
+      "sourceOrder": 21,
+      "type": "single",
+      "question": "Which antibody is associated with cold agglutinin syndrome?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Anti-i"
+        },
+        {
+          "id": "b",
+          "text": "Anti-P1"
+        },
+        {
+          "id": "c",
+          "text": "Anti-Lea"
+        },
+        {
+          "id": "d",
+          "text": "Anti-I"
+        }
+      ],
+      "correct": [
+        "d"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Anti-I is the antibody associated with cold agglutinin syndrome.",
+        "pageNumber": 264,
+        "directQuote": "Anti-I is associated with cold agglutinin syndrome.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q022",
+      "canonicalId": "mlt106-5.2-workbook-row-23",
+      "lessonId": "5.2",
+      "sourceOrder": 22,
+      "type": "single",
+      "question": "Which antibody is associated with infectious mononucleosis?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Anti-i"
+        },
+        {
+          "id": "b",
+          "text": "Anti-I"
+        },
+        {
+          "id": "c",
+          "text": "Anti-M"
+        },
+        {
+          "id": "d",
+          "text": "Anti-U"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The antibody associated with infectious mononucleosis is autoanti-i.",
+        "pageNumber": 265,
+        "directQuote": "Autoanti-i can be associated with infectious mononucleosis",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q023",
+      "canonicalId": "mlt106-5.2-workbook-row-24",
+      "lessonId": "5.2",
+      "sourceOrder": 23,
+      "type": "single",
+      "question": "When are Kell antigens well developed?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "At 4 months"
+        },
+        {
+          "id": "b",
+          "text": "At birth"
+        },
+        {
+          "id": "c",
+          "text": "At 6 weeks gestation"
+        },
+        {
+          "id": "d",
+          "text": "At 10-12 weeks gestation"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Kell antigens are detectable in fetal red cells and well developed at birth.",
+        "pageNumber": 266,
+        "directQuote": "meaning these antigens are well developed at birth.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q024",
+      "canonicalId": "mlt106-5.2-workbook-row-25",
+      "lessonId": "5.2",
+      "sourceOrder": 24,
+      "type": "single",
+      "question": "Which Kell antigen is produced by a homozygous KoKo individual?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "k antigen"
+        },
+        {
+          "id": "b",
+          "text": "Kpa antigen"
+        },
+        {
+          "id": "c",
+          "text": "No Kell antigens"
+        },
+        {
+          "id": "d",
+          "text": "K antigen"
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Homozygous KoKo produces no Kell antigens.",
+        "pageNumber": 266,
+        "directQuote": "produces no Kell antigens and is referred to as the",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q025",
+      "canonicalId": "mlt106-5.2-workbook-row-26",
+      "lessonId": "5.2",
+      "sourceOrder": 25,
+      "type": "single",
+      "question": "Which antigen is essential for normal Kell antigen expression?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "K"
+        },
+        {
+          "id": "b",
+          "text": "k"
+        },
+        {
+          "id": "c",
+          "text": "Kpa"
+        },
+        {
+          "id": "d",
+          "text": "Kx"
+        }
+      ],
+      "correct": [
+        "d"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The Kx system is essential for normal expression of Kell antigens.",
+        "pageNumber": 266,
+        "directQuote": "This system is essential for the antigens of the Kell system to be expressed",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q026",
+      "canonicalId": "mlt106-5.2-workbook-row-27",
+      "lessonId": "5.2",
+      "sourceOrder": 26,
+      "type": "single",
+      "question": "Which antigen is associated with the McLeod phenotype?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Kx"
+        },
+        {
+          "id": "b",
+          "text": "K"
+        },
+        {
+          "id": "c",
+          "text": "k"
+        },
+        {
+          "id": "d",
+          "text": "Jsa"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The McLeod phenotype lacks Kx antigen; the question is about its association with Kx.",
+        "pageNumber": 267,
+        "directQuote": "Kx- present on all RBCs except those of the rare McLeod Phenotype",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q027",
+      "canonicalId": "mlt106-5.2-workbook-row-28",
+      "lessonId": "5.2",
+      "sourceOrder": 27,
+      "type": "single",
+      "question": "Which antibody is the most clinically significant in the Kell system?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Anti-Jsa"
+        },
+        {
+          "id": "b",
+          "text": "Anti-K"
+        },
+        {
+          "id": "c",
+          "text": "Anti-k"
+        },
+        {
+          "id": "d",
+          "text": "Anti-Kpa"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Anti-K is the most clinically significant antibody of the Kell system.",
+        "pageNumber": 268,
+        "directQuote": "After ABO and Rh antibodies, anti-K is the most clinically significant antibody",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q028",
+      "canonicalId": "mlt106-5.2-workbook-row-29",
+      "lessonId": "5.2",
+      "sourceOrder": 28,
+      "type": "single",
+      "question": "At which phase is anti-K usually detected?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Room temperature"
+        },
+        {
+          "id": "b",
+          "text": "Saline phase"
+        },
+        {
+          "id": "c",
+          "text": "AHG"
+        },
+        {
+          "id": "d",
+          "text": "Immediate spin"
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Anti-K is detected at the AHG phase (and often 37°C).",
+        "pageNumber": 268,
+        "directQuote": "Usually detected at 37oC and AHG phase of testing",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q029",
+      "canonicalId": "mlt106-5.2-workbook-row-30",
+      "lessonId": "5.2",
+      "sourceOrder": 29,
+      "type": "single",
+      "question": "Which Kell antibody can cause HDFN?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Anti-Lea"
+        },
+        {
+          "id": "b",
+          "text": "Anti-P1"
+        },
+        {
+          "id": "c",
+          "text": "Anti-Lua"
+        },
+        {
+          "id": "d",
+          "text": "Anti-K"
+        }
+      ],
+      "correct": [
+        "d"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "Anti-K is associated with HDFN.",
+        "pageNumber": 268,
+        "directQuote": "Has been associated with severe hemolytic transfusion reactions and HDFN.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
+    },
+    {
+      "id": "mlt106-5.2-q030",
+      "canonicalId": "mlt106-5.2-workbook-row-31",
+      "lessonId": "5.2",
+      "sourceOrder": 30,
+      "type": "single",
+      "question": "Which enzymes are specifically named as not denaturing Kell antigens?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Ficin and papain"
+        },
+        {
+          "id": "b",
+          "text": "Ficin, papain, trypsin"
+        },
+        {
+          "id": "c",
+          "text": "Bromelin, chymotrypsin, ficin"
+        },
+        {
+          "id": "d",
+          "text": "Trypsin, EDTA, ficin"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "cognitiveLevel": "C1",
+      "topicObjective": "Other Major Blood Groups",
+      "markingBasis": "workbook-authorized",
+      "explanation": {
+        "summary": "The approved stem and answer choice now specifically name ficin and papain, the two enzymes explicitly cited.",
+        "pageNumber": 269,
+        "directQuote": "Kell antigens are not denatured by routine blood bank enzymes, papain and ficin.",
+        "sourceName": "MLT 106 Blood Bank (22 Oct 2025), Unit 5"
+      },
+      "study": {
+        "reversible": false
+      }
     }
   ]
 }
